@@ -15,13 +15,13 @@ public class Reservation {
 
     private int id;
     private ArrayList<Ticket> tickets;
-    private MovieSchedual movieSchedual;
+    private MovieSchedule movieSchedual;
     private User user;
     private PaymentMethod paymentMethod;
 
     private final static String TAG = "Reservation";
 
-    public Reservation(int id, ArrayList<Ticket> tickets, MovieSchedual movieSchedual, User user, PaymentMethod paymentMethod) {
+    public Reservation(int id, ArrayList<Ticket> tickets, MovieSchedule movieSchedual, User user, PaymentMethod paymentMethod) {
 
         Log.d(TAG, "Reservation-Constructor (extended) was called");
         this.id = id;
@@ -55,11 +55,11 @@ public class Reservation {
         this.tickets.add(ticket);
     }
 
-    public MovieSchedual getMovieSchedual() {
+    public MovieSchedule getMovieSchedual() {
         return movieSchedual;
     }
 
-    public void setMovieSchedual(MovieSchedual movieSchedual) {
+    public void setMovieSchedual(MovieSchedule movieSchedual) {
         this.movieSchedual = movieSchedual;
     }
 

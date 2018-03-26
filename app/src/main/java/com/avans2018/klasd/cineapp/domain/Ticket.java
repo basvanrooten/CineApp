@@ -12,16 +12,16 @@ import com.avans2018.klasd.cineapp.domain.PaymentCategory.PaymentCategory;
 public class Ticket {
 
     private int id;
-    private Theather theather;
+    private Theater theater;
     private Seat seat;
     private Movie movie;
     private PaymentCategory paymentCategory;
 
     private static final String TAG = "Domain: Ticket";
 
-    public Ticket(int id, Theather theather, Seat seat, Movie movie, PaymentCategory paymentCategory) {
+    public Ticket(int id, Theater theater, Seat seat, Movie movie, PaymentCategory paymentCategory) {
         this.id = id;
-        this.theather = theather;
+        this.theater = theater;
         this.seat = seat;
         this.movie = movie;
         this.paymentCategory = paymentCategory;
@@ -41,12 +41,12 @@ public class Ticket {
         this.id = id;
     }
 
-    public Theather getTheather() {
-        return theather;
+    public Theater getTheater() {
+        return theater;
     }
 
-    public void setTheather(Theather theather) {
-        this.theather = theather;
+    public void setTheater(Theater theater) {
+        this.theater = theater;
     }
 
     public Seat getSeat() {

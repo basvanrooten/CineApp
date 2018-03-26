@@ -7,26 +7,26 @@ import android.util.Log;
  * Last Edited by Robin on 26-03-18.
  */
 
-public class MovieSchedual {
+public class MovieSchedule {
 
     private int id;
     private int time;
     private Movie movie;
-    private Theather theather;
+    private Theater theater;
 
-    private static final String TAG = "Domain: MovieSchedual";
+    private static final String TAG = "Domain: MovieSchedule";
 
-    public MovieSchedual(int id, int time, Movie movie, Theather theather) {
+    public MovieSchedule(int id, int time, Movie movie, Theater theater) {
 
-        Log.d(TAG, "MovieSchedual-Constructor (extended) called");
+        Log.d(TAG, "MovieSchedule-Constructor (extended) called");
         this.id = id;
         this.time = time;
         this.movie = movie;
-        this.theather = theather;
+        this.theater = theater;
     }
 
-    public MovieSchedual()  {
-        Log.d(TAG, "MovieSchedual-Constructor (empty) called");
+    public MovieSchedule()  {
+        Log.d(TAG, "MovieSchedule-Constructor (empty) called");
     }
 
     public int getId() {
@@ -53,20 +53,20 @@ public class MovieSchedual {
         this.movie = movie;
     }
 
-    public Theather getTheather() {
-        return theather;
+    public Theater getTheater() {
+        return theater;
     }
 
-    public void setTheather(Theather theather) {
-        this.theather = theather;
+    public void setTheater(Theater theater) {
+        this.theater = theater;
     }
 
     @Override
     public String toString() {
-        return "MovieSchedual{" +
+        return "MovieSchedule{" +
                 "movie=" + movie.toString() +
                 ", time=" + time +
-                ", theather=" + theather.getTheatherNumber() +
+                ", theater=" + theater.getTheatherNumber() +
                 '}';
     }
 }

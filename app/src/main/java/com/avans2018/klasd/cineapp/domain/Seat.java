@@ -10,16 +10,16 @@ import android.util.Log;
 public class Seat {
 
     private int seatNumber;
-    private Theather theather;
+    private Theater theater;
     private boolean taken;
 
     private final static String TAG = "Domain: Seat";
 
-    public Seat(int seatNumber, Theather theather, boolean taken) {
+    public Seat(int seatNumber, Theater theater, boolean taken) {
 
         Log.d(TAG, "Seat-Constructor (extended) was called");
         this.seatNumber = seatNumber;
-        this.theather = theather;
+        this.theater = theater;
         this.taken = taken;
     }
 
@@ -35,12 +35,12 @@ public class Seat {
         this.seatNumber = seatNumber;
     }
 
-    public Theather getTheather() {
-        return theather;
+    public Theater getTheater() {
+        return theater;
     }
 
-    public void setTheather(Theather theather) {
-        this.theather = theather;
+    public void setTheater(Theater theater) {
+        this.theater = theater;
     }
 
     public boolean isTaken() {
