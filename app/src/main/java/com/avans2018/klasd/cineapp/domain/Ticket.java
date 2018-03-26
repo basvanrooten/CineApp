@@ -26,7 +26,11 @@ public class Ticket {
         this.movie = movie;
         this.paymentCategory = paymentCategory;
 
-        Log.d(TAG, "Ticket-Constructor called");
+        Log.d(TAG, "Ticket-Constructor (extended) called");
+    }
+
+    public Ticket() {
+        Log.d(TAG, "Ticket-Constructor (empty) was called");
     }
 
     public int getId() {

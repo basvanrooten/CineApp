@@ -1,5 +1,7 @@
 package com.avans2018.klasd.cineapp.domain;
 
+import android.util.Log;
+
 import java.util.ArrayList;
 
 /**
@@ -19,6 +21,28 @@ public class User {
     private String streetName;
     private String city;
     private ArrayList<Reservation> reservations;
+
+    private static final String TAG = "Domain: User";
+
+    public User(int id, String firstName, String lastName, int age, String emailAddress, int phoneNumber, int houseNumber, String streetName, String city, ArrayList<Reservation> reservations) {
+
+        Log.d(TAG, "User-Constructor (extended) was called");
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.age = age;
+        this.emailAddress = emailAddress;
+        this.phoneNumber = phoneNumber;
+        this.houseNumber = houseNumber;
+        this.streetName = streetName;
+        this.city = city;
+        this.reservations = reservations;
+    }
+
+    public User() {
+
+        Log.d(TAG, "User-Constructor (empty) was called");
+    }
 
     public int getId() {
         return id;

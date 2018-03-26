@@ -16,8 +16,17 @@ public class MovieSchedual {
 
     private static final String TAG = "Domain: MovieSchedual";
 
+    public MovieSchedual(int id, int time, Movie movie, Theather theather) {
+
+        Log.d(TAG, "MovieSchedual-Constructor (extended) called");
+        this.id = id;
+        this.time = time;
+        this.movie = movie;
+        this.theather = theather;
+    }
+
     public MovieSchedual()  {
-        Log.d(TAG, "MovieSchedual-Constructor called");
+        Log.d(TAG, "MovieSchedual-Constructor (empty) called");
     }
 
     public int getId() {

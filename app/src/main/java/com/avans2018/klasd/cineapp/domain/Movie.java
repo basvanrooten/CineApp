@@ -25,8 +25,28 @@ public class Movie implements Serializable {
 
     private static final String TAG = "Domain: Movie";
 
+    public Movie(int id, String name, boolean adultOnly, String genre, String imageUrl, int duration,
+                 String info, String language, String releaseDate, String homePageUrl, String status,
+                 int rating, int ratingCount) {
+
+        Log.d(TAG, "Movie-Constructor (extended) was called");
+        this.id = id;
+        this.name = name;
+        this.adultOnly = adultOnly;
+        this.genre = genre;
+        this.imageUrl = imageUrl;
+        this.duration = duration;
+        this.info = info;
+        this.language = language;
+        this.releaseDate = releaseDate;
+        this.homePageUrl = homePageUrl;
+        this.status = status;
+        this.rating = rating;
+        this.ratingCount = ratingCount;
+    }
+
     public Movie()  {
-        Log.d(TAG, "Movie-Constructor was called");
+        Log.d(TAG, "Movie-Constructor (empty) was called");
     }
 
 

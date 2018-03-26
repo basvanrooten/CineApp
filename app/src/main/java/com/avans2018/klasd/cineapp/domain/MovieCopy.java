@@ -20,7 +20,7 @@ public class MovieCopy {
     }
 
     public MovieCopy()  {
-        Log.d(TAG, "MovieCopy-Constructor was called. Received nothing");
+        Log.d(TAG, "MovieCopy-Constructor (empty) was called.");
     }
 
     public Movie getMovie() {
