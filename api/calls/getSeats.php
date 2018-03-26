@@ -35,5 +35,5 @@ if(checkFields($fields) && checkValidApiKey()) {
 
     echo json_encode($seats);
 } else {
-    echo checkValidApiKey();
+    echo "error!";
 }

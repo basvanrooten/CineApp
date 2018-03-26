@@ -7,7 +7,7 @@ $fields = array("screeningId");
 $seats = [];
 
 if(checkFields($fields) && checkValidApiKey()) {
-    
+
     $screeningId = getField($fields[0]);
 
     $statement = Database::getConnection()->prepare("SELECT * FROM seats WHERE id not in ( SELECT seatId FROM `tickets` JOIN ( SELECT id FROM `reservations` WHERE screeningId = ?) as reservations ON tickets.reservationId = reservations.id);");
@@ -35,5 +35,5 @@ if(checkFields($fields) && checkValidApiKey()) {
 
     echo json_encode($seats);
 } else {
-    echo checkValidApiKey();
+    echo "error!";
 }
