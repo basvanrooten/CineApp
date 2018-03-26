@@ -11,7 +11,7 @@ public class Movie implements Serializable {
 
     private int id;
     private String name;
-    private boolean adultOnly;
+    private boolean adultOnly;  // ( ͡° ͜ʖ ͡°)
     private String genre;
     private String imageUrl;
     private int duration;
