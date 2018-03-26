@@ -17,11 +17,7 @@ import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
-/**
- * Created by Tom on 26-3-2018.
- * Adapter voor RecyclerView in MovieListActivity
- */
-
+//Adapter voor RecyclerView in MovieListActivity
 public class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.MovieViewHolder> {
 
     private Context mContext;

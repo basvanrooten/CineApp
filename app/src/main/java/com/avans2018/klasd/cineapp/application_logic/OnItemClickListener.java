@@ -1,9 +1,6 @@
 package com.avans2018.klasd.cineapp.application_logic;
 
-/**
- * Created by Tom on 26-3-2018.
- */
-
+// Interface voor RecyclerView klik logica
 public interface OnItemClickListener {
     void onItemClick(int position);
 }

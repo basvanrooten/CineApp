@@ -33,7 +33,6 @@ public class MovieListActivity extends AppCompatActivity implements OnItemClickL
         recyclerView.setLayoutManager(new LinearLayoutManager(MovieListActivity.this));
         recyclerView.setAdapter(adapter);
         adapter.setOnItemClickListener(MovieListActivity.this);
-
     }
 
     @Override
