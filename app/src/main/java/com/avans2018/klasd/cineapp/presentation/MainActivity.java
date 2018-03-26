@@ -1,7 +1,9 @@
-package com.avans2018.klasd.cineapp;
+package com.avans2018.klasd.cineapp.presentation;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.avans2018.klasd.cineapp.R;
 
 public class MainActivity extends AppCompatActivity {
 
