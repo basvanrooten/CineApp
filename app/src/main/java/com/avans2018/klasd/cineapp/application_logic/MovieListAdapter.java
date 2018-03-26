@@ -36,20 +36,20 @@ public class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.Movi
 
     @Override
     public MovieViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        Log.i(TAG,"onCreateViewHolder() aangeroepen.");
+        Log.i(TAG,"onCreateViewHolder() called.");
         View v = LayoutInflater.from(mContext).inflate(R.layout.recyclerview_row, parent, false);
         return new MovieViewHolder(v);
     }
 
     @Override
     public void onBindViewHolder(MovieViewHolder holder, int position) {
-        Log.i(TAG,"onBindViewHolder() aangeroepen.");
+        Log.i(TAG,"onBindViewHolder() called.");
 
         Movie movie = movieList.get(position);
 
 
         // Onderstaande aanpassen aan Movie class
-        holder.id.setText("Filmtitel");
+        holder.id.setText("Film title");
         String imageUrl = "https://www.mightyape.co.nz/product/sesame-street-elmo-giggle-ball/21384930";
         Picasso.with(mContext).load(imageUrl).fit().centerInside().into(holder.imageView);
 

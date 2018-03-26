@@ -14,7 +14,7 @@ public class DetailActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        Log.i(TAG,"Gestart vanuit MovieListActivity.");
+        Log.i(TAG, "onCreate() called.");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
 

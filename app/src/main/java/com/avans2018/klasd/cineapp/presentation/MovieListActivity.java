@@ -25,6 +25,7 @@ public class MovieListActivity extends AppCompatActivity implements OnItemClickL
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Log.i(TAG, "onCreate() called.");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_movie_list);
 
@@ -38,11 +39,11 @@ public class MovieListActivity extends AppCompatActivity implements OnItemClickL
     @Override
     public void onItemClick(int position) {
         // Klik logica voor meegeven film en opstarten DetailActivity
-        Log.i(TAG, "onItemClick() aangeroepen.");
+        Log.i(TAG, "onItemClick() called.");
         Intent detailIntent = new Intent(this, DetailActivity.class);
         Movie clickedMovie = movieList.get(position);
         detailIntent.putExtra(CLICKED_MOVIE, clickedMovie);
         startActivity(detailIntent);
-        Log.i(TAG, "DetailActivity gestart.");
+        Log.i(TAG, "Starting DetailActivity...");
     }
 }
