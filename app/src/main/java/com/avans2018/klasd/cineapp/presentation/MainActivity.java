@@ -7,6 +7,7 @@ import com.avans2018.klasd.cineapp.R;
 
 // Login-scherm waar gebruiker begint bij opstarten App
 public class MainActivity extends AppCompatActivity {
+    private final static String TAG = "MainActivity (login-screen)";
 
 
 

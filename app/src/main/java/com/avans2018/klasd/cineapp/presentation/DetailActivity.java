@@ -6,6 +6,7 @@ import android.os.Bundle;
 import com.avans2018.klasd.cineapp.R;
 
 public class DetailActivity extends AppCompatActivity {
+    private final static String TAG = "DetailActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
