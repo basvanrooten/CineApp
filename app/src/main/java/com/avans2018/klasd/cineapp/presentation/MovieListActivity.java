@@ -42,6 +42,7 @@ public class MovieListActivity extends AppCompatActivity implements OnItemClickL
         spinnerAdapter.setDropDownViewResource(R.layout.spinner_dropdown_item);
         movieFilter.setAdapter(spinnerAdapter);
 
+        // RecyclerView voor het weergeven van lijst van films
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(MovieListActivity.this));
