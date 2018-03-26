@@ -1,5 +1,6 @@
 RewriteEngine on
 
-RewriteRule ^index index.php [NC,L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\.]+)$ $1.php [NC,L]
 
 

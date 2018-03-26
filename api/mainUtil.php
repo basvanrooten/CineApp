@@ -18,7 +18,7 @@ function getApiKey(){
 }
 
 function checkValidApiKey(){
-    if (isset($_POST['key']) && !empty($_POST['key']) && $_POST['key'] == getApiKey()){
+    if (isset($_GET['key']) && !empty($_GET['key']) && $_GET['key'] == getApiKey()){
         return true;
     } else {
         return false;
@@ -28,7 +28,7 @@ function checkValidApiKey(){
 
 function checkFields($fields){
     foreach ($fields as $field){
-        if(!isset($_POST[$field]) && !empty($_POST[$field])){
+        if(!isset($_GET[$field]) && !empty($_GET[$field])){
             return false;
         }
     }
@@ -36,5 +36,5 @@ function checkFields($fields){
 }
 
 function getField($field){
-    return $_POST[$field];
+    return $_GET[$field];
 }
