@@ -1,5 +1,7 @@
 <?php
-require_once "databaseConnection.php";
+//require_once "databaseConnection.php";
+
+include "mainUtil.php";
 
 if(isset($_POST["type"])) {
     $type = $_POST["type"];
@@ -15,5 +17,3 @@ if(isset($_POST["type"])) {
             break;
     }
 }
-
-// hele leuke comment
