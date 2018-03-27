@@ -28,7 +28,7 @@
 
         <TextView
             android:id="@+id/listFilmTitle"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_marginLeft="17dp"
@@ -41,7 +41,7 @@
 
         <TextView
             android:id="@+id/ListFilmAge"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignLeft="@+id/listFilmTitle"
             android:layout_alignStart="@+id/listFilmTitle"

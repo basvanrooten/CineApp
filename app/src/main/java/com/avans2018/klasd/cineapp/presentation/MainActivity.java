@@ -26,11 +26,11 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
     private MovieListAdapter adapter = new MovieListAdapter(MainActivity.this, movieList);
 
     // Test data zonder database
-    Movie voorbeeld1 = new Movie();
-    Movie voorbeeld2 = new Movie();
-    Movie voorbeeld3 = new Movie();
-    Movie voorbeeld4 = new Movie();
-    Movie voorbeeld5 = new Movie();
+//    Movie voorbeeld1 = new Movie();
+//    Movie voorbeeld2 = new Movie();
+//    Movie voorbeeld3 = new Movie();
+//    Movie voorbeeld4 = new Movie();
+//    Movie voorbeeld5 = new Movie();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

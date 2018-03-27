@@ -51,7 +51,7 @@ public class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.Movi
         // Onderstaande aanpassen aan Movie class
         holder.movieTitle.setText(movie.getName());
         if(movie.isAdultOnly()){
-            holder.movieAgeRestriction.setText("16+");
+            holder.movieAgeRestriction.setText("18+");
         } else {
             holder.movieAgeRestriction.setText("all ages");
         }

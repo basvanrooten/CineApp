@@ -29,21 +29,29 @@ public class DetailActivity extends AppCompatActivity {
 
         // TextViews + ImageView
         TextView detailActivityPageHeader = (TextView) findViewById(R.id.detailFilmTitle);
+        detailActivityPageHeader.setText(clickedMovie.getName());
 
         ImageView detailImageView = (ImageView) findViewById(R.id.detailFilmImg);
         TextView detailActivityIMDB = (TextView) findViewById(R.id.detailFilmIMDB);
+        detailActivityIMDB.setText("IMDB score: " + clickedMovie.getRating() + "/10");
         TextView detailActivityPlaytime = (TextView) findViewById(R.id.detailFilmPlaytime);
+        detailActivityPlaytime.setText(clickedMovie.getDuration() + " min");
         TextView detailActivityFilmAge = (TextView) findViewById(R.id.detailFilmAge);
-
+        if(clickedMovie.isAdultOnly()){
+            detailActivityFilmAge.setText("Age 18+");
+        } else {
+            detailActivityFilmAge.setText("");
+        }
         TextView detailCommentHeader = (TextView) findViewById(R.id.detailFilmDescriptionHeader);
         TextView detailCommentContent = (TextView) findViewById(R.id.detailFilmDescriptionContent);
+        detailCommentContent.setText(clickedMovie.getInfo());
 
 
         TextView detailFilmTimesHeader = (TextView) findViewById(R.id.detailFilmTimesHeader);
         TextView detailFilmTimesContent = (TextView) findViewById(R.id.detailFilmTimesContent);
 
         // Picasso voor invullen ImageView
-        String imageUrl = "https://d3fa68hw0m2vcc.cloudfront.net/e3a/91155935.jpeg";    // placeholder
+        String imageUrl = clickedMovie.getImageUrl();
         Picasso.with(mContext).load(imageUrl).fit().centerInside().into(detailImageView);
 
     }
