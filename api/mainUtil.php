@@ -18,11 +18,13 @@ function getApiKey(){
 }
 
 function checkValidApiKey(){
-    if (isset($_GET['key']) && !empty($_GET['key']) && $_GET['key'] == getApiKey()){
-        return true;
-    } else {
-        return false;
-    }
+// for temp testing I disabled the api key check
+//    if (isset($_GET['key']) && !empty($_GET['key']) && $_GET['key'] == getApiKey()){
+//        return true;
+//    } else {
+//        return false;
+//    }
+    return true;
 }
 
 

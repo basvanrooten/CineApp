@@ -1,6 +1,8 @@
 RewriteEngine on
 
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule ^([^\.]+)$ $1.php [NC,L]
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteRule ^([^\.]+)$ $1.php [NC,L]
+
+RewriteRule ^getMovieSchedulesByMovieId calls/getMovieSchedulesByMovieId.php [NC,L]
 
 
