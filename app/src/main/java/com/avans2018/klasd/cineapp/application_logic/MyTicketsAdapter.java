@@ -12,7 +12,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.avans2018.klasd.cineapp.R;
-import com.avans2018.klasd.cineapp.domain.Movie;
 import com.avans2018.klasd.cineapp.domain.Ticket;
 import com.squareup.picasso.Picasso;
 
@@ -29,7 +28,7 @@ public class MyTicketsAdapter extends RecyclerView.Adapter<MyTicketsAdapter.Tick
         this.listener = listener;
     }
 
-    public MyTicketsAdapter(Context mContext, ArrayList<Movie> movieList) {
+    public MyTicketsAdapter(Context mContext, ArrayList<Ticket> ticketList) {
         this.mContext = mContext;
         this.ticketList = ticketList;
     }
@@ -37,7 +36,7 @@ public class MyTicketsAdapter extends RecyclerView.Adapter<MyTicketsAdapter.Tick
     @Override
     public MyTicketsAdapter.TicketViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         Log.i(TAG,"onCreateViewHolder() called.");
-        View v = LayoutInflater.from(mContext).inflate(R.layout.recyclerview_row, parent, false);
+        View v = LayoutInflater.from(mContext).inflate(R.layout.mytickets_row, parent, false);
         return new MyTicketsAdapter.TicketViewHolder(v);
     }
 
@@ -48,7 +47,7 @@ public class MyTicketsAdapter extends RecyclerView.Adapter<MyTicketsAdapter.Tick
         Ticket ticket = ticketList.get(position);
 
 
-        // Onderstaande aanpassen aan Movie class
+        // Onderstaande aanpassen aan Ticket class
         holder.ticketMovieTitle.setText("PlaceholderTitle");    // placeholder
         holder.ticketDate.setText("PlaceholderDate");    // placeholder
         holder.ticketTime.setText("PlaceholderTime");    // placeholder
