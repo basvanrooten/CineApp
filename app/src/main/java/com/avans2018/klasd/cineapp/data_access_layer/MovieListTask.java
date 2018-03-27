@@ -33,7 +33,7 @@ public class MovieListTask extends AsyncTask<String, Void, String> {
         String response = "";
 
         try {
-            java.net.URL url = new URL("https://api.themoviedb.org/3/movie/now_playing?api_key="+ StringKeys.API_KEY);
+            java.net.URL url = new URL("https://api.themoviedb.org/3/movie/now_playing?api_key=" + StringKeys.API_KEY);
             URLConnection connection = url.openConnection();
 
             bufferedReader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
@@ -78,8 +78,6 @@ public class MovieListTask extends AsyncTask<String, Void, String> {
             for (int i = 0; i < results.length(); i++) {
                 JSONObject object = results.getJSONObject(i);
                 String id = object.getString("id");
-                String name = object.getString("title");
-                boolean adultOnly = object.getBoolean("adult");
 
                 MovieTask task = new MovieTask(movieListener);
                 task.execute(id);

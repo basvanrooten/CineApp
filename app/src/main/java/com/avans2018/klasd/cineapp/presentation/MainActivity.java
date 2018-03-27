@@ -1,11 +1,12 @@
 package com.avans2018.klasd.cineapp.presentation;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+
 import com.avans2018.klasd.cineapp.R;
 import com.avans2018.klasd.cineapp.application_logic.MovieListAdapter;
 import com.avans2018.klasd.cineapp.application_logic.OnItemClickListener;
@@ -22,14 +23,14 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
 
     private RecyclerView recyclerView;
     private ArrayList<Movie> movieList = new ArrayList<>();
-    private MovieListAdapter adapter = new MovieListAdapter(MainActivity.this,movieList);
+    private MovieListAdapter adapter = new MovieListAdapter(MainActivity.this, movieList);
 
     // Test data zonder database
-        Movie voorbeeld1 = new Movie();
-        Movie voorbeeld2 = new Movie();
-        Movie voorbeeld3 = new Movie();
-        Movie voorbeeld4 = new Movie();
-        Movie voorbeeld5 = new Movie();
+    Movie voorbeeld1 = new Movie();
+    Movie voorbeeld2 = new Movie();
+    Movie voorbeeld3 = new Movie();
+    Movie voorbeeld4 = new Movie();
+    Movie voorbeeld5 = new Movie();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

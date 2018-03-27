@@ -33,14 +33,14 @@ public class MovieTask extends AsyncTask<String, Void, String> {
         BufferedReader bufferedReader = null;
         String response = "";
 
-        if(strings.length == 0){
+        if (strings.length == 0) {
             throw new IllegalArgumentException("No parameters given in the execute method!");
         }
 
         String id = strings[0];
 
         try {
-            java.net.URL url = new URL("https://api.themoviedb.org/3/movie/"+id+"?api_key="+ StringKeys.API_KEY);
+            java.net.URL url = new URL("https://api.themoviedb.org/3/movie/" + id + "?api_key=" + StringKeys.API_KEY);
             URLConnection connection = url.openConnection();
 
             bufferedReader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
@@ -88,11 +88,11 @@ public class MovieTask extends AsyncTask<String, Void, String> {
 
             JSONArray genres = jsonObject.getJSONArray("genres");
 
-            for(int i = 0; i<genres.length(); i++){
+            for (int i = 0; i < genres.length(); i++) {
                 genre += genres.getJSONObject(i).getString("name");
             }
 
-            String imageUrl = "http://image.tmdb.org/t/p/w185"+jsonObject.getString("backdrop_path");
+            String imageUrl = "http://image.tmdb.org/t/p/w185" + jsonObject.getString("backdrop_path");
             int duration = jsonObject.getInt("runtime");
             String info = jsonObject.getString("overview");
             String language = jsonObject.getString("original_language");
