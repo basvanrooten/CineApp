@@ -49,8 +49,8 @@ public class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.Movi
 
 
         // Onderstaande aanpassen aan Movie class
-        holder.id.setText("Film title");    // placeholder
-        String imageUrl = "https://www.mightyape.co.nz/product/sesame-street-elmo-giggle-ball/21384930";    // placeholder
+        holder.id.setText("Placeholder");    // placeholder
+        String imageUrl = "https://d3fa68hw0m2vcc.cloudfront.net/e3a/91155935.jpeg";    // placeholder
         Picasso.with(mContext).load(imageUrl).fit().centerInside().into(holder.imageView);
 
     }
@@ -67,8 +67,8 @@ public class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.Movi
 
         private MovieViewHolder(View itemView) {
             super(itemView);
-            imageView = itemView.findViewById(R.id.rowImageView);
-            id = itemView.findViewById(R.id.rowTextView);
+            imageView = itemView.findViewById(R.id.listFilmImg);
+            id = itemView.findViewById(R.id.listFilmTitle);
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override

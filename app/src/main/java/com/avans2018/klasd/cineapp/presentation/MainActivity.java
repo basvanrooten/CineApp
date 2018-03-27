@@ -22,15 +22,25 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
     private ArrayList<Movie> movieList = new ArrayList<>();
     private MovieListAdapter adapter = new MovieListAdapter(MainActivity.this,movieList);
 
+    // Test data zonder database
+    Movie voorbeeld1 = new Movie();
+    Movie voorbeeld2 = new Movie();
+    Movie voorbeeld3 = new Movie();
+    Movie voorbeeld4 = new Movie();
+    Movie voorbeeld5 = new Movie();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         Log.i(TAG, "onCreate() called.");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Log.i(TAG, "onCreate() called.");
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_movie_list);
+        movieList.add(voorbeeld1);
+        movieList.add(voorbeeld2);
+        movieList.add(voorbeeld3);
+        movieList.add(voorbeeld4);
+        movieList.add(voorbeeld5);
 
         // RecyclerView voor het weergeven van lijst van films
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
@@ -38,6 +48,7 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
         recyclerView.setLayoutManager(new LinearLayoutManager(MainActivity.this));
         recyclerView.setAdapter(adapter);
         adapter.setOnItemClickListener(MainActivity.this);
+        adapter.notifyDataSetChanged();
 
     }
 
