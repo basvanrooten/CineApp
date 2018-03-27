@@ -20,6 +20,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".presentation.DetailActivity" />
+        <activity android:name=".presentation.SeatSelectionActivity"></activity>
     </application>
 
 </manifest>
