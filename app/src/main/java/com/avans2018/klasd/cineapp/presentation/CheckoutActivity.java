@@ -21,7 +21,5 @@ public class CheckoutActivity extends AppCompatActivity {
         TextView checkoutOverviewContent = (TextView) findViewById(R.id.CheckoutInfoContent);
 
         Button checkoutPaymentButton = (Button) findViewById(R.id.CheckoutPaymentButton);
-
-
     }
 }
