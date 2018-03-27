@@ -49,9 +49,15 @@ public class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.Movi
 
 
         // Onderstaande aanpassen aan Movie class
-        holder.movieTitle.setText("PlaceholderTitle");    // placeholder
-        holder.movieAgeRestriction.setText("PlaceholderAge");    // placeholder
-        String imageUrl = "https://d3fa68hw0m2vcc.cloudfront.net/e3a/91155935.jpeg";    // placeholder
+        holder.movieTitle.setText(movie.getName());
+        if(movie.isAdultOnly()){
+            holder.movieAgeRestriction.setText("16+");
+        } else {
+            holder.movieAgeRestriction.setText("all ages");
+        }
+
+
+        String imageUrl = movie.getImageUrl();
         Picasso.with(mContext).load(imageUrl).fit().centerInside().into(holder.movieImage);
 
     }
