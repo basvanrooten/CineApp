@@ -20,7 +20,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".presentation.DetailActivity" />
-        <activity android:name=".presentation.SeatSelectionActivity"></activity>
+        <activity android:name=".presentation.SeatSelectionActivity" />
+        <activity android:name=".presentation.TicketSelectionActivity" />
+        <activity android:name=".presentation.CheckoutActivity"></activity>
     </application>
 
 </manifest>
