@@ -9,29 +9,29 @@ import android.util.Log;
 
 public class Theater {
 
-    private int theatherNumber;
+    private int theaterNumber;
     private int numberOfSeats;
 
     private static final String TAG = "Domain: Theater";
 
-    public Theater(int theatherNumber, int numberOfSeats)  {
+    public Theater(int theaterNumber, int numberOfSeats)  {
         this.numberOfSeats = numberOfSeats;
-        this.theatherNumber = theatherNumber;
+        this.theaterNumber = theaterNumber;
 
-        Log.d(TAG, "Theater-Constructor was called. TheatherNumber: " +
-                theatherNumber + ", amount of seats: " + numberOfSeats);
+        Log.d(TAG, "Theater-Constructor was called. TheaterNumber: " +
+                theaterNumber + ", amount of seats: " + numberOfSeats);
     }
 
     public Theater()   {
         Log.d(TAG, "Theater-Constructor was called. Received nothing");
     }
 
-    public int getTheatherNumber() {
-        return theatherNumber;
+    public int getTheaterNumber() {
+        return theaterNumber;
     }
 
-    public void setTheatherNumber(int theatherNumber) {
-        this.theatherNumber = theatherNumber;
+    public void setTheaterNumber(int theaterNumber) {
+        this.theaterNumber = theaterNumber;
     }
 
     public int getNumberOfSeats() {
@@ -43,7 +43,7 @@ public class Theater {
     }
 
     public String toString()    {
-        return "This is theather '" + this.theatherNumber +
+        return "This is theater '" + this.theaterNumber +
                 "', with " + this.numberOfSeats + "' number of seats";
     }
 }

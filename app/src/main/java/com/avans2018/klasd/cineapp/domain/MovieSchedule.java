@@ -66,7 +66,7 @@ public class MovieSchedule {
         return "MovieSchedule{" +
                 "movie=" + movie.toString() +
                 ", time=" + time +
-                ", theater=" + theater.getTheatherNumber() +
+                ", theater=" + theater.getTheaterNumber() +
                 '}';
     }
 }

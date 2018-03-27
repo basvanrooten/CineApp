@@ -49,8 +49,8 @@ public class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.Movi
 
 
         // Onderstaande aanpassen aan Movie class
-        holder.id.setText("Film title");
-        String imageUrl = "https://www.mightyape.co.nz/product/sesame-street-elmo-giggle-ball/21384930";
+        holder.id.setText("Film title");    // placeholder
+        String imageUrl = "https://www.mightyape.co.nz/product/sesame-street-elmo-giggle-ball/21384930";    // placeholder
         Picasso.with(mContext).load(imageUrl).fit().centerInside().into(holder.imageView);
 
     }
