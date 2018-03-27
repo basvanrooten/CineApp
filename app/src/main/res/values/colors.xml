@@ -6,4 +6,5 @@
     <color name="CineAppBackground">#02131b</color>
     <color name="CineAppListViewItemBackground">#063852</color>
     <color name="CineAppListViewItemButtomBackground">#119ce4</color>
+    <color name="CineAppHeader">#0a5d89</color>
 </resources>

@@ -23,11 +23,11 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
     private MovieListAdapter adapter = new MovieListAdapter(MainActivity.this,movieList);
 
     // Test data zonder database
-    Movie voorbeeld1 = new Movie();
-    Movie voorbeeld2 = new Movie();
-    Movie voorbeeld3 = new Movie();
-    Movie voorbeeld4 = new Movie();
-    Movie voorbeeld5 = new Movie();
+        Movie voorbeeld1 = new Movie();
+        Movie voorbeeld2 = new Movie();
+        Movie voorbeeld3 = new Movie();
+        Movie voorbeeld4 = new Movie();
+        Movie voorbeeld5 = new Movie();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,11 +36,12 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        movieList.add(voorbeeld1);
-        movieList.add(voorbeeld2);
-        movieList.add(voorbeeld3);
-        movieList.add(voorbeeld4);
-        movieList.add(voorbeeld5);
+        // Test data zonder database
+            movieList.add(voorbeeld1);
+            movieList.add(voorbeeld2);
+            movieList.add(voorbeeld3);
+            movieList.add(voorbeeld4);
+            movieList.add(voorbeeld5);
 
         // RecyclerView voor het weergeven van lijst van films
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
