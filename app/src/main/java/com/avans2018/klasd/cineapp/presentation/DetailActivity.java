@@ -8,7 +8,7 @@ import android.util.Log;
 import com.avans2018.klasd.cineapp.R;
 import com.avans2018.klasd.cineapp.domain.Movie;
 
-// Activity voor detailscherm bij onItemClick in MovieListActivity
+// Activity voor detailscherm bij onItemClick in MainActivity
 public class DetailActivity extends AppCompatActivity {
     private final static String TAG = "DetailActivity";
 
@@ -19,7 +19,7 @@ public class DetailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_detail);
 
         Intent intent = getIntent();
-        Movie clickedMovie = (Movie) intent.getSerializableExtra(MovieListActivity.CLICKED_MOVIE);
+        Movie clickedMovie = (Movie) intent.getSerializableExtra(MainActivity.CLICKED_MOVIE);
 
     }
 }

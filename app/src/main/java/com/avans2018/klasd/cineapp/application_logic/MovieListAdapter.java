@@ -17,7 +17,7 @@ import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
-//Adapter voor RecyclerView in MovieListActivity
+//Adapter voor RecyclerView in MainActivity
 public class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.MovieViewHolder> {
 
     private Context mContext;
