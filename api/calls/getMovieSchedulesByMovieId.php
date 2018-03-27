@@ -11,7 +11,7 @@ if(checkFields($fields) && checkValidApiKey()) {
 
     $movieId = getField($fields[0]);
 
-    $statement = Database::getConnection()->prepare("SELECT * FROM MovieSchedual WHERE MovieId = ?");
+    $statement = Database::getConnection()->prepare("SELECT * FROM `MovieSchedule` WHERE MovieId = ?");
     $statement->bindValue(1, $movieId, Database::PARAM_STR);
 
     try
@@ -33,7 +33,7 @@ if(checkFields($fields) && checkValidApiKey()) {
         $movieSchedule["id"] = $result["Id"];
         $movieSchedule["startDate"] = $result["StartDate"];
         $movieSchedule["movieId"] = $result["MovieId"];
-        $movieSchedule["theatherId"] = $result["TheatherId"];
+        $movieSchedule["theaterId"] = $result["TheaterId"];
 
         $movieSchedules[] = $movieSchedule;
     }

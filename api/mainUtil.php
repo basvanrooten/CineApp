@@ -30,7 +30,7 @@ function checkValidApiKey(){
 
 function checkFields($fields){
     foreach ($fields as $field){
-        if(!isset($_GET[$field]) && !empty($_GET[$field])){
+        if(!isset($_GET[$field]) || empty($_GET[$field])){
             return false;
         }
     }
