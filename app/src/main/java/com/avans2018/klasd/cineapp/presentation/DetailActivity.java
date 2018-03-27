@@ -33,14 +33,14 @@ public class DetailActivity extends AppCompatActivity {
 
         ImageView detailImageView = (ImageView) findViewById(R.id.detailFilmImg);
         TextView detailActivityIMDB = (TextView) findViewById(R.id.detailFilmIMDB);
-        detailActivityIMDB.setText("IMDB score: " + clickedMovie.getRating() + "/10");
+        detailActivityIMDB.setText("   " + clickedMovie.getRating() + "/10");
         TextView detailActivityPlaytime = (TextView) findViewById(R.id.detailFilmPlaytime);
-        detailActivityPlaytime.setText(clickedMovie.getDuration() + " min");
+        detailActivityPlaytime.setText("       " + clickedMovie.getDuration() + "m");
         TextView detailActivityFilmAge = (TextView) findViewById(R.id.detailFilmAge);
         if(clickedMovie.isAdultOnly()){
-            detailActivityFilmAge.setText("Age 18+");
+            detailActivityFilmAge.setText("18+");
         } else {
-            detailActivityFilmAge.setText("");
+            detailActivityFilmAge.setText("all ages");
         }
         TextView detailCommentHeader = (TextView) findViewById(R.id.detailFilmDescriptionHeader);
         TextView detailCommentContent = (TextView) findViewById(R.id.detailFilmDescriptionContent);
