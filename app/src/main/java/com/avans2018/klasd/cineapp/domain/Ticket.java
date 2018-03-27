@@ -4,12 +4,14 @@ import android.util.Log;
 
 import com.avans2018.klasd.cineapp.domain.PaymentCategory.PaymentCategory;
 
+import java.io.Serializable;
+
 /**
  * Created by HeyRobin on 26-3-2018.
  * Last Edited by Robin on 26-03-18.
  */
 
-public class Ticket {
+public class Ticket implements Serializable{
 
     private int id;
     private Theater theater;

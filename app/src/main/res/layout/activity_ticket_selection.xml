@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/CineAppBackground"
+    tools:context="com.avans2018.klasd.cineapp.presentation.TicketSelectionActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/ticketSelectionTitle"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/CineAppHeader"
+            android:text="Ticket selection"
+            android:textAlignment="center"
+            android:textColor="@android:color/background_light"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="8dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="105dp"
+            android:layout_margin="20dp"
+            android:background="@color/CineAppListViewItemBackground"
+            android:orientation="vertical"
+            android:paddingLeft="5dp"
+            android:paddingTop="5dp">
+
+            <TextView
+                android:id="@+id/ticketSelectionInfoHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ticket information"
+                android:textColor="@android:color/background_light"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.037"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/ticketSelectionInfoMovie"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Movie: xxx"
+                android:textColor="@android:color/background_light"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.03"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/ticketSelectionInfoDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Date: xxx"
+                android:textColor="@android:color/background_light"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.029"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/ticketSelectionInfoStartTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Start time: xxx"
+                android:textColor="@android:color/background_light"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/ticketSelectionInfoDate"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/ticketSelectionInfoEndTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="End time: xxx"
+                android:textColor="@android:color/background_light"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.032"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@color/CineAppListViewItemBackground"
+            android:orientation="vertical"
+            android:paddingLeft="5dp"
+            android:paddingTop="5dp">
+
+            <TextView
+                android:id="@+id/ticketSelectionSelectorHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ticket selection"
+                android:textColor="@android:color/background_light"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.037"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/CineAppHeader"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/ticketSelectorTextAdult"
+                    android:layout_width="235dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Adult - 5,99"
+                    android:textColor="@android:color/background_light" />
+
+                <EditText
+                    android:id="@+id/ticketSelectorInputAdult"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:hint="amount"
+                    android:inputType="number"
+                    android:singleLine="true"
+                    android:textColor="@android:color/background_light"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/ticketSelectorTextChild"
+                    android:layout_width="235dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Child - 5,99"
+                    android:textColor="@android:color/background_light" />
+
+                <EditText
+                    android:id="@+id/ticketSelectorInputChild"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:hint="amount"
+                    android:inputType="number"
+                    android:singleLine="true"
+                    android:textColor="@android:color/background_light"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/CineAppHeader"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/ticketSelectorTextStudent"
+                    android:layout_width="235dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Student - 2,99"
+                    android:textColor="@android:color/background_light" />
+
+                <EditText
+                    android:id="@+id/ticketSelectorInputStudent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:hint="amount"
+                    android:inputType="number"
+                    android:singleLine="true"
+                    android:textColor="@android:color/background_light"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/ticketSelectorTextSenior"
+                    android:layout_width="235dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Senior - 4,99"
+                    android:textColor="@android:color/background_light" />
+
+                <EditText
+                    android:id="@+id/ticketSelectorInputSenior"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:hint="amount"
+                    android:inputType="number"
+                    android:singleLine="true"
+                    android:textColor="@android:color/background_light"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"></LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"></LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/ticketSelectionContinueToSeatSelectionButton"
+                android:layout_width="250dp"
+                android:layout_height="50dp"
+                android:background="@color/CineAppListViewItemButtomBackground"
+                android:text="Continue to seat selection"
+                android:textColor="@android:color/background_light"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </android.support.constraint.ConstraintLayout>
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimaryDark"
-    tools:context="com.avans2018.klasd.cineapp.presentation.MainActivity">
+    android:background="@color/CineAppBackground"
+    tools:context="com.avans2018.klasd.cineapp.presentation.MyTicketsActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -13,11 +13,11 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/listFilmTitle"
+            android:id="@+id/myTicketsTitle"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:background="@color/CineAppHeader"
-            android:text="Movies to watch"
+            android:text="My Tickets"
             android:textAlignment="center"
             android:textColor="@android:color/background_light"
             android:textSize="24sp"
@@ -27,7 +27,7 @@
             tools:layout_editor_absoluteY="8dp" />
 
         <android.support.v7.widget.RecyclerView
-            android:id="@+id/recyclerView"
+            android:id="@+id/myTicketsRecyclerView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_alignParentLeft="true"
@@ -38,6 +38,6 @@
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/detailFilmTitle" />
-    </LinearLayout>
 
+    </LinearLayout>
 </android.support.constraint.ConstraintLayout>

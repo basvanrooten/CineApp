@@ -17,7 +17,7 @@ import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
-//Adapter voor RecyclerView in MovieListActivity
+//Adapter voor RecyclerView in MainActivity
 public class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.MovieViewHolder> {
 
     private Context mContext;
@@ -49,9 +49,10 @@ public class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.Movi
 
 
         // Onderstaande aanpassen aan Movie class
-        holder.id.setText("Film title");    // placeholder
-        String imageUrl = "https://www.mightyape.co.nz/product/sesame-street-elmo-giggle-ball/21384930";    // placeholder
-        Picasso.with(mContext).load(imageUrl).fit().centerInside().into(holder.imageView);
+        holder.movieTitle.setText("PlaceholderTitle");    // placeholder
+        holder.movieAgeRestriction.setText("PlaceholderAge");    // placeholder
+        String imageUrl = "https://d3fa68hw0m2vcc.cloudfront.net/e3a/91155935.jpeg";    // placeholder
+        Picasso.with(mContext).load(imageUrl).fit().centerInside().into(holder.movieImage);
 
     }
 
@@ -62,13 +63,15 @@ public class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.Movi
 
     public class MovieViewHolder extends RecyclerView.ViewHolder {
 
-        private ImageView imageView;
-        private TextView id;
+        private ImageView movieImage;
+        private TextView movieTitle;
+        private TextView movieAgeRestriction;
 
         private MovieViewHolder(View itemView) {
             super(itemView);
-            imageView = itemView.findViewById(R.id.rowImageView);
-            id = itemView.findViewById(R.id.rowTextView);
+            movieImage = itemView.findViewById(R.id.listFilmImg);
+            movieTitle = itemView.findViewById(R.id.listFilmTitle);
+            movieAgeRestriction = itemView.findViewById(R.id.ListFilmAge);
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override

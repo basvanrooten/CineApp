@@ -16,8 +16,8 @@
         android:background="@color/CineAppListViewItemBackground">
 
         <ImageView
-            android:id="@+id/listFilmImg"
-            android:layout_width="100dp"
+            android:id="@+id/myTicketQRCode"
+            android:layout_width="150dp"
             android:layout_height="match_parent"
             android:layout_alignParentBottom="true"
             android:layout_alignParentLeft="true"
@@ -27,27 +27,35 @@
             app:srcCompat="@mipmap/ic_launcher" />
 
         <TextView
-            android:id="@+id/listFilmTitle"
+            android:id="@+id/myTicketTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/myTicketTime"
             android:layout_alignParentTop="true"
-            android:layout_marginLeft="17dp"
-            android:layout_marginStart="17dp"
-            android:layout_marginTop="14dp"
-            android:layout_toEndOf="@+id/listFilmImg"
-            android:layout_toRightOf="@+id/listFilmImg"
+            android:layout_alignStart="@+id/myTicketTime"
+            android:layout_marginTop="23dp"
             android:text="Film Title"
             android:textColor="@android:color/background_light" />
 
         <TextView
-            android:id="@+id/ListFilmAge"
+            android:id="@+id/myTicketDate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/listFilmTitle"
-            android:layout_alignStart="@+id/listFilmTitle"
-            android:layout_below="@+id/listFilmTitle"
-            android:text="Age"
+            android:layout_below="@+id/myTicketTitle"
+            android:layout_centerHorizontal="true"
+            android:text="Date"
             android:textColor="@android:color/background_light" />
+
+        <TextView
+            android:id="@+id/myTicketTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/myTicketDate"
+            android:layout_alignStart="@+id/myTicketDate"
+            android:layout_centerVertical="true"
+            android:text="Time"
+            android:textColor="@android:color/background_light"
+            android:textSize="12sp" />
 
     </RelativeLayout>
 </LinearLayout>
