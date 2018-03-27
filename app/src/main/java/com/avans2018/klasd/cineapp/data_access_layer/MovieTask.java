@@ -39,7 +39,7 @@ public class MovieTask extends AsyncTask<String, Void, String> {
 
         String id = strings[0];
 
-        try { //&language=nl_NL
+        try {
             java.net.URL url = new URL("https://api.themoviedb.org/3/movie/"+id+"?api_key="+ StringKeys.API_KEY);
             URLConnection connection = url.openConnection();
 
