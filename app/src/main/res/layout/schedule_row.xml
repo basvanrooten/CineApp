@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="40dp"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        android:background="@color/CineAppListViewItemBackground">
+
+        <TextView
+            android:id="@+id/scheduleListTheater"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/scheduleListTime"
+            android:layout_alignBottom="@+id/scheduleListTime"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="21dp"
+            android:layout_marginStart="21dp"
+            android:text="Theater"
+            android:textColor="@android:color/background_light" />
+
+        <TextView
+            android:id="@+id/scheduleListTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginEnd="45dp"
+            android:layout_marginRight="45dp"
+            android:layout_marginTop="17dp"
+            android:text="Time"
+            android:textColor="@android:color/background_light"
+            android:textSize="12sp" />
+
+    </RelativeLayout>
+</LinearLayout>
