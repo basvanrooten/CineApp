@@ -60,7 +60,6 @@ public class DetailActivity extends AppCompatActivity implements OnItemClickList
         detailCommentContent.setText(clickedMovie.getInfo());
 
         TextView detailFilmTimesHeader = (TextView) findViewById(R.id.detailFilmTimesHeader);
-        TextView detailFilmTimesContent = (TextView) findViewById(R.id.detailFilmTimesContent);
 
         // RecyclerView voor het weergeven van lijst van films
         recyclerView = (RecyclerView) findViewById(R.id.scheduleRecyclerView);
