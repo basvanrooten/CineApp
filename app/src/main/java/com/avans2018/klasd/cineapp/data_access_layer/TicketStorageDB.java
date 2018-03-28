@@ -85,7 +85,7 @@ public class TicketStorageDB extends SQLiteOpenHelper{
         db.close();
     }
 
-    public ArrayList<TicketPrint> getAllTickets(){
+    public ArrayList<TicketPrint> getAllTicketPrints(){
         Log.i(TAG,"getAllPhotos() called.");
         ArrayList<TicketPrint> tickets = new ArrayList<>();
 

@@ -35,6 +35,7 @@ public class MyTicketsActivity extends AppCompatActivity implements OnItemClickL
         recyclerView.setAdapter(adapter);
         adapter.setOnItemClickListener(MyTicketsActivity.this);
 
+        ticketList.addAll(ticketStorage.getAllTicketPrints());
         adapter.notifyDataSetChanged();
     }
 
