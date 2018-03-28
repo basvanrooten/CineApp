@@ -2,8 +2,10 @@ package com.avans2018.klasd.cineapp.presentation_layer;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -11,6 +13,10 @@ import com.avans2018.klasd.cineapp.R;
 import com.avans2018.klasd.cineapp.domain_layer.Ticket;
 import com.avans2018.klasd.cineapp.domain_layer.TicketPrint;
 import com.avans2018.klasd.cineapp.util_layer.StringLimiter;
+import com.google.zxing.BarcodeFormat;
+import com.google.zxing.MultiFormatWriter;
+import com.google.zxing.common.BitMatrix;
+import com.journeyapps.barcodescanner.BarcodeEncoder;
 import com.squareup.picasso.Picasso;
 
 public class MyTicketsDetailActivity extends AppCompatActivity {
@@ -30,8 +36,22 @@ public class MyTicketsDetailActivity extends AppCompatActivity {
         TicketPrint clickedTicket = (TicketPrint) intent.getSerializableExtra(MyTicketsActivity.CLICKED_TICKET);
 
         ImageView QRCode = (ImageView) findViewById(R.id.ticketQRCodeBig);
-        String QRUrl = "https://cdn.crunchify.com/wp-content/uploads/2013/01/CrunchifyQR-Tutorial.png";    // placeholder voor QR-code
+
+        String QRUrl = clickedTicket.getId() + "";    // placeholder voor QR-code
         Picasso.with(mContext).load(QRUrl).fit().centerInside().into(QRCode);
+
+        MultiFormatWriter multiFormatWriter = new MultiFormatWriter();
+        try {
+            BitMatrix bitMatrix = multiFormatWriter.encode(QRUrl, BarcodeFormat.QR_CODE, 200, 200);
+            BarcodeEncoder barcodeEncoder = new BarcodeEncoder();
+            Bitmap bitmap = barcodeEncoder.createBitmap(bitMatrix);
+            QRCode.setImageBitmap(bitmap);
+        } catch (Exception e)   {
+            e.printStackTrace();
+        }
+
+
+
 
         TextView movieTitle = (TextView) findViewById(R.id.ticketDetailMovieTitle);
         movieTitle.setText(clickedTicket.getMovie());

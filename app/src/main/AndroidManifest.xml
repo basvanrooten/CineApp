@@ -26,7 +26,6 @@
         <activity android:name=".presentation_layer.MyTicketsActivity" />
         <activity android:name=".presentation_layer.MyTicketsDetailActivity" />
         <activity android:name=".presentation_layer.ConfirmationActivity" />
-        <activity android:name=".presentation_layer.QrGeneratorActivity"></activity>
     </application>
 
 </manifest>
