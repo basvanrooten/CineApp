@@ -92,7 +92,7 @@ public class MovieTask extends AsyncTask<String, Void, String> {
                 genre += genres.getJSONObject(i).getString("name");
             }
 
-            String imageUrl = "http://image.tmdb.org/t/p/w185" + jsonObject.getString("backdrop_path");
+            String imageUrl = "http://image.tmdb.org/t/p/w500" + jsonObject.getString("backdrop_path");
             int duration = jsonObject.getInt("runtime");
             String info = jsonObject.getString("overview");
             String language = jsonObject.getString("original_language");
