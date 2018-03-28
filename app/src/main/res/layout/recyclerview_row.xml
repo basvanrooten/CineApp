@@ -47,7 +47,7 @@
             android:layout_below="@+id/listFilmTitle"
             android:layout_marginRight="15dp"
             android:width="50dp"
-            android:height="92dp"
+            android:height="93dp"
             android:text="Description"
             android:textColor="@android:color/background_light"
             android:textSize="10sp" />
