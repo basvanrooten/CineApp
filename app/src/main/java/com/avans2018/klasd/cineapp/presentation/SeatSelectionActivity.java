@@ -5,8 +5,9 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 import com.avans2018.klasd.cineapp.R;
+import com.avans2018.klasd.cineapp.application_logic.OnItemClickListener;
 
-public class SeatSelectionActivity extends AppCompatActivity {
+public class SeatSelectionActivity extends AppCompatActivity implements OnItemClickListener{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,6 +18,11 @@ public class SeatSelectionActivity extends AppCompatActivity {
         TextView seatSelectionPageHeader = (TextView) findViewById(R.id.seatSelectionTitle);
 
         // Hier nog alle losse stoelen toevoegen
+
+    }
+
+    @Override
+    public void onItemClick(int position) {
 
     }
 }

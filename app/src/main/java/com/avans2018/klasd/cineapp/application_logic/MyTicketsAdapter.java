@@ -12,7 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.avans2018.klasd.cineapp.R;
-import com.avans2018.klasd.cineapp.domain.Ticket;
+import com.avans2018.klasd.cineapp.domain.TicketPrint;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -20,7 +20,7 @@ import java.util.ArrayList;
 public class MyTicketsAdapter extends RecyclerView.Adapter<MyTicketsAdapter.TicketViewHolder> {
 
     private Context mContext;
-    private ArrayList<Ticket> ticketList;
+    private ArrayList<TicketPrint> ticketList;
     private OnItemClickListener listener;
     private final static String TAG = "MyTicketsAdapter";
 
@@ -28,7 +28,7 @@ public class MyTicketsAdapter extends RecyclerView.Adapter<MyTicketsAdapter.Tick
         this.listener = listener;
     }
 
-    public MyTicketsAdapter(Context mContext, ArrayList<Ticket> ticketList) {
+    public MyTicketsAdapter(Context mContext, ArrayList<TicketPrint> ticketList) {
         this.mContext = mContext;
         this.ticketList = ticketList;
     }
@@ -44,16 +44,17 @@ public class MyTicketsAdapter extends RecyclerView.Adapter<MyTicketsAdapter.Tick
     public void onBindViewHolder(MyTicketsAdapter.TicketViewHolder holder, int position) {
         Log.i(TAG,"onBindViewHolder() called.");
 
-        Ticket ticket = ticketList.get(position);
+        TicketPrint ticket = ticketList.get(position);
 
 
         // Onderstaande aanpassen aan Ticket class
-        holder.ticketMovieTitle.setText("PlaceholderTitle");    // placeholder
-        holder.ticketDate.setText("PlaceholderDate");    // placeholder
-        holder.ticketTime.setText("PlaceholderTime");    // placeholder
+        holder.ticketMovieTitle.setText(ticket.getMovie());
+        holder.ticketDate.setText(ticket.getDate());
+        holder.ticketTime.setText(""+ ticket.getTime());
 
-        String imageUrl = "https://d3fa68hw0m2vcc.cloudfront.net/e3a/91155935.jpeg";    // placeholder
-        Picasso.with(mContext).load(imageUrl).fit().centerInside().into(holder.QRCode);
+
+        String QRUrl = "https://cdn.crunchify.com/wp-content/uploads/2013/01/CrunchifyQR-Tutorial.png";    // placeholder voor QR-code
+        Picasso.with(mContext).load(QRUrl).fit().centerInside().into(holder.QRCode);
 
     }
 

@@ -12,6 +12,7 @@ import com.avans2018.klasd.cineapp.application_logic.MovieListAdapter;
 import com.avans2018.klasd.cineapp.application_logic.OnItemClickListener;
 import com.avans2018.klasd.cineapp.data_access_layer.MovieListTask;
 import com.avans2018.klasd.cineapp.data_access_layer.MovieListener;
+import com.avans2018.klasd.cineapp.data_access_layer.TicketStorageDB;
 import com.avans2018.klasd.cineapp.domain.Movie;
 
 import java.util.ArrayList;
@@ -25,12 +26,8 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
     private ArrayList<Movie> movieList = new ArrayList<>();
     private MovieListAdapter adapter = new MovieListAdapter(MainActivity.this, movieList);
 
-    // Test data zonder database
-//    Movie voorbeeld1 = new Movie();
-//    Movie voorbeeld2 = new Movie();
-//    Movie voorbeeld3 = new Movie();
-//    Movie voorbeeld4 = new Movie();
-//    Movie voorbeeld5 = new Movie();
+    // Misschien overbodig
+    private TicketStorageDB storageDB = new TicketStorageDB(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,13 +37,6 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
 
         MovieListTask movieListTask = new MovieListTask(this);
         movieListTask.execute();
-
-        // Test data zonder database
-//            movieList.add(voorbeeld1);
-//            movieList.add(voorbeeld2);
-//            movieList.add(voorbeeld3);
-//            movieList.add(voorbeeld4);
-//            movieList.add(voorbeeld5);
 
         // RecyclerView voor het weergeven van lijst van films
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
