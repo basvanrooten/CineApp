@@ -13,6 +13,7 @@ import com.avans2018.klasd.cineapp.R;
 import com.avans2018.klasd.cineapp.domain_layer.Movie;
 
 
+import com.avans2018.klasd.cineapp.util_layer.StringLimiter;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -47,13 +48,9 @@ public class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.Movi
 
         Movie movie = movieList.get(position);
 
-
-        // Onderstaande aanpassen aan Movie class
-        holder.movieTitle.setText(movie.getName());
+        holder.movieTitle.setText(StringLimiter.limit(movie.getName(),35));
         holder.movieDescription.setText(movie.getInfo());
-
-
-
+        
         String imageUrl = movie.getImageUrl();
         Picasso.with(mContext).load(imageUrl).fit().centerInside().into(holder.movieImage);
 
