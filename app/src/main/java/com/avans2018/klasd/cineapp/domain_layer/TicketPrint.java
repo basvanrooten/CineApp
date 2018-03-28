@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 /**
  * Created by Tom on 28-3-2018.
- * Class zorgt voor MyTicketsActivity. Gemaakt als temp. lite-'kloon' van Ticket class, maar dan Strings ipv classes als attributen om gegevens uit database om te zetten naar items in MyTicketsAdapter.
+ * Class zorgt voor MyTicketsActivity. Gemaakt als temp. lite-'kloon' van Ticket class, maar dan Strings ipv classes als attributen om gegevens uit database om te zetten naar items in MyTicketsListAdapter.
  */
 
 public class TicketPrint implements Serializable{
