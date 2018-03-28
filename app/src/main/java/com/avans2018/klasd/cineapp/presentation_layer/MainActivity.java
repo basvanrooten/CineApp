@@ -45,7 +45,6 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
         recyclerView.setAdapter(adapter);
         adapter.setOnItemClickListener(MainActivity.this);
         adapter.notifyDataSetChanged();
-
     }
 
     @Override
@@ -58,7 +57,6 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
         startActivity(detailIntent);
         Log.i(TAG, "Starting DetailActivity...");
     }
-
 
     @Override
     public void onMovieRecieved(Movie m) {
