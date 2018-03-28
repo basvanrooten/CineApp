@@ -8,12 +8,14 @@ import java.io.Serializable;
 
 /**
  * Created by HeyRobin on 26-3-2018.
- * Last Edited by Robin on 26-03-18.
+ * Last Edited by Tom on 28-03-18. String date en time toegevoegd voor opslaan datum en tijd in Ticket + aanpassing constructor/getters/setters
  */
 
 public class Ticket implements Serializable{
 
     private int id;
+    private String date;
+    private String time;
     private Theater theater;
     private Seat seat;
     private Movie movie;
@@ -21,8 +23,10 @@ public class Ticket implements Serializable{
 
     private static final String TAG = "Domain: Ticket";
 
-    public Ticket(int id, Theater theater, Seat seat, Movie movie, PaymentCategory paymentCategory) {
+    public Ticket(int id, String date, String time, Theater theater, Seat seat, Movie movie, PaymentCategory paymentCategory) {
         this.id = id;
+        this.date = date;
+        this.time = time;
         this.theater = theater;
         this.seat = seat;
         this.movie = movie;
@@ -51,8 +55,20 @@ public class Ticket implements Serializable{
         this.theater = theater;
     }
 
+    public void setDate(String date) {
+        this.date = date;
+    }
+
     public Seat getSeat() {
-        return seat;
+        return this.seat;
+    }
+
+    public String getTime() {
+        return time;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
     }
 
     public void setSeat(Seat seat) {
@@ -62,6 +78,8 @@ public class Ticket implements Serializable{
     public Movie getMovie() {
         return movie;
     }
+
+    public String getDate() { return this.date; }
 
     public void setMovie(Movie movie) {
         this.movie = movie;

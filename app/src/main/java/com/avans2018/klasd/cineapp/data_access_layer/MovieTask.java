@@ -79,7 +79,7 @@ public class MovieTask extends AsyncTask<String, Void, String> {
             JSONObject jsonObject = new JSONObject(response);
 
 
-            Log.i(getClass().getSimpleName(), "Recieved " + jsonObject.toString());
+            Log.i(getClass().getSimpleName(), "Received " + jsonObject.toString());
 
             int id = jsonObject.getInt("id");
             String name = jsonObject.getString("title");

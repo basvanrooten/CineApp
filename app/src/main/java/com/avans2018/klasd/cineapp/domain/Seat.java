@@ -54,4 +54,12 @@ public class Seat {
     public static String getTAG() {
         return TAG;
     }
+
+    public String returnTheaterForDB() {
+        return this.theater + "";
+    }
+
+    public int returnSeatNumberForDB() {
+        return this.seatNumber;
+    }
 }

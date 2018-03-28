@@ -8,7 +8,6 @@ import android.util.Log;
  */
 
 public class PaymentCategoryFactory {
-
     private static final String TAG = "PaymentCategoryFactory";
 
     public PaymentCategory createPaymentCategory(String paymentCategory)   {
@@ -39,6 +38,5 @@ public class PaymentCategoryFactory {
         Log.d(TAG, "Received nothing of value, returning null");
         return null;
     }
-
 
 }
