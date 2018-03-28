@@ -1,15 +1,21 @@
 package com.avans2018.klasd.cineapp.presentation_layer;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.avans2018.klasd.cineapp.R;
 import com.avans2018.klasd.cineapp.domain_layer.Ticket;
+import com.avans2018.klasd.cineapp.domain_layer.TicketPrint;
 import com.avans2018.klasd.cineapp.util_layer.StringLimiter;
+import com.squareup.picasso.Picasso;
 
 public class MyTicketsDetailActivity extends AppCompatActivity {
     private final static String TAG = "MyTicketsDetailActivity";
+    private Context mContext;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,7 +27,25 @@ public class MyTicketsDetailActivity extends AppCompatActivity {
 
         // Intent met data van film vanuit MyTicketsActivity
         Intent intent = getIntent();
-        Ticket clickedTicket = (Ticket) intent.getSerializableExtra(MyTicketsActivity.CLICKED_TICKET);
+        TicketPrint clickedTicket = (TicketPrint) intent.getSerializableExtra(MyTicketsActivity.CLICKED_TICKET);
+
+        ImageView QRCode = (ImageView) findViewById(R.id.ticketQRCodeBig);
+        String QRUrl = "https://cdn.crunchify.com/wp-content/uploads/2013/01/CrunchifyQR-Tutorial.png";    // placeholder voor QR-code
+        Picasso.with(mContext).load(QRUrl).fit().centerInside().into(QRCode);
+
+        TextView movieTitle = (TextView) findViewById(R.id.ticketDetailMovieTitle);
+        movieTitle.setText(clickedTicket.getMovie());
+        TextView movieDate = (TextView) findViewById(R.id.ticketDetailDate);
+        movieDate.setText("Date: " + clickedTicket.getDate());
+        TextView movieTime = (TextView) findViewById(R.id.ticketDetailTime);
+        movieTime.setText("Time: " + clickedTicket.getTime());
+
+        TextView movieTheater = (TextView) findViewById(R.id.ticketDetailTheater);
+        movieTheater.setText("Theater: " + clickedTicket.getTheater());
+        TextView movieSeat = (TextView) findViewById(R.id.ticketDetailSeat);
+        movieSeat.setText("Seat: " + clickedTicket.getSeat());
+        TextView movieType = (TextView) findViewById(R.id.ticketDetailType);
+        movieType.setText("Type: " + clickedTicket.getPaymentCategory());
 
     }
 }

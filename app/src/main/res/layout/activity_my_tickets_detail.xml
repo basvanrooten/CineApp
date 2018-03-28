@@ -21,26 +21,63 @@
             android:background="@color/CineAppListViewItemBackground">
 
 
-            <ImageView
-                android:id="@+id/ticketQRCodeBig"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                app:srcCompat="@mipmap/ic_launcher" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/ticketDetailDescription"
-                android:layout_width="314dp"
-                android:layout_height="150dp"
-                android:layout_marginBottom="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:text="Content"
-                android:textColor="@android:color/background_light"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/detailFilmDescriptionHeader" />
+                <ImageView
+                    android:id="@+id/ticketQRCodeBig"
+                    android:layout_width="match_parent"
+                    android:layout_height="280dp"
+                    app:srcCompat="@mipmap/ic_launcher" />
+
+                <TextView
+                    android:id="@+id/ticketDetailMovieTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="20dp"
+                    android:text="Movie title"
+                    android:textColor="@android:color/background_light"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/ticketDetailDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Date: xxx"
+                    android:textColor="@android:color/background_light" />
+
+                <TextView
+                    android:id="@+id/ticketDetailTime"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Time: xxx"
+                    android:textColor="@android:color/background_light" />
+
+                <TextView
+                    android:id="@+id/ticketDetailTheater"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Theater: xxx"
+                    android:textColor="@android:color/background_light" />
+
+                <TextView
+                    android:id="@+id/ticketDetailSeat"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Seat: xxx"
+                    android:textColor="@android:color/background_light" />
+
+                <TextView
+                    android:id="@+id/ticketDetailType"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Type: xxx"
+                    android:textColor="@android:color/background_light" />
+
+            </LinearLayout>
+
         </android.support.constraint.ConstraintLayout>
 
     </LinearLayout>
