@@ -7,8 +7,8 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
-import com.avans2018.klasd.cineapp.domain.Ticket;
-import com.avans2018.klasd.cineapp.domain.TicketPrint;
+import com.avans2018.klasd.cineapp.domain_layer.Ticket;
+import com.avans2018.klasd.cineapp.domain_layer.TicketPrint;
 
 import java.util.ArrayList;
 
@@ -70,7 +70,6 @@ public class TicketStorageDB extends SQLiteOpenHelper{
     public void addTicket(Ticket ticket){
         Log.i(TAG,"addTicket() called for ticket ID " + ticket.getId() + ".");
 
-        // Waardes toevoegen aan tabel
         ContentValues toBeAdded = new ContentValues();
         toBeAdded.put(ID, ticket.getId());
         toBeAdded.put(DATE, ticket.getDate());
