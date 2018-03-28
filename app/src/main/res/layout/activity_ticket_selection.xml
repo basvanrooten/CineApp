@@ -16,20 +16,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/ticketSelectionTitle"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:background="@color/CineAppHeader"
-            android:text="Ticket selection"
-            android:textAlignment="center"
-            android:textColor="@android:color/background_light"
-            android:textSize="24sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:layout_editor_absoluteY="8dp" />
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="105dp"

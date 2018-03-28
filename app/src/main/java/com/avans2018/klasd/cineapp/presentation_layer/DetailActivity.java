@@ -11,6 +11,7 @@ import android.widget.TextView;
 import com.avans2018.klasd.cineapp.R;
 import com.avans2018.klasd.cineapp.domain_layer.Movie;
 import com.squareup.picasso.Picasso;
+import com.avans2018.klasd.cineapp.util_layer.StringLimiter;
 
 // Activity voor detailscherm bij onItemClick in MainActivity
 public class DetailActivity extends AppCompatActivity {
@@ -27,9 +28,8 @@ public class DetailActivity extends AppCompatActivity {
         Intent intent = getIntent();
         Movie clickedMovie = (Movie) intent.getSerializableExtra(MainActivity.CLICKED_MOVIE);
 
-        // TextViews + ImageView
-        TextView detailActivityPageHeader = (TextView) findViewById(R.id.detailFilmTitle);
-        detailActivityPageHeader.setText(clickedMovie.getName());
+        // Hoofdtitel veranderen
+        getSupportActionBar().setTitle(clickedMovie.getName());
 
         ImageView detailImageView = (ImageView) findViewById(R.id.detailFilmImg);
         TextView detailActivityIMDB = (TextView) findViewById(R.id.detailFilmIMDB);

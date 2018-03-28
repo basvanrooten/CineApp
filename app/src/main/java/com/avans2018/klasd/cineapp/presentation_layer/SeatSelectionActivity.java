@@ -6,6 +6,7 @@ import android.widget.TextView;
 
 import com.avans2018.klasd.cineapp.R;
 import com.avans2018.klasd.cineapp.application_logic_layer.OnItemClickListener;
+import com.avans2018.klasd.cineapp.util_layer.StringLimiter;
 
 public class SeatSelectionActivity extends AppCompatActivity implements OnItemClickListener{
 
@@ -14,8 +15,8 @@ public class SeatSelectionActivity extends AppCompatActivity implements OnItemCl
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_seat_selection);
 
-        // TextView
-        TextView seatSelectionPageHeader = (TextView) findViewById(R.id.seatSelectionTitle);
+        // Hoofdtitel veranderen
+        getSupportActionBar().setTitle(StringLimiter.limit(getResources().getString(R.string.seat_selection_title), 25));
 
         // Hier nog alle losse stoelen toevoegen
 

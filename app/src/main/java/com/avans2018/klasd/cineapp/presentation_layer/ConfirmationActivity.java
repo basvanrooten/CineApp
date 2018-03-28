@@ -8,6 +8,7 @@ import android.util.Log;
 import com.avans2018.klasd.cineapp.R;
 import com.avans2018.klasd.cineapp.data_access_layer.TicketStorageDB;
 import com.avans2018.klasd.cineapp.domain_layer.Ticket;
+import com.avans2018.klasd.cineapp.util_layer.StringLimiter;
 
 // Class waar klant terecht komt na geslaagde aankoop. Deze class schrijft ook de ticket weg naar lokale DB.
 
@@ -20,6 +21,10 @@ public class ConfirmationActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_confirmation);
+
+        // Hoofdtitel veranderen
+        getSupportActionBar().setTitle(StringLimiter.limit(getResources().getString(R.string.confirmationHeader), 25));
+
 
         Intent intent = getIntent();
         Ticket ticket = (Ticket) intent.getSerializableExtra(CheckoutActivity.PENDING_PAYMENT);
