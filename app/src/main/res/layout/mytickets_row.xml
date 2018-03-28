@@ -34,7 +34,7 @@
             android:layout_alignParentTop="true"
             android:layout_alignStart="@+id/myTicketTime"
             android:layout_marginTop="23dp"
-            android:text="Film Title"
+            android:text="@string/my_ticket_title"
             android:textColor="@android:color/background_light" />
 
         <TextView
@@ -43,7 +43,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/myTicketTitle"
             android:layout_centerHorizontal="true"
-            android:text="Date"
+            android:text="@string/my_ticket_date"
             android:textColor="@android:color/background_light" />
 
         <TextView
@@ -53,7 +53,7 @@
             android:layout_alignLeft="@+id/myTicketDate"
             android:layout_alignStart="@+id/myTicketDate"
             android:layout_centerVertical="true"
-            android:text="Time"
+            android:text="@string/my_ticket_time"
             android:textColor="@android:color/background_light"
             android:textSize="12sp" />
 

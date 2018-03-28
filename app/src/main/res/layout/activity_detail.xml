@@ -18,7 +18,7 @@
             android:layout_height="50dp"
             android:layout_marginTop="8dp"
             android:background="@color/CineAppHeader"
-            android:text="Film Title"
+            android:text="@string/detail_film_title"
             android:textAlignment="center"
             android:textColor="@android:color/background_light"
             android:textSize="24sp"
@@ -50,7 +50,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="IMDB Rating"
+                android:text="@string/detail_imdb_rating_top"
                 android:textAlignment="center"
                 android:textColor="@android:color/background_light" />
 
@@ -59,7 +59,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="Playtime"
+                android:text="@string/detail_playtime_top"
                 android:textAlignment="center"
                 android:textColor="@android:color/background_light" />
 
@@ -68,7 +68,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="Age rating"
+                android:text="@string/detail_age_rating_top"
                 android:textAlignment="center"
                 android:textColor="@android:color/background_light" />
 
@@ -88,7 +88,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="IMDB Rating"
+                android:text="@string/detail_imdb_rating"
                 android:textAlignment="center"
                 android:textColor="@android:color/background_light" />
 
@@ -97,7 +97,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="Playtime"
+                android:text="@string/detail_playtime"
                 android:textAlignment="center"
                 android:textColor="@android:color/background_light" />
 
@@ -106,7 +106,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="Age rating"
+                android:text="@string/detail_age_rating"
                 android:textAlignment="center"
                 android:textColor="@android:color/background_light" />
 
@@ -141,7 +141,7 @@
                 android:layout_marginEnd="8dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
-                android:text="Content"
+                android:text="@string/detail_summary_content"
                 android:textColor="@android:color/background_light"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -165,7 +165,7 @@
                 android:layout_marginEnd="8dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="4dp"
-                android:text="Times and tickets"
+                android:text="@string/detail_times_and_tickets"
                 android:textColor="@android:color/background_light"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.029"
@@ -180,7 +180,7 @@
                 android:layout_marginEnd="8dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
-                android:text="Content"
+                android:text="@string/detail_times_and_tickets_nocontent"
                 android:textColor="@android:color/background_light"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"

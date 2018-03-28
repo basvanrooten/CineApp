@@ -17,7 +17,7 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:background="@color/CineAppHeader"
-            android:text="My Tickets"
+            android:text="@string/my_tickets_title"
             android:textAlignment="center"
             android:textColor="@android:color/background_light"
             android:textSize="24sp"
