@@ -2,12 +2,14 @@ package com.avans2018.klasd.cineapp.domain_layer;
 
 import android.util.Log;
 
+import java.io.Serializable;
+
 /**
  * Created by HeyRobin on 26-3-2018.
  * Last Edited by Robin on 26-03-18.
  */
 
-public class MovieSchedule {
+public class MovieSchedule implements Serializable{
 
     private int id;
     private int time;

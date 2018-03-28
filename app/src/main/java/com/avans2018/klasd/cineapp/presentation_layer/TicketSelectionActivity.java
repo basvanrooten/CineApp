@@ -1,11 +1,13 @@
 package com.avans2018.klasd.cineapp.presentation_layer;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
 
 import com.avans2018.klasd.cineapp.R;
+import com.avans2018.klasd.cineapp.domain_layer.MovieSchedule;
 import com.avans2018.klasd.cineapp.util_layer.StringLimiter;
 
 public class TicketSelectionActivity extends AppCompatActivity {
@@ -14,6 +16,10 @@ public class TicketSelectionActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ticket_selection);
+
+        // Intent met data van MovieSchedule vanuit DetailActivity
+        Intent intent = getIntent();
+        MovieSchedule clickedSchedule = (MovieSchedule) intent.getSerializableExtra(DetailActivity.CLICKED_SCHEDULE);
 
         // Hoofdtitel veranderen
         getSupportActionBar().setTitle(StringLimiter.limit(getResources().getString(R.string.my_ticket_detail_title), 25));
