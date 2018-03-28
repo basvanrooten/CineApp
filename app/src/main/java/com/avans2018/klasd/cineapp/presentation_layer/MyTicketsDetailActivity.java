@@ -23,7 +23,7 @@ public class MyTicketsDetailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_my_tickets_detail);
 
         // Hoofdtitel veranderen
-        getSupportActionBar().setTitle(StringLimiter.limit(getResources().getString(R.string.my_tickets_title), 25));
+        getSupportActionBar().setTitle(StringLimiter.limit(getResources().getString(R.string.my_ticket_detail_title), 25));
 
         // Intent met data van film vanuit MyTicketsActivity
         Intent intent = getIntent();
