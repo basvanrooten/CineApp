@@ -1,4 +1,4 @@
-package com.avans2018.klasd.cineapp.data_access_layer;
+package com.avans2018.klasd.cineapp.data_access_layer.movie;
 
 import com.avans2018.klasd.cineapp.domain_layer.Movie;
 
