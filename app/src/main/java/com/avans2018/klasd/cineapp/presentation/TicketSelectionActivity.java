@@ -22,14 +22,17 @@ public class TicketSelectionActivity extends AppCompatActivity {
         TextView ticketDate = (TextView) findViewById(R.id.ticketSelectionInfoDate);
         TextView ticketStartTime = (TextView) findViewById(R.id.ticketSelectionInfoStartTime);
         TextView ticketEndTime = (TextView) findViewById(R.id.ticketSelectionInfoEndTime);
-
         TextView selectorHeader = (TextView) findViewById(R.id.ticketSelectionSelectorHeader);
+
         TextView selectorAdult = (TextView) findViewById(R.id.ticketSelectorTextAdult);
         TextView selectorAdultInput = (TextView) findViewById(R.id.ticketSelectorInputAdult);
+
         TextView selectorChild = (TextView) findViewById(R.id.ticketSelectorTextChild);
         TextView selectorChildInput = (TextView) findViewById(R.id.ticketSelectorInputChild);
+
         TextView selectorStudent = (TextView) findViewById(R.id.ticketSelectorTextStudent);
         TextView selectorStudentInput = (TextView) findViewById(R.id.ticketSelectorInputStudent);
+
         TextView selectorSenior = (TextView) findViewById(R.id.ticketSelectorTextSenior);
         TextView selectorSeniorInput = (TextView) findViewById(R.id.ticketSelectorInputSenior);
 
