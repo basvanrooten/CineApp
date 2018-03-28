@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/CineAppBackground"
-    tools:context="com.avans2018.klasd.cineapp.presentation.MyTicketsDetailActivity">
+    tools:context="com.avans2018.klasd.cineapp.presentation_layer.MyTicketsDetailActivity">
 
     <LinearLayout
         android:layout_width="match_parent"

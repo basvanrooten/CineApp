@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimaryDark"
-    tools:context="com.avans2018.klasd.cineapp.presentation.MainActivity">
+    tools:context="com.avans2018.klasd.cineapp.presentation_layer.MainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"

@@ -12,20 +12,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".presentation.MainActivity">
+        <activity android:name=".presentation_layer.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".presentation.DetailActivity" />
-        <activity android:name=".presentation.SeatSelectionActivity" />
-        <activity android:name=".presentation.TicketSelectionActivity" />
-        <activity android:name=".presentation.CheckoutActivity" />
-        <activity android:name=".presentation.MyTicketsActivity" />
-        <activity android:name=".presentation.MyTicketsDetailActivity" />
-        <activity android:name=".presentation.ConfirmationActivity"></activity>
+        <activity android:name=".presentation_layer.DetailActivity" />
+        <activity android:name=".presentation_layer.SeatSelectionActivity" />
+        <activity android:name=".presentation_layer.TicketSelectionActivity" />
+        <activity android:name=".presentation_layer.CheckoutActivity" />
+        <activity android:name=".presentation_layer.MyTicketsActivity" />
+        <activity android:name=".presentation_layer.MyTicketsDetailActivity" />
+        <activity android:name=".presentation_layer.ConfirmationActivity"></activity>
     </application>
 
 </manifest>

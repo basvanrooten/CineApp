@@ -17,31 +17,31 @@ import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
-public class MyTicketsAdapter extends RecyclerView.Adapter<MyTicketsAdapter.TicketViewHolder> {
+public class MyTicketsListAdapter extends RecyclerView.Adapter<MyTicketsListAdapter.TicketViewHolder> {
 
     private Context mContext;
     private ArrayList<TicketPrint> ticketList;
     private OnItemClickListener listener;
-    private final static String TAG = "MyTicketsAdapter";
+    private final static String TAG = "MyTicketsListAdapter";
 
     public void setOnItemClickListener(OnItemClickListener listener) {
         this.listener = listener;
     }
 
-    public MyTicketsAdapter(Context mContext, ArrayList<TicketPrint> ticketList) {
+    public MyTicketsListAdapter(Context mContext, ArrayList<TicketPrint> ticketList) {
         this.mContext = mContext;
         this.ticketList = ticketList;
     }
 
     @Override
-    public MyTicketsAdapter.TicketViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public MyTicketsListAdapter.TicketViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         Log.i(TAG,"onCreateViewHolder() called.");
         View v = LayoutInflater.from(mContext).inflate(R.layout.mytickets_row, parent, false);
-        return new MyTicketsAdapter.TicketViewHolder(v);
+        return new MyTicketsListAdapter.TicketViewHolder(v);
     }
 
     @Override
-    public void onBindViewHolder(MyTicketsAdapter.TicketViewHolder holder, int position) {
+    public void onBindViewHolder(MyTicketsListAdapter.TicketViewHolder holder, int position) {
         Log.i(TAG,"onBindViewHolder() called.");
 
         TicketPrint ticket = ticketList.get(position);

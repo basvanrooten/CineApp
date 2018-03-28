@@ -3,7 +3,7 @@ package com.avans2018.klasd.cineapp.data_access_layer;
 import android.os.AsyncTask;
 import android.util.Log;
 
-import com.avans2018.klasd.cineapp.application_logic.StringKeys;
+import com.avans2018.klasd.cineapp.application_logic_layer.StringKeys;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
