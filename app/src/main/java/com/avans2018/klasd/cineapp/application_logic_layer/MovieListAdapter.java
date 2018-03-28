@@ -50,11 +50,8 @@ public class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.Movi
 
         // Onderstaande aanpassen aan Movie class
         holder.movieTitle.setText(movie.getName());
-        if(movie.isAdultOnly()){
-            holder.movieAgeRestriction.setText("18+");
-        } else {
-            holder.movieAgeRestriction.setText("all ages");
-        }
+        holder.movieDescription.setText(movie.getInfo());
+
 
 
         String imageUrl = movie.getImageUrl();
@@ -71,13 +68,13 @@ public class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.Movi
 
         private ImageView movieImage;
         private TextView movieTitle;
-        private TextView movieAgeRestriction;
+        private TextView movieDescription;
 
         private MovieViewHolder(View itemView) {
             super(itemView);
             movieImage = itemView.findViewById(R.id.listFilmImg);
             movieTitle = itemView.findViewById(R.id.listFilmTitle);
-            movieAgeRestriction = itemView.findViewById(R.id.ListFilmAge);
+            movieDescription = itemView.findViewById(R.id.ListFilmDescription);
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
