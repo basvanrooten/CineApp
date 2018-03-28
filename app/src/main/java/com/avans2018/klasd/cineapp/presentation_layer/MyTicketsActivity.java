@@ -20,8 +20,8 @@ public class MyTicketsActivity extends AppCompatActivity implements OnItemClickL
     final static String CLICKED_TICKET = "clickedTicket";
 
     private RecyclerView recyclerView;
-    private ArrayList<TicketPrint> ticketList = new ArrayList<>();
-    private MyTicketsListAdapter adapter = new MyTicketsListAdapter(MyTicketsActivity.this,ticketList);
+    private ArrayList<TicketPrint> ticketPrintList = new ArrayList<>();
+    private MyTicketsListAdapter adapter = new MyTicketsListAdapter(MyTicketsActivity.this, ticketPrintList);
     private TicketStorageDB ticketStorage = new TicketStorageDB(this);
 
     @Override
@@ -35,7 +35,7 @@ public class MyTicketsActivity extends AppCompatActivity implements OnItemClickL
         recyclerView.setAdapter(adapter);
         adapter.setOnItemClickListener(MyTicketsActivity.this);
 
-        ticketList.addAll(ticketStorage.getAllTicketPrints());
+        ticketPrintList.addAll(ticketStorage.getAllTicketPrints());
         adapter.notifyDataSetChanged();
     }
 
@@ -44,7 +44,7 @@ public class MyTicketsActivity extends AppCompatActivity implements OnItemClickL
         // Klik logica voor meegeven film en opstarten DetailActivity
         Log.i(TAG, "onItemClick() called.");
         Intent detailIntent = new Intent(this, DetailActivity.class);
-        TicketPrint clickedTicket = ticketList.get(position);
+        TicketPrint clickedTicket = ticketPrintList.get(position);
         detailIntent.putExtra(CLICKED_TICKET, clickedTicket);
         startActivity(detailIntent);
         Log.i(TAG, "Starting MyTicketsDetailActivity...");
