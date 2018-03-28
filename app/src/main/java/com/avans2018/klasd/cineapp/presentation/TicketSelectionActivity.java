@@ -6,6 +6,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.avans2018.klasd.cineapp.R;
+import com.avans2018.klasd.cineapp.util.StringLimiter;
 
 public class TicketSelectionActivity extends AppCompatActivity {
 
@@ -14,9 +15,11 @@ public class TicketSelectionActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ticket_selection);
 
-        // TextViews
-        TextView ticketSelectionPageHeader = (TextView) findViewById(R.id.ticketSelectionTitle);
 
+        // Titelbalk aanpassen
+        getSupportActionBar().setTitle(StringLimiter.limit(getResources().getString(R.string.ticket_selection_title), 25));
+
+        // TextViews
         TextView ticketInfoHeader = (TextView) findViewById(R.id.ticketSelectionInfoHeader);
         TextView ticketMovie = (TextView) findViewById(R.id.ticketSelectionInfoMovie);
         TextView ticketDate = (TextView) findViewById(R.id.ticketSelectionInfoDate);

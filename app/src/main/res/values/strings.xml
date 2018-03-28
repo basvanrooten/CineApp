@@ -36,4 +36,5 @@
     <string name="checkout_button">Pay now</string>
     <string name="my_ticket_detail_title">Ticket details</string>
     <string name="my_ticket_detail_content">Content</string>
+    <string name="seat_selection_title">Seat Selection</string>
 </resources>

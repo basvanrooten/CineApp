@@ -13,6 +13,7 @@ import com.avans2018.klasd.cineapp.R;
 import com.avans2018.klasd.cineapp.domain.Movie;
 
 
+import com.avans2018.klasd.cineapp.util.StringLimiter;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -49,7 +50,7 @@ public class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.Movi
 
 
         // Onderstaande aanpassen aan Movie class
-        holder.movieTitle.setText(movie.getName());
+        holder.movieTitle.setText(StringLimiter.limit(movie.getName(), 40));
         if(movie.isAdultOnly()){
             holder.movieAgeRestriction.setText("18+");
         } else {

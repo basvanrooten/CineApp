@@ -12,6 +12,7 @@ import com.avans2018.klasd.cineapp.application_logic.MyTicketsAdapter;
 import com.avans2018.klasd.cineapp.application_logic.OnItemClickListener;
 import com.avans2018.klasd.cineapp.data_access_layer.TicketStorageDB;
 import com.avans2018.klasd.cineapp.domain.TicketPrint;
+import com.avans2018.klasd.cineapp.util.StringLimiter;
 
 import java.util.ArrayList;
 
@@ -28,6 +29,9 @@ public class MyTicketsActivity extends AppCompatActivity implements OnItemClickL
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_tickets);
+
+        // Titelbalk aanpassen
+        getSupportActionBar().setTitle(StringLimiter.limit(getResources().getString(R.string.my_tickets_title), 25));
 
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);

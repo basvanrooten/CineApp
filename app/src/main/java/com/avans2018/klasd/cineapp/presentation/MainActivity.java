@@ -14,6 +14,7 @@ import com.avans2018.klasd.cineapp.data_access_layer.MovieListTask;
 import com.avans2018.klasd.cineapp.data_access_layer.MovieListener;
 import com.avans2018.klasd.cineapp.data_access_layer.TicketStorageDB;
 import com.avans2018.klasd.cineapp.domain.Movie;
+import com.avans2018.klasd.cineapp.util.StringLimiter;
 
 import java.util.ArrayList;
 
@@ -35,10 +36,15 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // Hoofdtitel veranderen
+        getSupportActionBar().setTitle(StringLimiter.limit(getResources().getString(R.string.movies_to_watch), 25));
+
+
         MovieListTask movieListTask = new MovieListTask(this);
         movieListTask.execute();
 
         // RecyclerView voor het weergeven van lijst van films
+
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(MainActivity.this));
