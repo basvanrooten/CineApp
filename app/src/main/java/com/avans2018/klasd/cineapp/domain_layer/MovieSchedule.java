@@ -3,6 +3,7 @@ package com.avans2018.klasd.cineapp.domain_layer;
 import android.util.Log;
 
 import java.io.Serializable;
+import java.util.Date;
 
 /**
  * Created by HeyRobin on 26-3-2018.
@@ -12,13 +13,13 @@ import java.io.Serializable;
 public class MovieSchedule implements Serializable{
 
     private int id;
-    private int time;
+    private Date time;
     private Movie movie;
     private Theater theater;
 
     private static final String TAG = "Domain: MovieSchedule";
 
-    public MovieSchedule(int id, int time, Movie movie, Theater theater) {
+    public MovieSchedule(int id, Date time, Movie movie, Theater theater) {
 
         Log.d(TAG, "MovieSchedule-Constructor (extended) called");
         this.id = id;
@@ -39,11 +40,11 @@ public class MovieSchedule implements Serializable{
         this.id = id;
     }
 
-    public int getTime() {
+    public Date getTime() {
         return time;
     }
 
-    public void setTime(int time) {
+    public void setTime(Date time) {
         this.time = time;
     }
 

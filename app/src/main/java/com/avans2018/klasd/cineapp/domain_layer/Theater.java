@@ -4,22 +4,22 @@ import android.util.Log;
 
 /**
  * Created by HeyRobin on 26-3-2018.
- * Last edited by Robin on 26-03-2018.
+ * Last edited by Wouter Kodde on 26-03-2018.
  */
 
 public class Theater {
 
     private int theaterNumber;
-    private int numberOfSeats;
+    private String theaterName;
 
     private static final String TAG = "Domain: Theater";
 
-    public Theater(int theaterNumber, int numberOfSeats)  {
-        this.numberOfSeats = numberOfSeats;
+    public Theater(int theaterNumber, String theaterName)  {
         this.theaterNumber = theaterNumber;
+        this.theaterName = theaterName;
 
         Log.d(TAG, "Theater-Constructor was called. TheaterNumber: " +
-                theaterNumber + ", amount of seats: " + numberOfSeats);
+                theaterNumber + ", with the name: " + theaterName);
     }
 
     public Theater()   {
@@ -34,16 +34,12 @@ public class Theater {
         this.theaterNumber = theaterNumber;
     }
 
-    public int getNumberOfSeats() {
-        return numberOfSeats;
-    }
-
-    public void setNumberOfSeats(int numberOfSeats) {
-        this.numberOfSeats = numberOfSeats;
+    public Theater(String theaterName) {
+        this.theaterName = theaterName;
     }
 
     public String toString()    {
         return "This is theater '" + this.theaterNumber +
-                "', with " + this.numberOfSeats + "' number of seats";
+                "', with the name " + this.theaterName;
     }
 }
