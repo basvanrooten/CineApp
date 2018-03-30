@@ -85,7 +85,6 @@ function insertMovieSchedules($startDate, $movieId, $theaters) {
         try
         {
           $statement->execute();
-          echo "<br>";
         }
         catch (\Exception $e)
         {
@@ -120,7 +119,6 @@ function insertMovieSchedules($startDate, $movieId, $theaters) {
             try
             {
                 $statement->execute();
-                echo "<br>";
             }
             catch (\Exception $e)
             {
