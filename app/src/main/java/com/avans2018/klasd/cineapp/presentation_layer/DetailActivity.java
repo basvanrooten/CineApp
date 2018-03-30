@@ -14,15 +14,18 @@ import com.avans2018.klasd.cineapp.R;
 import com.avans2018.klasd.cineapp.application_logic_layer.MovieListAdapter;
 import com.avans2018.klasd.cineapp.application_logic_layer.OnItemClickListener;
 import com.avans2018.klasd.cineapp.application_logic_layer.ScheduleListAdapter;
+import com.avans2018.klasd.cineapp.data_access_layer.movieschedule.GetMovieSchedulesListener;
+import com.avans2018.klasd.cineapp.data_access_layer.movieschedule.GetMovieSchedulesTask;
 import com.avans2018.klasd.cineapp.domain_layer.Movie;
 import com.avans2018.klasd.cineapp.domain_layer.MovieSchedule;
 import com.squareup.picasso.Picasso;
 import com.avans2018.klasd.cineapp.util_layer.StringLimiter;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 // Activity voor detailscherm bij onItemClick in MainActivity
-public class DetailActivity extends AppCompatActivity implements OnItemClickListener {
+public class DetailActivity extends AppCompatActivity implements OnItemClickListener, GetMovieSchedulesListener {
     private final static String TAG = "DetailActivity";
     private Context mContext;
     private ArrayList<MovieSchedule> scheduleList = new ArrayList<>();
@@ -40,6 +43,9 @@ public class DetailActivity extends AppCompatActivity implements OnItemClickList
         // Intent met data van film vanuit MainActivity
         Intent intent = getIntent();
         Movie clickedMovie = (Movie) intent.getSerializableExtra(MainActivity.CLICKED_MOVIE);
+        Date currentDate = new Date();
+        GetMovieSchedulesTask getMovieSchedulesTask = new GetMovieSchedulesTask(this, clickedMovie, currentDate);
+        getMovieSchedulesTask.execute();
 
         // Hoofdtitel veranderen
         getSupportActionBar().setTitle(clickedMovie.getName());
@@ -83,5 +89,13 @@ public class DetailActivity extends AppCompatActivity implements OnItemClickList
         detailIntent.putExtra(CLICKED_SCHEDULE, schedule);
         startActivity(detailIntent);
         Log.i(TAG, "Starting TicketSelectionActivity...");
+    }
+
+    @Override
+    public void onMovieSchedulesRecieved(ArrayList<MovieSchedule> movieSchedules) {
+        for (int i = 0; i < movieSchedules.size(); i++) {
+            scheduleList.add(movieSchedules.get(i));
+        }
+        adapter.notifyDataSetChanged();
     }
 }

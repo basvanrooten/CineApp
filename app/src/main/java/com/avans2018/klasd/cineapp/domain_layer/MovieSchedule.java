@@ -3,6 +3,7 @@ package com.avans2018.klasd.cineapp.domain_layer;
 import android.util.Log;
 
 import java.io.Serializable;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
@@ -62,6 +63,19 @@ public class MovieSchedule implements Serializable{
 
     public void setTheater(Theater theater) {
         this.theater = theater;
+    }
+
+    public String getStartTime() {
+        SimpleDateFormat format = new SimpleDateFormat("HH:mm");
+        return format.format(this.time);
+    }
+    public String getEndTime() {
+        Integer hours = this.time.getHours() + 2;
+        Date endTime = this.time;
+        endTime.setHours(hours);
+        endTime.setMinutes(this.time.getMinutes() + 18);
+        SimpleDateFormat format = new SimpleDateFormat("HH:mm");
+        return format.format(endTime);
     }
 
     @Override

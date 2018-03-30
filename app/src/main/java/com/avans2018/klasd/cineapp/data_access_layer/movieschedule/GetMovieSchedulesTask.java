@@ -43,9 +43,11 @@ public class GetMovieSchedulesTask extends AsyncTask<String, Void, String> {
 
         BufferedReader bufferedReader = null;
         String response = "";
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String dateStr = format.format(date);
 
         try {
-            URL url = new URL("http://api.gaikvanavondlam.nl/getMovieSchedulesByMovieIdAndDate?movieId="+movie.getId()+"&startDate="+date.toString());
+            URL url = new URL("http://api.gaikvanavondlam.nl/getMovieSchedulesByMovieIdAndDate?movieId="+movie.getId()+"&startDate="+dateStr);
             URLConnection connection = url.openConnection();
 
             bufferedReader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
