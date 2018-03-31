@@ -36,7 +36,7 @@ if(checkFields($fields) && checkValidApiKey()) {
         $movieSchedule["rowNumber"] = $result["RowNumber"];
         $movieSchedule["taken"] = $result["Taken"];
 
-        $seats[] = $movieSchedule;
+        $seats["results"][] = $movieSchedule;
     }
 
 

@@ -5,7 +5,11 @@ RewriteEngine on
 
 RewriteRule ^getMovieSchedulesByMovieId calls/getMovieSchedulesByMovieId.php [NC,L]
 
+RewriteRule ^getMovieSchedulesByMovieIdAndDate calls/getMovieSchedulesByMovieIdAndDate.php [NC,L]
+
 RewriteRule ^getSeatsByScheduleId calls/getSeatsByScheduleId.php [NC,L]
+
+RewriteRule ^getSeatBySeatIdAndScheduleId calls/getSeatBySeatIdAndScheduleId.php [NC,L]
 
 RewriteRule ^insertMovieSchedule calls/insertMovieSchedule.php [NC,L]
 

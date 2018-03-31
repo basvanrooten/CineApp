@@ -9,16 +9,20 @@ import android.util.Log;
 
 public class Seat {
 
+    private int seatId;
     private int seatNumber;
+    private int rowNumber;
     private Theater theater;
-    private boolean taken;
+    private int taken;
 
     private final static String TAG = "Domain: Seat";
 
-    public Seat(int seatNumber, Theater theater, boolean taken) {
+    public Seat(int seatId,int seatNumber, int rowNumber, Theater theater, int taken) {
 
         Log.d(TAG, "Seat-Constructor (extended) was called");
+        this.seatId = seatId;
         this.seatNumber = seatNumber;
+        this.rowNumber = rowNumber;
         this.theater = theater;
         this.taken = taken;
     }
@@ -43,11 +47,11 @@ public class Seat {
         this.theater = theater;
     }
 
-    public boolean isTaken() {
+    public int isTaken() {
         return taken;
     }
 
-    public void setTaken(boolean taken) {
+    public void setTaken(int taken) {
         this.taken = taken;
     }
 
