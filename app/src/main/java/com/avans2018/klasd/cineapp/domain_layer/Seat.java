@@ -47,6 +47,27 @@ public class Seat {
         this.theater = theater;
     }
 
+    public int getSeatId() {
+        return seatId;
+    }
+
+    public int getRowNumber() {
+        return rowNumber;
+    }
+
+    public int getTaken() {
+        return taken;
+    }
+
+    public void setSeatId(int seatId) {
+
+        this.seatId = seatId;
+    }
+
+    public void setRowNumber(int rowNumber) {
+        this.rowNumber = rowNumber;
+    }
+
     public int isTaken() {
         return taken;
     }

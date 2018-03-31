@@ -13,4 +13,6 @@ RewriteRule ^getSeatBySeatIdAndScheduleId calls/getSeatBySeatIdAndScheduleId.php
 
 RewriteRule ^insertMovieSchedule calls/insertMovieSchedule.php [NC,L]
 
+RewriteRule ^updateSeatStatus calls/updateSeatStatus.php [NC,L]
+
 

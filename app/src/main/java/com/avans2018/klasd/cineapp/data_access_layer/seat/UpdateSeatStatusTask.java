@@ -14,21 +14,22 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 
 /**
  * Created by Jorrit on 31-3-2018.
  */
 
-public class GetSeatsTask extends AsyncTask<String, Void, String> {
-
-    private GetSeatsListener getSeatsListener;
+public class UpdateSeatStatusTask extends AsyncTask<String, Void, String> {
+    private UpdateSeatStatusListener updateSeatStatusListener;
     private MovieSchedule movieSchedule;
+    private Seat seat;
+    private int status;
 
-    public GetSeatsTask(GetSeatsListener getSeatsListener, MovieSchedule movieSchedule) {
-        this.getSeatsListener = getSeatsListener;
+    public UpdateSeatStatusTask(UpdateSeatStatusListener updateSeatStatusListener, MovieSchedule movieSchedule, Seat seat, int status) {
+        this.updateSeatStatusListener = updateSeatStatusListener;
         this.movieSchedule = movieSchedule;
+        this.seat = seat;
+        this.status = status;
     }
 
     @Override
@@ -37,7 +38,7 @@ public class GetSeatsTask extends AsyncTask<String, Void, String> {
         String response = "";
 
         try {
-            URL url = new URL("http://api.gaikvanavondlam.nl/getseatsbyscheduleid?scheduleId=" + this.movieSchedule.getId());
+            URL url = new URL("http://api.gaikvanavondlam.nl/updateseatstatus?scheduleId="+this.movieSchedule.getId()+"&seatId="+this.seat.getSeatId()+"&status="+this.status);
             URLConnection connection = url.openConnection();
 
             bufferedReader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
@@ -68,7 +69,6 @@ public class GetSeatsTask extends AsyncTask<String, Void, String> {
 
     @Override
     protected void onPostExecute(String response) {
-        ArrayList<Seat> seats = new ArrayList<>();
 
         Log.i(getClass().getSimpleName(), "async response data : " + response);
 
@@ -82,20 +82,15 @@ public class GetSeatsTask extends AsyncTask<String, Void, String> {
 
             for (int i = 0; i < results.length(); i++) {
                 JSONObject object = results.getJSONObject(i);
-                int seatId = object.getInt("seatId");
-                int theaterId = object.getInt("theaterId");
-                int seatNumber = object.getInt("seatNumber");
-                int rowNumber = object.getInt("rowNumber");
-                int taken = object.getInt("taken");
-
-                seats.add(new Seat(seatId, seatNumber, rowNumber, movieSchedule.getTheater(), taken));
+                this.seat.setTaken(object.getInt("taken"));
 
             }
 
-            getSeatsListener.onSeatsRecieved(seats);
+            updateSeatStatusListener.onSeatRecieved(this.seat);
+
+
         } catch (Exception e) {
             Log.e(getClass().getSimpleName(), e.getMessage());
         }
     }
-
 }
