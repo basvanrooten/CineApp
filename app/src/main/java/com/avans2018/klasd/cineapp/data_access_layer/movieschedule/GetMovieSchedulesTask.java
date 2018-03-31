@@ -47,7 +47,7 @@ public class GetMovieSchedulesTask extends AsyncTask<String, Void, String> {
         String dateStr = format.format(date);
 
         try {
-            URL url = new URL("http://api.gaikvanavondlam.nl/getMovieSchedulesByMovieIdAndDate?movieId="+movie.getId()+"&startDate="+dateStr);
+            URL url = new URL("http://api.gaikvanavondlam.nl/calls/getMovieSchedulesByMovieIdAndDate.php?movieId="+movie.getId()+"&startDate="+dateStr);
             URLConnection connection = url.openConnection();
 
             bufferedReader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
