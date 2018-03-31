@@ -27,9 +27,16 @@ public class TicketSelectionActivity extends AppCompatActivity {
         // TextViews
         TextView ticketInfoHeader = (TextView) findViewById(R.id.ticketSelectionInfoHeader);
         TextView ticketMovie = (TextView) findViewById(R.id.ticketSelectionInfoMovie);
+        ticketMovie.setText(clickedSchedule.getMovie().getName());
+
+        // MovieSchedule heeft nog geen datumveld
         TextView ticketDate = (TextView) findViewById(R.id.ticketSelectionInfoDate);
+        
         TextView ticketStartTime = (TextView) findViewById(R.id.ticketSelectionInfoStartTime);
+        ticketStartTime.setText("Start time: " + clickedSchedule.getStartTime());
         TextView ticketEndTime = (TextView) findViewById(R.id.ticketSelectionInfoEndTime);
+        ticketEndTime.setText("End time: " + clickedSchedule.getEndTime());
+
         TextView selectorHeader = (TextView) findViewById(R.id.ticketSelectionSelectorHeader);
 
         TextView selectorAdult = (TextView) findViewById(R.id.ticketSelectorTextAdult);
