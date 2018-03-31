@@ -2,15 +2,19 @@ package com.avans2018.klasd.cineapp.domain_layer.payment_category;
 
 import android.util.Log;
 
+import java.io.Serializable;
+
+import static com.avans2018.klasd.cineapp.application_logic_layer.TicketPrices.studentTicketPrice;
+
 /**
  * Created by HeyRobin on 26-3-2018.
  * Last Edited by Tom on 28-03-18. String CustomerType toegevoegd voor opslaan gegevens in locale DB.
  */
 
-public class StudentPayment implements PaymentCategory {
+public class StudentPayment implements PaymentCategory, Serializable {
     private final String CUSTOMER_TYPE = "Student";
-    private final double PRICE = 7.00;
-    private static final String TAG = "SeniorPayment";
+    private final double PRICE = studentTicketPrice;
+    private static final String TAG = "StudentPayment";
 
     @Override
     public double getPrice() {

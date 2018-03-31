@@ -13,6 +13,10 @@ import com.avans2018.klasd.cineapp.R;
 import com.avans2018.klasd.cineapp.domain_layer.MovieSchedule;
 import com.avans2018.klasd.cineapp.util_layer.StringLimiter;
 
+import static com.avans2018.klasd.cineapp.application_logic_layer.TicketPrices.adultTicketPrice;
+import static com.avans2018.klasd.cineapp.application_logic_layer.TicketPrices.childTicketPrice;
+import static com.avans2018.klasd.cineapp.application_logic_layer.TicketPrices.seniorTicketPrice;
+import static com.avans2018.klasd.cineapp.application_logic_layer.TicketPrices.studentTicketPrice;
 import static com.avans2018.klasd.cineapp.presentation_layer.DetailActivity.CLICKED_SCHEDULE;
 
 public class TicketSelectionActivity extends AppCompatActivity{
@@ -22,6 +26,8 @@ public class TicketSelectionActivity extends AppCompatActivity{
     final static String TOTAL_CHILD_TICKETS = "totalChildTickets";
     final static String TOTAL_STUDENT_TICKETS = "totalStudentTickets";
     final static String TOTAL_SENIOR_TICKETS = "totalSeniorTickets";
+    final static String TOTAL_AMOUNT = "totalAmount";
+    double totalPriceAmount = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,6 +86,12 @@ public class TicketSelectionActivity extends AppCompatActivity{
                     int studentTicketsAmount = Integer.parseInt(selectorStudentInput.getText().toString());
                     int seniorTicketsAmount = Integer.parseInt(selectorSeniorInput.getText().toString());
                     int totalTicketCount = adultTicketsAmount + childTicketsAmount + studentTicketsAmount + seniorTicketsAmount;
+
+                    totalPriceAmount = (double) totalPriceAmount + (adultTicketsAmount * adultTicketPrice);
+                    totalPriceAmount = (double) totalPriceAmount + (childTicketsAmount * childTicketPrice);
+                    totalPriceAmount = (double) totalPriceAmount + (studentTicketsAmount * studentTicketPrice);
+                    totalPriceAmount = (double) totalPriceAmount + (seniorTicketsAmount * seniorTicketPrice);
+
                     if(totalTicketCount<=0){
 
                 } else {
@@ -91,6 +103,7 @@ public class TicketSelectionActivity extends AppCompatActivity{
                     seatSelectionIntent.putExtra(TOTAL_CHILD_TICKETS,childTicketsAmount);
                     seatSelectionIntent.putExtra(TOTAL_STUDENT_TICKETS,studentTicketsAmount);
                     seatSelectionIntent.putExtra(TOTAL_SENIOR_TICKETS,seniorTicketsAmount);
+                    seatSelectionIntent.putExtra(TOTAL_AMOUNT,totalPriceAmount);
 
                     startActivity(seatSelectionIntent);
                     Log.i(TAG, "Starting SeatSelectionActivity...");

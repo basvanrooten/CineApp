@@ -35,6 +35,7 @@ public class Ticket implements Serializable{
         Log.d(TAG, "Ticket-Constructor (extended) called");
     }
 
+
     public Ticket() {
         Log.d(TAG, "Ticket-Constructor (empty) was called");
     }

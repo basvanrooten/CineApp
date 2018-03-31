@@ -10,13 +10,14 @@ import android.util.Log;
 import com.avans2018.klasd.cineapp.domain_layer.Ticket;
 import com.avans2018.klasd.cineapp.domain_layer.TicketPrint;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  * Created by Tom on 28-3-2018.
  */
 
-public class TicketStorageDB extends SQLiteOpenHelper{
+public class TicketStorageDB extends SQLiteOpenHelper implements Serializable{
     private final static String TAG = "TicketStorageDB";
 
     private final static String DATABASE_NAME = "CineApp.db";

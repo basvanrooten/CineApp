@@ -11,6 +11,7 @@ import com.avans2018.klasd.cineapp.R;
 import com.avans2018.klasd.cineapp.application_logic_layer.MyTicketsListAdapter;
 import com.avans2018.klasd.cineapp.application_logic_layer.OnItemClickListener;
 import com.avans2018.klasd.cineapp.data_access_layer.TicketStorageDB;
+import com.avans2018.klasd.cineapp.domain_layer.Ticket;
 import com.avans2018.klasd.cineapp.domain_layer.TicketPrint;
 import com.avans2018.klasd.cineapp.util_layer.StringLimiter;
 
@@ -29,6 +30,9 @@ public class MyTicketsActivity extends AppCompatActivity implements OnItemClickL
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_tickets);
+
+        Intent intent = getIntent();
+//        ticketStorage = (TicketStorageDB) intent.getSerializableExtra(ConfirmationActivity.DATABASE);
 
         // Hoofdtitel veranderen
         getSupportActionBar().setTitle(StringLimiter.limit(getResources().getString(R.string.my_tickets_title), 25));

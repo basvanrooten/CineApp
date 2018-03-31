@@ -37,7 +37,8 @@ public class MyTicketsDetailActivity extends AppCompatActivity {
 
         ImageView QRCode = (ImageView) findViewById(R.id.ticketQRCodeBig);
 
-        String QRUrl = clickedTicket.getId() + "";    // placeholder voor QR-code
+//      String QRUrl = clickedTicket.getId() + "";    // placeholder voor QR-code
+        String QRUrl = "https://cdn.crunchify.com/wp-content/uploads/2013/01/CrunchifyQR-Tutorial.png";    // placeholder voor QR-code
         Picasso.with(mContext).load(QRUrl).fit().centerInside().into(QRCode);
 
         MultiFormatWriter multiFormatWriter = new MultiFormatWriter();

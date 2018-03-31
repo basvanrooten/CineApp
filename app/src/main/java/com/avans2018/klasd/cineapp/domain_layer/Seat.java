@@ -2,12 +2,14 @@ package com.avans2018.klasd.cineapp.domain_layer;
 
 import android.util.Log;
 
+import java.io.Serializable;
+
 /**
  * Created by HeyRobin on 26-3-2018.
  * Last Edited by Robin on 26-03-18.
  */
 
-public class Seat {
+public class Seat implements Serializable {
 
     private int seatId;
     private int seatNumber;
