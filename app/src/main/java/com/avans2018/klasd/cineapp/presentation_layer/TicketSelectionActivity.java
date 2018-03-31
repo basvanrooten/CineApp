@@ -3,14 +3,25 @@ package com.avans2018.klasd.cineapp.presentation_layer;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.avans2018.klasd.cineapp.R;
 import com.avans2018.klasd.cineapp.domain_layer.MovieSchedule;
 import com.avans2018.klasd.cineapp.util_layer.StringLimiter;
 
-public class TicketSelectionActivity extends AppCompatActivity {
+import static com.avans2018.klasd.cineapp.presentation_layer.DetailActivity.CLICKED_SCHEDULE;
+
+public class TicketSelectionActivity extends AppCompatActivity{
+    private final static String TAG = "TicketSelectionActivity";
+    final static String TOTAL_TICKETS = "totalTickets";
+    final static String TOTAL_ADULT_TICKETS = "totalAdultTickets";
+    final static String TOTAL_CHILD_TICKETS = "totalChildTickets";
+    final static String TOTAL_STUDENT_TICKETS = "totalStudentTickets";
+    final static String TOTAL_SENIOR_TICKETS = "totalSeniorTickets";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,7 +30,7 @@ public class TicketSelectionActivity extends AppCompatActivity {
 
         // Intent met data van MovieSchedule vanuit DetailActivity
         Intent ticketSelectionReceiveIntent = getIntent();
-        MovieSchedule clickedSchedule = (MovieSchedule) ticketSelectionReceiveIntent.getSerializableExtra(DetailActivity.CLICKED_SCHEDULE);
+        final MovieSchedule clickedSchedule = (MovieSchedule) ticketSelectionReceiveIntent.getSerializableExtra(CLICKED_SCHEDULE);
 
         // Hoofdtitel veranderen
         getSupportActionBar().setTitle(StringLimiter.limit(getResources().getString(R.string.my_ticket_detail_title), 25));
@@ -31,7 +42,7 @@ public class TicketSelectionActivity extends AppCompatActivity {
 
         // MovieSchedule heeft nog geen datumveld
         TextView ticketDate = (TextView) findViewById(R.id.ticketSelectionInfoDate);
-        
+
         TextView ticketStartTime = (TextView) findViewById(R.id.ticketSelectionInfoStartTime);
         ticketStartTime.setText("Start time: " + clickedSchedule.getStartTime());
         TextView ticketEndTime = (TextView) findViewById(R.id.ticketSelectionInfoEndTime);
@@ -40,21 +51,58 @@ public class TicketSelectionActivity extends AppCompatActivity {
         TextView selectorHeader = (TextView) findViewById(R.id.ticketSelectionSelectorHeader);
 
         TextView selectorAdult = (TextView) findViewById(R.id.ticketSelectorTextAdult);
-        TextView selectorAdultInput = (TextView) findViewById(R.id.ticketSelectorInputAdult);
+        final TextView selectorAdultInput = (TextView) findViewById(R.id.ticketSelectorInputAdult);
+        selectorAdultInput.setText("0");
 
         TextView selectorChild = (TextView) findViewById(R.id.ticketSelectorTextChild);
-        TextView selectorChildInput = (TextView) findViewById(R.id.ticketSelectorInputChild);
+        final TextView selectorChildInput = (TextView) findViewById(R.id.ticketSelectorInputChild);
+        selectorChildInput.setText("0");
 
         TextView selectorStudent = (TextView) findViewById(R.id.ticketSelectorTextStudent);
-        TextView selectorStudentInput = (TextView) findViewById(R.id.ticketSelectorInputStudent);
+        final TextView selectorStudentInput = (TextView) findViewById(R.id.ticketSelectorInputStudent);
+        selectorStudentInput.setText("0");
 
         TextView selectorSenior = (TextView) findViewById(R.id.ticketSelectorTextSenior);
-        TextView selectorSeniorInput = (TextView) findViewById(R.id.ticketSelectorInputSenior);
+        final TextView selectorSeniorInput = (TextView) findViewById(R.id.ticketSelectorInputSenior);
+        selectorSeniorInput.setText("0");
 
         // Buttons
         Button continueToSeatSelectionButton = (Button) findViewById(R.id.ticketSelectionContinueToSeatSelectionButton);
+        continueToSeatSelectionButton.setOnClickListener(new View.OnClickListener() {
 
+            @Override
+            public void onClick(View v) {
+
+                try {
+                    int adultTicketsAmount = Integer.parseInt(selectorAdultInput.getText().toString());
+                    int childTicketsAmount = Integer.parseInt(selectorChildInput.getText().toString());
+                    int studentTicketsAmount = Integer.parseInt(selectorStudentInput.getText().toString());
+                    int seniorTicketsAmount = Integer.parseInt(selectorSeniorInput.getText().toString());
+                    int totalTicketCount = adultTicketsAmount + childTicketsAmount + studentTicketsAmount + seniorTicketsAmount;
+                    if(totalTicketCount<=0){
+
+                } else {
+                    Intent seatSelectionIntent = new Intent(v.getContext(), SeatSelectionActivity.class);
+                    MovieSchedule schedule = clickedSchedule;
+                    seatSelectionIntent.putExtra(CLICKED_SCHEDULE, schedule);
+                    seatSelectionIntent.putExtra(TOTAL_TICKETS,totalTicketCount);
+                    seatSelectionIntent.putExtra(TOTAL_ADULT_TICKETS,adultTicketsAmount);
+                    seatSelectionIntent.putExtra(TOTAL_CHILD_TICKETS,childTicketsAmount);
+                    seatSelectionIntent.putExtra(TOTAL_STUDENT_TICKETS,studentTicketsAmount);
+                    seatSelectionIntent.putExtra(TOTAL_SENIOR_TICKETS,seniorTicketsAmount);
+
+                    startActivity(seatSelectionIntent);
+                    Log.i(TAG, "Starting SeatSelectionActivity...");
+                }
+                } catch (Exception e){
+                    Log.i(TAG, "Error with one of the inputfields.");
+                    Toast.makeText(TicketSelectionActivity.this, "Select valid amount of tickets.", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
 
 
     }
+
+
 }
