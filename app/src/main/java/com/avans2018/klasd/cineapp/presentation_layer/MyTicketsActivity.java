@@ -6,6 +6,9 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuItem;
 
 import com.avans2018.klasd.cineapp.R;
 import com.avans2018.klasd.cineapp.application_logic_layer.MyTicketsListAdapter;
@@ -20,6 +23,7 @@ import java.util.ArrayList;
 public class MyTicketsActivity extends AppCompatActivity implements OnItemClickListener {
     private final static String TAG = "MyTicketActivity";
     final static String CLICKED_TICKET = "clickedTicket";
+    private Toolbar toolbar;
 
     private RecyclerView recyclerView;
     private ArrayList<TicketPrint> ticketPrintList = new ArrayList<>();
@@ -30,6 +34,9 @@ public class MyTicketsActivity extends AppCompatActivity implements OnItemClickL
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_tickets);
+
+        toolbar = (Toolbar) findViewById(R.id.tool_bar);
+        setSupportActionBar(toolbar);
 
         Intent intent = getIntent();
 //        ticketStorage = (TicketStorageDB) intent.getSerializableExtra(ConfirmationActivity.DATABASE);
@@ -64,5 +71,24 @@ public class MyTicketsActivity extends AppCompatActivity implements OnItemClickL
         detailIntent.putExtra(CLICKED_TICKET, clickedTicket);
         startActivity(detailIntent);
         Log.i(TAG, "Starting MyTicketsDetailActivity...");
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_my_tickets) {
+            Intent intent = new Intent(this,MainActivity.class);
+            startActivity(intent);
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 }

@@ -13,6 +13,11 @@
         android:orientation="vertical">
 
 
+        <include
+            android:id="@+id/tool_bar"
+            layout="@layout/tool_bar"
+            android:layout_width="match_parent"
+            android:layout_weight="1" />
 
         <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"

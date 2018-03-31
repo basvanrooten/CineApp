@@ -7,8 +7,11 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.support.v7.widget.Toolbar;
 
 import com.avans2018.klasd.cineapp.R;
 import com.avans2018.klasd.cineapp.application_logic_layer.MovieListAdapter;
@@ -32,12 +35,17 @@ public class DetailActivity extends AppCompatActivity implements OnItemClickList
     private RecyclerView recyclerView;
     private ScheduleListAdapter adapter = new ScheduleListAdapter(DetailActivity.this, scheduleList);
     final static String CLICKED_SCHEDULE = "clickedSchedule";
+    private Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         Log.i(TAG, "onCreate() called.");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
+
+        toolbar = (Toolbar) findViewById(R.id.tool_bar);
+        setSupportActionBar(toolbar);
+
 
 
         // Intent met data van film vanuit MainActivity
@@ -97,5 +105,24 @@ public class DetailActivity extends AppCompatActivity implements OnItemClickList
             scheduleList.add(movieSchedules.get(i));
         }
         adapter.notifyDataSetChanged();
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_my_tickets) {
+            Intent intent = new Intent(this,MyTicketsActivity.class);
+            startActivity(intent);
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 }

@@ -4,10 +4,13 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.support.v7.widget.Toolbar;
 
 import com.avans2018.klasd.cineapp.R;
 import com.avans2018.klasd.cineapp.domain_layer.MovieSchedule;
@@ -28,12 +31,16 @@ public class TicketSelectionActivity extends AppCompatActivity{
     final static String TOTAL_SENIOR_TICKETS = "totalSeniorTickets";
     final static String TOTAL_AMOUNT = "totalAmount";
     double totalPriceAmount = 0;
+    private Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         Log.i(TAG,"Started.");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ticket_selection);
+
+        toolbar = (Toolbar) findViewById(R.id.tool_bar);
+        setSupportActionBar(toolbar);
 
         // Intent met data van MovieSchedule vanuit DetailActivity
         Intent ticketSelectionReceiveIntent = getIntent();
@@ -116,6 +123,28 @@ public class TicketSelectionActivity extends AppCompatActivity{
         });
 
 
+
+
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_my_tickets) {
+            Intent intent = new Intent(this,MyTicketsActivity.class);
+            startActivity(intent);
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 
 

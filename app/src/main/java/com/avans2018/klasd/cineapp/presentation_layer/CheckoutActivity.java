@@ -4,9 +4,12 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.support.v7.widget.Toolbar;
 
 import com.avans2018.klasd.cineapp.R;
 import com.avans2018.klasd.cineapp.domain_layer.MovieSchedule;
@@ -34,11 +37,15 @@ public class CheckoutActivity extends AppCompatActivity{
     final static String PENDING_PAYMENT = "payment";
     final static String TAG = "CheckoutActivity";
     final static String PROCESSED_TICKETLIST = "processedTickets";
+    private Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_checkout);
+
+        toolbar = (Toolbar) findViewById(R.id.tool_bar);
+        setSupportActionBar(toolbar);
 
         Intent scheduleSeatsTicketAmounts = getIntent();
         final MovieSchedule receivedMovieSchedule = (MovieSchedule) scheduleSeatsTicketAmounts.getSerializableExtra(CLICKED_SCHEDULE);
@@ -113,5 +120,25 @@ public class CheckoutActivity extends AppCompatActivity{
                 Log.i(TAG, "Starting ConfirmationActivity...");
             }
         });
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_my_tickets) {
+            Intent intent = new Intent(this,MyTicketsActivity.class);
+            startActivity(intent);
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 }

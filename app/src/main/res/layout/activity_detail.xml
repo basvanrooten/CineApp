@@ -7,10 +7,17 @@
     android:background="@color/CineAppBackground"
     tools:context="com.avans2018.klasd.cineapp.presentation_layer.DetailActivity">
 
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+
+        <include
+            android:id="@+id/tool_bar"
+            layout="@layout/tool_bar"
+            />
 
         <ImageView
             android:id="@+id/detailFilmImg"
