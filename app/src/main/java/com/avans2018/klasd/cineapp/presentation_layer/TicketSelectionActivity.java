@@ -18,8 +18,8 @@ public class TicketSelectionActivity extends AppCompatActivity {
         setContentView(R.layout.activity_ticket_selection);
 
         // Intent met data van MovieSchedule vanuit DetailActivity
-        Intent intent = getIntent();
-        MovieSchedule clickedSchedule = (MovieSchedule) intent.getSerializableExtra(DetailActivity.CLICKED_SCHEDULE);
+        Intent ticketSelectionReceiveIntent = getIntent();
+        MovieSchedule clickedSchedule = (MovieSchedule) ticketSelectionReceiveIntent.getSerializableExtra(DetailActivity.CLICKED_SCHEDULE);
 
         // Hoofdtitel veranderen
         getSupportActionBar().setTitle(StringLimiter.limit(getResources().getString(R.string.my_ticket_detail_title), 25));

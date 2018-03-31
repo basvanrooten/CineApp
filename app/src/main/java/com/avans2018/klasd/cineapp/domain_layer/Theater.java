@@ -2,12 +2,14 @@ package com.avans2018.klasd.cineapp.domain_layer;
 
 import android.util.Log;
 
+import java.io.Serializable;
+
 /**
  * Created by HeyRobin on 26-3-2018.
  * Last edited by Wouter Kodde on 26-03-2018.
  */
 
-public class Theater {
+public class Theater implements Serializable{
 
     private int theaterNumber;
     private String theaterName;

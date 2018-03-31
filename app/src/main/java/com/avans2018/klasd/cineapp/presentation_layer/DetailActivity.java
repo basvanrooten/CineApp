@@ -84,10 +84,10 @@ public class DetailActivity extends AppCompatActivity implements OnItemClickList
     public void onItemClick(int position) {
         // Klik logica voor meegeven film en opstarten DetailActivity
         Log.i(TAG, "onItemClick() called.");
-        Intent detailIntent = new Intent(this, TicketSelectionActivity.class);
+        Intent ticketSelectionIntent = new Intent(this, TicketSelectionActivity.class);
         MovieSchedule schedule = scheduleList.get(position);
-        detailIntent.putExtra(CLICKED_SCHEDULE, schedule);
-        startActivity(detailIntent);
+        ticketSelectionIntent.putExtra(CLICKED_SCHEDULE, schedule);
+        startActivity(ticketSelectionIntent);
         Log.i(TAG, "Starting TicketSelectionActivity...");
     }
 

@@ -53,7 +53,7 @@ public class MyTicketsActivity extends AppCompatActivity implements OnItemClickL
 
     @Override
     public void onItemClick(int position) {
-        // Klik logica voor meegeven film en opstarten DetailActivity
+        // Klik logica voor meegeven film en opstarten MyTicketsDetailActivity
         Log.i(TAG, "onItemClick() called.");
         Intent detailIntent = new Intent(this, MyTicketsDetailActivity.class);
         TicketPrint clickedTicket = ticketPrintList.get(position);
