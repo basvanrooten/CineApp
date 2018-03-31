@@ -25,6 +25,7 @@ public class TicketSelectionActivity extends AppCompatActivity{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Log.i(TAG,"Started.");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ticket_selection);
 
