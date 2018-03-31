@@ -15,18 +15,22 @@ public class MovieSchedule implements Serializable{
 
     private int id;
     private Date time;
+    private Date endTime;
+    private int takenPerc;
     private Movie movie;
     private Theater theater;
 
     private static final String TAG = "Domain: MovieSchedule";
 
-    public MovieSchedule(int id, Date time, Movie movie, Theater theater) {
+    public MovieSchedule(int id, Date time, Movie movie, Theater theater, Date endTime, int takenPerc) {
 
         Log.d(TAG, "MovieSchedule-Constructor (extended) called");
         this.id = id;
         this.time = time;
         this.movie = movie;
         this.theater = theater;
+        this.endTime = endTime;
+        this.takenPerc = takenPerc;
     }
 
     public MovieSchedule()  {
@@ -70,12 +74,12 @@ public class MovieSchedule implements Serializable{
         return format.format(this.time);
     }
     public String getEndTime() {
-        Integer hours = this.time.getHours() + 2;
-        Date endTime = this.time;
-        endTime.setHours(hours);
-        endTime.setMinutes(this.time.getMinutes() + 18);
         SimpleDateFormat format = new SimpleDateFormat("HH:mm");
-        return format.format(endTime);
+        return format.format(this.endTime);
+    }
+
+    public int getTakenPerc() {
+        return takenPerc;
     }
 
     @Override

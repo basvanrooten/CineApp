@@ -14,7 +14,6 @@ if(checkFields($fields) && checkValidApiKey()) {
     $theaters = 1;
 
     $results = getMovieSchedules($startDate, $movieId);
-
     if(count($results) == 0) {
         insertMovieSchedules($startDate, $movieId, $theaters);
         $results = getMovieSchedules($startDate, $movieId);
@@ -31,7 +30,7 @@ if(checkFields($fields) && checkValidApiKey()) {
         $theater["id"] = $result["TheaterId"];
         $theater["name"] = $result["Name"];
         $movieSchedule["theater"] = $theater;
-
+        $movieSchedule["takenPerc"] = getTakenPercentage($movieSchedule["id"], $theater["id"]);
         $movieSchedules["results"][] = $movieSchedule;
     }
 
@@ -39,6 +38,48 @@ if(checkFields($fields) && checkValidApiKey()) {
 
 }
 echo json_encode($movieSchedules);
+
+function getTakenPercentage($movieScheduleId, $theaterId) {
+    $statement = Database::getConnection()->prepare("
+        SELECT COUNT(*) as FreeSeats
+      FROM Taken 
+      WHERE MovieScheduleId = ? AND Taken = 0;
+    ");
+    $statement->bindValue(1, $movieScheduleId, Database::PARAM_STR);
+
+    try
+    {
+        $statement->execute();
+    }
+    catch (\Exception $e)
+    {
+        return 0;
+    }
+
+    $freeSeats = $statement->fetch();
+    $freeSeats = intval($freeSeats["FreeSeats"]);
+
+    $statement = Database::getConnection()->prepare("
+        SELECT COUNT(*) as NumOfSeats
+        FROM Seat 
+        WHERE TheaterId = ?;
+    ");
+    $statement->bindValue(1, $theaterId, Database::PARAM_STR);
+
+    try
+    {
+        $statement->execute();
+    }
+    catch (\Exception $e)
+    {
+        return 0;
+    }
+    $numOfSeats = $statement->fetch();
+    $numOfSeats = intval($numOfSeats["NumOfSeats"]);
+
+    return intval($freeSeats / $numOfSeats *100);
+
+}
 
 function getMovieSchedules($startDate, $movieId) {
     $statement = Database::getConnection()->prepare("
@@ -59,8 +100,6 @@ function getMovieSchedules($startDate, $movieId) {
     }
     catch (\Exception $e)
     {
-        //Return just the empty array.
-        //Do a die(); method so the code stops running and doesn't crash, because the statement->fetchAll() will throw another exception.
         return [];
     }
 

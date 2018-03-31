@@ -94,17 +94,23 @@ public class GetMovieSchedulesTask extends AsyncTask<String, Void, String> {
             for (int i = 0; i < results.length(); i++) {
                 JSONObject object = results.getJSONObject(i);
                 int id = object.getInt("id");
+                int takenPerc = object.getInt("takenPerc");
 //                Date startDate = new Date(object.getString("startDate"));
                 DateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
                 Date startDate = df.parse(object.getString("startDate"));
+                final long ONE_MINUTE_IN_MILLIS = 60000;
+                long startTime = startDate.getTime();
+                Date endDate = new Date(startTime + (this.movie.getDuration() * ONE_MINUTE_IN_MILLIS));
+
 
                 JSONObject theaterObject = object.getJSONObject("theater");
                 int theaterId = theaterObject.getInt("id");
+
                 String theaterName = theaterObject.getString("name");
 
                 Theater theater = new Theater(theaterId, theaterName);
 
-                  movieSchedules.add(new MovieSchedule(id, startDate, movie, theater));
+                  movieSchedules.add(new MovieSchedule(id, startDate, this.movie, theater, endDate, takenPerc));
 
             }
 

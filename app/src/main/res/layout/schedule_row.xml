@@ -12,29 +12,42 @@
         android:background="@color/CineAppListViewItemBackground">
 
         <TextView
-            android:id="@+id/scheduleListTheater"
+            android:id="@+id/scheduleListStartTime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBaseline="@+id/scheduleListTime"
-            android:layout_alignBottom="@+id/scheduleListTime"
+            android:layout_alignBaseline="@+id/scheduleListTakenPerc"
+            android:layout_alignBottom="@+id/scheduleListTakenPerc"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_marginLeft="21dp"
             android:layout_marginStart="21dp"
-            android:text="Theater"
+            android:text="00:00"
             android:textColor="@android:color/background_light" />
 
         <TextView
-            android:id="@+id/scheduleListTime"
+            android:id="@+id/scheduleListEndTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/scheduleListTakenPerc"
+            android:layout_marginLeft="11dp"
+            android:layout_marginStart="11dp"
+            android:layout_toEndOf="@+id/scheduleListStartTime"
+            android:layout_toRightOf="@+id/scheduleListStartTime"
+            android:text="00:00"
+            android:textColor="@android:color/background_light"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/scheduleListTakenPerc"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
             android:layout_alignParentTop="true"
-            android:layout_marginEnd="45dp"
-            android:layout_marginRight="45dp"
+            android:layout_marginEnd="54dp"
+            android:layout_marginRight="54dp"
             android:layout_marginTop="17dp"
-            android:text="Time"
+            android:text="Beschikbaarheid: 99%"
             android:textColor="@android:color/background_light"
             android:textSize="12sp" />
 

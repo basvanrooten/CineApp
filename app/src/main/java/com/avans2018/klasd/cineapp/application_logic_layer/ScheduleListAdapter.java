@@ -6,7 +6,6 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.avans2018.klasd.cineapp.R;
@@ -47,8 +46,9 @@ public class ScheduleListAdapter extends RecyclerView.Adapter<ScheduleListAdapte
 
         MovieSchedule schedule = scheduleList.get(position);
 
-        holder.scheduleListTheater.setText("Zaal " + schedule.getTheater().getTheaterNumber());
-        holder.scheduleListTime.setText("" + schedule.getTime());
+        holder.scheduleListStartTime.setText("" + schedule.getStartTime());
+        holder.scheduleListEndTime.setText("" + schedule.getEndTime());
+        holder.scheduleListTakenPerc.setText("Beschikbaarheid: " + schedule.getTakenPerc() + "%");
     }
 
     @Override
@@ -58,13 +58,15 @@ public class ScheduleListAdapter extends RecyclerView.Adapter<ScheduleListAdapte
 
     public class ScheduleViewHolder extends RecyclerView.ViewHolder {
 
-        private TextView scheduleListTheater;
-        private TextView scheduleListTime;
+        private TextView scheduleListStartTime;
+        private TextView scheduleListEndTime;
+        private TextView scheduleListTakenPerc;
 
         private ScheduleViewHolder(View itemView) {
             super(itemView);
-            scheduleListTheater = itemView.findViewById(R.id.scheduleListTheater);
-            scheduleListTime = itemView.findViewById(R.id.scheduleListTime);
+            scheduleListStartTime = itemView.findViewById(R.id.scheduleListStartTime);
+            scheduleListEndTime = itemView.findViewById(R.id.scheduleListEndTime);
+            scheduleListTakenPerc = itemView.findViewById(R.id.scheduleListTakenPerc);
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
