@@ -23,6 +23,7 @@
     <string name="until">until</string>
     <string name="genre_header">Genre</string>
     <string name="genre_content">Action</string>
+    <string name="unavailable">Unavailable</string>
 
     <!-- TicketSelectionActivity!-->
     <string name="ticket_selection_title">Ticket selection</string>

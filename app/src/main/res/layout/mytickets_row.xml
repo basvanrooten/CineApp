@@ -17,12 +17,16 @@
 
         <ImageView
             android:id="@+id/myTicketQRCode"
-            android:layout_width="150dp"
+            android:layout_width="200dp"
             android:layout_height="match_parent"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
             android:layout_alignParentTop="true"
+            android:layout_marginEnd="23dp"
+            android:layout_marginRight="23dp"
+            android:paddingBottom="5dp"
+            android:paddingLeft="30dp"
+            android:paddingTop="5dp"
             android:scaleType="centerCrop"
             app:srcCompat="@mipmap/ic_launcher" />
 
@@ -30,11 +34,9 @@
             android:id="@+id/myTicketTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/myTicketDate"
             android:layout_alignParentTop="true"
-            android:layout_alignStart="@+id/myTicketDate"
             android:layout_marginTop="11dp"
-            android:paddingLeft="10dp"
+            android:paddingLeft="20dp"
             android:text="@string/my_ticket_title"
             android:textColor="@android:color/background_light"
             android:textSize="18sp" />
@@ -43,9 +45,10 @@
             android:id="@+id/myTicketDate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
             android:layout_below="@+id/myTicketTitle"
-            android:layout_centerHorizontal="true"
-            android:paddingLeft="10dp"
+            android:paddingLeft="20dp"
             android:text="@string/my_ticket_date"
             android:textColor="@android:color/background_light"
             android:textSize="14sp" />
@@ -57,7 +60,7 @@
             android:layout_alignLeft="@+id/myTicketDate"
             android:layout_alignStart="@+id/myTicketDate"
             android:layout_below="@+id/myTicketDate"
-            android:paddingLeft="10dp"
+            android:paddingLeft="20dp"
             android:text="@string/my_ticket_time"
             android:textColor="@android:color/background_light"
             android:textSize="14sp" />

@@ -13,6 +13,7 @@ import android.widget.TextView;
 
 import com.avans2018.klasd.cineapp.R;
 import com.avans2018.klasd.cineapp.domain_layer.TicketPrint;
+import com.google.zxing.qrcode.encoder.QRCode;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -51,10 +52,7 @@ public class MyTicketsListAdapter extends RecyclerView.Adapter<MyTicketsListAdap
         holder.ticketMovieTitle.setText(ticket.getMovie());
         holder.ticketDate.setText(ticket.getDate());
         holder.ticketTime.setText(""+ ticket.getTime());
-
-
-        String QRUrl = "https://cdn.crunchify.com/wp-content/uploads/2013/01/CrunchifyQR-Tutorial.png";    // placeholder voor QR-code
-        Picasso.with(mContext).load(QRUrl).fit().centerInside().into(holder.QRCode);
+        holder.QRCode.setImageResource(R.drawable.ticket_round_one);
 
     }
 

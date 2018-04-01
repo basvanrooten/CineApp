@@ -1,6 +1,7 @@
 package com.avans2018.klasd.cineapp.application_logic_layer;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -57,10 +58,29 @@ public class ScheduleListAdapter extends RecyclerView.Adapter<ScheduleListAdapte
         String endTime = "" + schedule.getEndTime();
         String takenPerc = mContext.getString(R.string.schedule_availability) +""+ schedule.getTakenPerc() + "%";
 
+        if(schedule.getDate().getTime() < System.currentTimeMillis()){
+            holder.scheduleListDate.setTextColor(Color.GRAY);
+            holder.scheduleListStartTime.setTextColor(Color.GRAY);
+            holder.until.setTextColor(Color.GRAY);
+            holder.scheduleListEndTime.setTextColor(Color.GRAY);
+            holder.scheduleListTakenPerc.setTextColor(Color.GRAY);
+            holder.scheduleListTakenPerc.setText(mContext.getString(R.string.unavailable));
+        } else {
+            holder.scheduleListDate.setTextColor(Color.WHITE);
+            holder.scheduleListStartTime.setTextColor(Color.WHITE);
+            holder.until.setTextColor(Color.WHITE);
+            holder.scheduleListEndTime.setTextColor(Color.WHITE);
+            holder.scheduleListTakenPerc.setTextColor(Color.WHITE);
+            holder.scheduleListTakenPerc.setText(takenPerc);
+        }
+
         holder.scheduleListDate.setText(scheduleDate);
         holder.scheduleListStartTime.setText(startTime);
         holder.scheduleListEndTime.setText(endTime);
-        holder.scheduleListTakenPerc.setText(takenPerc);
+
+
+
+
     }
 
     @Override
@@ -72,6 +92,7 @@ public class ScheduleListAdapter extends RecyclerView.Adapter<ScheduleListAdapte
 
         private TextView scheduleListDate;
         private TextView scheduleListStartTime;
+        private TextView until;
         private TextView scheduleListEndTime;
         private TextView scheduleListTakenPerc;
 
@@ -79,6 +100,7 @@ public class ScheduleListAdapter extends RecyclerView.Adapter<ScheduleListAdapte
             super(itemView);
             scheduleListDate = itemView.findViewById(R.id.scheduleListDate);
             scheduleListStartTime = itemView.findViewById(R.id.scheduleListStartTime);
+            until = itemView.findViewById(R.id.scheduleListUntil);
             scheduleListEndTime = itemView.findViewById(R.id.scheduleListEndTime);
             scheduleListTakenPerc = itemView.findViewById(R.id.scheduleListTakenPerc);
 

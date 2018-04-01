@@ -108,7 +108,7 @@ public class DetailActivity extends AppCompatActivity implements OnItemClickList
         for (int i=0; i<30; i++){
             Date date = new Date();
             date.setTime((System.currentTimeMillis()) + (86400000 * i));
-            dateList.add(date) ;
+            dateList.add(date);
         }
         dateButton = (Button) findViewById(R.id.date_selection_button);
         datePager = (ViewPager) findViewById(R.id.datePager);
