@@ -7,6 +7,7 @@ import com.avans2018.klasd.cineapp.application_logic_layer.StringKeys;
 import com.avans2018.klasd.cineapp.data_access_layer.movie.MovieTask;
 import com.avans2018.klasd.cineapp.domain_layer.Movie;
 import com.avans2018.klasd.cineapp.domain_layer.MovieSchedule;
+import com.avans2018.klasd.cineapp.domain_layer.Seat;
 import com.avans2018.klasd.cineapp.domain_layer.Theater;
 
 import org.json.JSONArray;
@@ -105,10 +106,23 @@ public class GetMovieSchedulesTask extends AsyncTask<String, Void, String> {
 
                 JSONObject theaterObject = object.getJSONObject("theater");
                 int theaterId = theaterObject.getInt("id");
-
                 String theaterName = theaterObject.getString("name");
 
-                Theater theater = new Theater(theaterId, theaterName);
+                ArrayList<Seat> seats = new ArrayList<>();
+                Theater theater = new Theater(theaterId, theaterName, seats);
+
+                JSONArray jsonSeats = theaterObject.getJSONArray("seats");
+
+                JSONObject temp;
+                for(int numb = 0; numb < jsonSeats.length(); numb++){
+                    temp = jsonSeats.getJSONObject(numb);
+                    int seatId = temp.getInt("seatId");
+                    int seatNumber = temp.getInt("seatNumber");
+                    int rowNumber = temp.getInt("rowNumber");
+                    int taken = temp.getInt("taken");
+
+                    seats.add(new Seat(seatId, seatNumber, rowNumber, theater, taken));
+                }
 
                   movieSchedules.add(new MovieSchedule(id, startDate, this.movie, theater, endDate, takenPerc));
 
