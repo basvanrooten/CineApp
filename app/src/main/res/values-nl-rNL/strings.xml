@@ -17,7 +17,7 @@
     <string name="ticket_selection_title">Ticketselectie</string>
     <string name="ticket_selection_info_header">Filmdetails</string>
     <string name="ticket_selection_info_movie">"Film: "</string>
-    <string name="ticket_selection_info_date">Datum: 05-04-2018</string>
+    <string name="ticket_selection_info_date">"Datum: "</string>
     <string name="ticket_selection_info_start_time">"Starttijd: "</string>
     <string name="ticket_selection_info_end_time">"Eindtijd: "</string>
     <string name="ticket_selection_selector_header">"Ticketselectie"</string>
@@ -69,5 +69,5 @@
     <string name="topbar_my_tickets">Mijn tickets</string>
     <string name="movie_screen">Scherm</string>
     <string name="detail_get_date">Pas toe</string>
-    <string name="detail_choosedate">Slide gewenste datum</string>
+    <string name="detail_choosedate">Slide naar gewenste datum</string>
 </resources>

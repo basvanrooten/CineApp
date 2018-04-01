@@ -46,7 +46,7 @@ public class DatePagerAdapter extends PagerAdapter{
         TextView textView = (TextView) itemView.findViewById(R.id.datePagerContentDate);
 
         Date date = dateList.get(position);
-        DateFormat df = new SimpleDateFormat("dd-MM");
+        DateFormat df = new SimpleDateFormat("dd-MM-YY");
         String dateAsString = df.format(date);
 
         String textToAdd = dateAsString;

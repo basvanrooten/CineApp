@@ -19,13 +19,13 @@
     <string name="detail_times_and_tickets_nocontent">No times or tickets found.</string>
     <string name="detail_all_ages">All ages</string>
     <string name="detail_get_date">Confirm</string>
-    <string name="detail_choosedate">Slide date</string>
+    <string name="detail_choosedate">Slide to view date</string>
 
     <!-- TicketSelectionActivity!-->
     <string name="ticket_selection_title">Ticket selection</string>
     <string name="ticket_selection_info_header">Movie info</string>
     <string name="ticket_selection_info_movie">Movie: xxx</string>
-    <string name="ticket_selection_info_date">Date: 05-04-2018</string>
+    <string name="ticket_selection_info_date">Date: </string>
     <string name="ticket_selection_info_start_time">Start time: </string>
     <string name="ticket_selection_info_end_time">End time: </string>
     <string name="ticket_selection_selector_header">Ticket selection</string>

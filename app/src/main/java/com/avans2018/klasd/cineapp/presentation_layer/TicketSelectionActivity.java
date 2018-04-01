@@ -17,6 +17,10 @@ import com.avans2018.klasd.cineapp.R;
 import com.avans2018.klasd.cineapp.domain_layer.MovieSchedule;
 import com.avans2018.klasd.cineapp.util_layer.StringLimiter;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import static com.avans2018.klasd.cineapp.application_logic_layer.TicketPrices.ADULT_TICKET_PRICE;
 import static com.avans2018.klasd.cineapp.application_logic_layer.TicketPrices.CHILD_TICKET_PRICE;
 import static com.avans2018.klasd.cineapp.application_logic_layer.TicketPrices.SENIOR_TICKET_PRICE;
@@ -62,7 +66,11 @@ public class TicketSelectionActivity extends AppCompatActivity{
 
         // MovieSchedule heeft nog geen datumveld
         TextView ticketDate = (TextView) findViewById(R.id.ticketSelectionInfoDate);
-        String ticketDateText = this.getString(R.string.ticket_selection_info_date);
+
+        DateFormat df = new SimpleDateFormat("dd-MM-YY");
+        String dateAsString = df.format(clickedSchedule.getDate());
+
+        String ticketDateText = this.getString(R.string.ticket_selection_info_date) + dateAsString;
         ticketDate.setText(ticketDateText);
 
         TextView ticketStartTime = (TextView) findViewById(R.id.ticketSelectionInfoStartTime);
