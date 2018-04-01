@@ -35,6 +35,19 @@ public class Ticket implements Serializable{
         Log.d(TAG, "Ticket-Constructor (extended) called");
     }
 
+    public Ticket(String date, String time, Theater theater, Seat seat, Movie movie, PaymentCategory paymentCategory) {
+        this.id = 0;
+        this.date = date;
+        this.time = time;
+        this.theater = theater;
+        this.seat = seat;
+        this.movie = movie;
+        this.paymentCategory = paymentCategory;
+
+        Log.d(TAG, "Ticket-Constructor (extended) called");
+    }
+
+
 
     public Ticket() {
         Log.d(TAG, "Ticket-Constructor (empty) was called");

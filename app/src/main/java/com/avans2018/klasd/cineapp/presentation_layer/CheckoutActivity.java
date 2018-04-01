@@ -93,28 +93,32 @@ public class CheckoutActivity extends AppCompatActivity{
                 ArrayList<Ticket> tickets = new ArrayList<>();
                 Random random = new Random();
 
-                // (int id, String date, String time, Theater theater, Seat seat, Movie movie, PaymentCategory paymentCategory) {
+                // (String date, String time, Theater theater, Seat seat, Movie movie, PaymentCategory paymentCategory)
                 for(int i = 0; i < adultTickets; i++){
+                    // Logica van stoelnummer en datum nog toevoegen
                     Seat seat = new Seat();
-                    Ticket ticket = new Ticket(random.nextInt(100000000),"05-03-2018",receivedMovieSchedule.getStartTime(),receivedMovieSchedule.getTheater(),seat,receivedMovieSchedule.getMovie(),new AdultPayment());
+                    Ticket ticket = new Ticket("05-04-2018",receivedMovieSchedule.getStartTime(),receivedMovieSchedule.getTheater(),seat,receivedMovieSchedule.getMovie(),new AdultPayment());
                     tickets.add(ticket);
                 }
 
                 for(int i = 0; i < childTickets; i++){
+                    // Logica van stoelnummer en datum nog toevoegen
                     Seat seat = new Seat();
-                    Ticket ticket = new Ticket(random.nextInt(100000000),"05-03-2018",receivedMovieSchedule.getStartTime(),receivedMovieSchedule.getTheater(),seat,receivedMovieSchedule.getMovie(),new ChildPayment());
+                    Ticket ticket = new Ticket("05-04-2018",receivedMovieSchedule.getStartTime(),receivedMovieSchedule.getTheater(),seat,receivedMovieSchedule.getMovie(),new ChildPayment());
                     tickets.add(ticket);
                 }
 
                 for(int i = 0; i < studentTickets; i++){
+                    // Logica van stoelnummer en datum nog toevoegen
                     Seat seat = new Seat();
-                    Ticket ticket = new Ticket(random.nextInt(100000000),"05-03-2018",receivedMovieSchedule.getStartTime(),receivedMovieSchedule.getTheater(),seat,receivedMovieSchedule.getMovie(),new StudentPayment());
+                    Ticket ticket = new Ticket("05-04-2018",receivedMovieSchedule.getStartTime(),receivedMovieSchedule.getTheater(),seat,receivedMovieSchedule.getMovie(),new StudentPayment());
                     tickets.add(ticket);
                 }
 
                 for(int i = 0; i < seniorTickets; i++){
+                    // Logica van stoelnummer en datum nog toevoegen
                     Seat seat = new Seat();
-                    Ticket ticket = new Ticket(random.nextInt(100000000),"05-03-2018",receivedMovieSchedule.getStartTime(),receivedMovieSchedule.getTheater(),seat,receivedMovieSchedule.getMovie(),new SeniorPayment());
+                    Ticket ticket = new Ticket("05-04-2018",receivedMovieSchedule.getStartTime(),receivedMovieSchedule.getTheater(),seat,receivedMovieSchedule.getMovie(),new SeniorPayment());
                     tickets.add(ticket);
                 }
 

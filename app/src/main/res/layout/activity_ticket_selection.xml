@@ -131,17 +131,11 @@
                     android:text="+"
                     android:textSize="8sp" />
 
-                <Button
-                    android:id="@+id/buttonDecreaseAdult"
-                    android:layout_width="8dp"
-                    android:layout_height="30dp"
-                    android:layout_weight="1"
-                    android:onClick="decreaseIntegerAdult"
-                    android:text="-"
-                    android:textSize="8sp" />
+
 
                 <EditText
                     android:id="@+id/ticketSelectorInputAdult"
+                    android:focusable="false"
                     android:layout_width="30dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -154,6 +148,17 @@
                     android:textAlignment="center"
                     android:textColor="@android:color/background_light"
                     android:textSize="12sp" />
+
+                <Button
+                    android:id="@+id/buttonDecreaseAdult"
+                    android:layout_width="8dp"
+                    android:layout_height="30dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:onClick="decreaseIntegerAdult"
+                    android:text="-"
+                    android:textSize="8sp" />
+
             </LinearLayout>
 
             <LinearLayout
@@ -170,6 +175,10 @@
                     android:text="@string/ticket_selection_child"
                     android:textColor="@android:color/background_light" />
 
+
+
+
+
                 <Button
                     android:id="@+id/buttonIncreaseChild"
                     android:layout_width="8dp"
@@ -179,17 +188,9 @@
                     android:text="+"
                     android:textSize="8sp" />
 
-                <Button
-                    android:id="@+id/buttonDecreaseChild"
-                    android:layout_width="8dp"
-                    android:layout_height="30dp"
-                    android:layout_weight="1"
-                    android:onClick="decreaseIntegerChild"
-                    android:text="-"
-                    android:textSize="8sp" />
-
                 <EditText
                     android:id="@+id/ticketSelectorInputChild"
+                    android:focusable="false"
                     android:layout_width="30dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -202,6 +203,16 @@
                     android:textAlignment="center"
                     android:textColor="@android:color/background_light"
                     android:textSize="12sp" />
+
+                <Button
+                    android:id="@+id/buttonDecreaseChild"
+                    android:layout_width="8dp"
+                    android:layout_height="30dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:onClick="decreaseIntegerChild"
+                    android:text="-"
+                    android:textSize="8sp" />
             </LinearLayout>
 
             <LinearLayout
@@ -228,17 +239,11 @@
                     android:text="+"
                     android:textSize="8sp" />
 
-                <Button
-                    android:id="@+id/buttonDecreaseStudent"
-                    android:layout_width="8dp"
-                    android:layout_height="30dp"
-                    android:layout_weight="1"
-                    android:onClick="decreaseIntegerStudent"
-                    android:text="-"
-                    android:textSize="8sp" />
+
 
                 <EditText
                     android:id="@+id/ticketSelectorInputStudent"
+                    android:focusable="false"
                     android:layout_width="30dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -251,6 +256,16 @@
                     android:textAlignment="center"
                     android:textColor="@android:color/background_light"
                     android:textSize="12sp" />
+
+                <Button
+                    android:id="@+id/buttonDecreaseStudent"
+                    android:layout_width="8dp"
+                    android:layout_height="30dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:onClick="decreaseIntegerStudent"
+                    android:text="-"
+                    android:textSize="8sp" />
             </LinearLayout>
 
             <LinearLayout
@@ -277,17 +292,11 @@
                     android:text="+"
                     android:textSize="8sp" />
 
-                <Button
-                    android:id="@+id/buttonDecreaseSenior"
-                    android:layout_width="8dp"
-                    android:layout_height="30dp"
-                    android:layout_weight="1"
-                    android:onClick="decreaseIntegerSenior"
-                    android:text="-"
-                    android:textSize="8sp" />
+
 
                 <EditText
                     android:id="@+id/ticketSelectorInputSenior"
+                    android:focusable="false"
                     android:layout_width="30dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -300,6 +309,16 @@
                     android:textAlignment="center"
                     android:textColor="@android:color/background_light"
                     android:textSize="12sp" />
+
+                <Button
+                    android:id="@+id/buttonDecreaseSenior"
+                    android:layout_width="8dp"
+                    android:layout_height="30dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:onClick="decreaseIntegerSenior"
+                    android:text="-"
+                    android:textSize="8sp" />
             </LinearLayout>
 
             <LinearLayout

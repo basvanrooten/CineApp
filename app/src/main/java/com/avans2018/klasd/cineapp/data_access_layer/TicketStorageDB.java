@@ -44,7 +44,7 @@ public class TicketStorageDB extends SQLiteOpenHelper implements Serializable{
 
                 "CREATE TABLE " +               TABLE_NAME +
                         " (" +
-                        ID +                " INTEGER PRIMARY KEY," +
+                        ID +                " INTEGER PRIMARY KEY AUTOINCREMENT," +
                         DATE +              " TEXT NOT NULL," +
                         TIME +              " TEXT NOT NULL, "+
                         THEATER +           " TEXT NOT NULL," +
@@ -72,7 +72,7 @@ public class TicketStorageDB extends SQLiteOpenHelper implements Serializable{
         Log.i(TAG,"addTicket() called for ticket ID " + ticket.getId() + ".");
 
         ContentValues toBeAdded = new ContentValues();
-        toBeAdded.put(ID, ticket.getId());
+//        toBeAdded.put(ID, ticket.getId());    AutoIncrement, niet meer nodig
         toBeAdded.put(DATE, ticket.getDate());
         toBeAdded.put(TIME, ticket.getTime());
         toBeAdded.put(THEATER, ticket.getSeat().returnTheaterForDB());
