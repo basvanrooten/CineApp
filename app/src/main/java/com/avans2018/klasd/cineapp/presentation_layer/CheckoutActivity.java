@@ -50,6 +50,7 @@ public class CheckoutActivity extends AppCompatActivity{
 
         toolbar = (Toolbar) findViewById(R.id.tool_bar);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         Intent scheduleSeatsTicketAmounts = getIntent();
         final MovieSchedule receivedMovieSchedule = (MovieSchedule) scheduleSeatsTicketAmounts.getSerializableExtra(CLICKED_SCHEDULE);
@@ -137,6 +138,12 @@ public class CheckoutActivity extends AppCompatActivity{
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onSupportNavigateUp(){
+        finish();
         return true;
     }
 

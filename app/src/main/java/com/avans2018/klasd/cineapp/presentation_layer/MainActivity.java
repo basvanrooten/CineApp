@@ -86,6 +86,12 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
     }
 
     @Override
+    public void onBackPressed()
+    {
+        Log.i(TAG,"Back button pressed from MainActivity.");
+    }
+
+    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
 

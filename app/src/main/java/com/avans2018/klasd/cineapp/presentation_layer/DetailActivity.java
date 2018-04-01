@@ -53,6 +53,7 @@ public class DetailActivity extends AppCompatActivity implements OnItemClickList
 
         toolbar = (Toolbar) findViewById(R.id.tool_bar);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         // Intent met data van film vanuit MainActivity
         Intent intent = getIntent();
@@ -138,6 +139,12 @@ public class DetailActivity extends AppCompatActivity implements OnItemClickList
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onSupportNavigateUp(){
+        finish();
         return true;
     }
 

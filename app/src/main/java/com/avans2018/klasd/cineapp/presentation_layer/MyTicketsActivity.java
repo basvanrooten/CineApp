@@ -37,6 +37,7 @@ public class MyTicketsActivity extends AppCompatActivity implements OnItemClickL
 
         toolbar = (Toolbar) findViewById(R.id.tool_bar);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         Intent intent = getIntent();
 //        ticketStorage = (TicketStorageDB) intent.getSerializableExtra(ConfirmationActivity.DATABASE);
@@ -68,6 +69,22 @@ public class MyTicketsActivity extends AppCompatActivity implements OnItemClickL
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
+    }
+
+    @Override
+    public boolean onSupportNavigateUp(){
+        startActivity(new Intent(MyTicketsActivity.this, MainActivity.class));
+        finish();
+        return true;
+    }
+
+    @Override
+    public void onBackPressed()
+    {
+        super.onBackPressed();
+        startActivity(new Intent(MyTicketsActivity.this, MainActivity.class));
+        finish();
+
     }
 
     @Override

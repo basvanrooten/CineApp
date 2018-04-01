@@ -52,6 +52,7 @@ public class TicketSelectionActivity extends AppCompatActivity{
 
         toolbar = (Toolbar) findViewById(R.id.tool_bar);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         // Intent met data van MovieSchedule vanuit DetailActivity
         Intent ticketSelectionReceiveIntent = getIntent();
@@ -220,6 +221,12 @@ public class TicketSelectionActivity extends AppCompatActivity{
         TextView displayInteger = (TextView) findViewById(
                 R.id.ticketSelectorInputStudent);
         displayInteger.setText("" + number);
+    }
+
+    @Override
+    public boolean onSupportNavigateUp(){
+        finish();
+        return true;
     }
 
     // Increase/Decrease button logic Senior
