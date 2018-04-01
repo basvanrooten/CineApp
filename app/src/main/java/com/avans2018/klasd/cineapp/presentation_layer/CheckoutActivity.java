@@ -22,6 +22,8 @@ import com.avans2018.klasd.cineapp.domain_layer.payment_category.SeniorPayment;
 import com.avans2018.klasd.cineapp.domain_layer.payment_category.StudentPayment;
 import com.avans2018.klasd.cineapp.util_layer.StringLimiter;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -64,22 +66,24 @@ public class CheckoutActivity extends AppCompatActivity{
         TextView checkoutOverviewHeader = (TextView) findViewById(R.id.CheckoutInfoHeader);
 
         TextView checkoutOverviewContentOne = (TextView) findViewById(R.id.CheckoutInfoContent1);
-        checkoutOverviewContentOne.setText("Adult tickets: " + adultTickets);
+        checkoutOverviewContentOne.setText(this.getString(R.string.checkout_adult_tickets) + adultTickets);
 
         TextView checkoutOverviewContentTwo = (TextView) findViewById(R.id.CheckoutInfoContent2);
-        checkoutOverviewContentTwo.setText("Child tickets: " + childTickets);
+        checkoutOverviewContentTwo.setText(this.getString(R.string.checkout_child_tickets) + childTickets);
 
         TextView checkoutOverviewContentThree = (TextView) findViewById(R.id.CheckoutInfoContent3);
-        checkoutOverviewContentThree.setText("Student tickets: " + studentTickets);
+        checkoutOverviewContentThree.setText(this.getString(R.string.checkout_student_tickets) + studentTickets);
 
         TextView checkoutOverviewContentFour = (TextView) findViewById(R.id.CheckoutInfoContent4);
-        checkoutOverviewContentFour.setText("Senior tickets: " + seniorTickets);
+        checkoutOverviewContentFour.setText(this.getString(R.string.checkout_senior_tickets) + seniorTickets);
 
         TextView checkoutOverviewContentFive = (TextView) findViewById(R.id.CheckoutInfoContent5);
-        checkoutOverviewContentFive.setText("Total tickets: " + totalTickets);
+        checkoutOverviewContentFive.setText(this.getString(R.string.checkout_total_tickets) + totalTickets);
 
         TextView checkoutOverviewContentSix = (TextView) findViewById(R.id.CheckoutInfoContent6);
-        checkoutOverviewContentSix.setText("Amount to be paid: " + totalPayment);
+        String firstPart = this.getString(R.string.checkout_payment_amount);
+        double roundedNumber = round(totalPayment, 2);
+        checkoutOverviewContentSix.setText(firstPart + roundedNumber);
 
         Button checkoutPaymentButton = (Button) findViewById(R.id.CheckoutPaymentButton);
         checkoutPaymentButton.setOnClickListener(new View.OnClickListener() {
@@ -140,5 +144,13 @@ public class CheckoutActivity extends AppCompatActivity{
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public static double round(double value, int places) {
+        if (places < 0) throw new IllegalArgumentException();
+
+        BigDecimal bd = new BigDecimal(value);
+        bd = bd.setScale(places, RoundingMode.HALF_UP);
+        return bd.doubleValue();
     }
 }

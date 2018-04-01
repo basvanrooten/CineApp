@@ -26,6 +26,8 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
     private final static String TAG = "MainActivity";
     final static String CLICKED_MOVIE = "clickedMovie";
     private Toolbar toolbar;
+    private String language = "pt_PT";
+
 
     private RecyclerView recyclerView;
     private ArrayList<Movie> movieList = new ArrayList<>();
@@ -38,6 +40,7 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         Log.i(TAG, "onCreate() called.");
+        language = this.getString(R.string.url_language);
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -46,7 +49,7 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
         setSupportActionBar(toolbar);
 
         // Hoofdtitel veranderen
-        getSupportActionBar().setTitle(StringLimiter.limit(getResources().getString(R.string.movies_to_watch), 25));
+        getSupportActionBar().setTitle(R.string.movies_to_watch);
 
         MovieListTask movieListTask = new MovieListTask(this);
         movieListTask.execute();
@@ -93,5 +96,9 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public String getLanguage() {
+        return this.language;
     }
 }

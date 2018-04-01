@@ -1,5 +1,6 @@
 package com.avans2018.klasd.cineapp.presentation_layer;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -32,6 +33,7 @@ public class TicketSelectionActivity extends AppCompatActivity{
     final static String TOTAL_AMOUNT = "totalAmount";
     double totalPriceAmount = 0;
     private Toolbar toolbar;
+    private Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,11 +58,18 @@ public class TicketSelectionActivity extends AppCompatActivity{
 
         // MovieSchedule heeft nog geen datumveld
         TextView ticketDate = (TextView) findViewById(R.id.ticketSelectionInfoDate);
+        String ticketDateText = this.getString(R.string.ticket_selection_info_date);
+        ticketDate.setText(ticketDateText);
 
         TextView ticketStartTime = (TextView) findViewById(R.id.ticketSelectionInfoStartTime);
-        ticketStartTime.setText("Start time: " + clickedSchedule.getStartTime());
+        String startTimeText = this.getString(R.string.ticket_selection_info_start_time);
+        String startTime =  startTimeText + clickedSchedule.getStartTime();
+        ticketStartTime.setText(startTime);
         TextView ticketEndTime = (TextView) findViewById(R.id.ticketSelectionInfoEndTime);
-        ticketEndTime.setText("End time: " + clickedSchedule.getEndTime());
+
+        String endTimeText = this.getString(R.string.ticket_selection_info_end_time);
+        String endTime = endTimeText + clickedSchedule.getEndTime();
+        ticketEndTime.setText(endTime);
 
         TextView selectorHeader = (TextView) findViewById(R.id.ticketSelectionSelectorHeader);
 

@@ -1,9 +1,12 @@
 package com.avans2018.klasd.cineapp.data_access_layer.movie;
 
+import android.content.Context;
 import android.os.AsyncTask;
 import android.util.Log;
 
+import com.avans2018.klasd.cineapp.R;
 import com.avans2018.klasd.cineapp.application_logic_layer.StringKeys;
+import com.avans2018.klasd.cineapp.presentation_layer.MainActivity;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -13,6 +16,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
+import java.util.Locale;
 
 /**
  * Created by Gebruiker on 27-3-2018.
@@ -21,6 +25,8 @@ import java.net.URLConnection;
 public class MovieListTask extends AsyncTask<String, Void, String> {
 
     private MovieListener movieListener;
+    private Context context;
+
 
     public MovieListTask(MovieListener movieListener) {
         this.movieListener = movieListener;
@@ -32,9 +38,22 @@ public class MovieListTask extends AsyncTask<String, Void, String> {
         BufferedReader bufferedReader = null;
         String response = "";
 
+
         try {
-            java.net.URL url = new URL("https://api.themoviedb.org/3/movie/now_playing?api_key=" + StringKeys.API_KEY);
+            String language = Locale.getDefault().getDisplayLanguage();
+
+            java.net.URL url;
+
+            if(language.equals("Nederlands")){
+                url = new URL("https://api.themoviedb.org/3/movie/now_playing?api_key=" + StringKeys.API_KEY + "&language=nl");
+            } else if(language.equals("English")){
+                url = new URL("https://api.themoviedb.org/3/movie/now_playing?api_key=" + StringKeys.API_KEY + "&language=pt_PT");
+            } else {
+                url = new URL("https://api.themoviedb.org/3/movie/now_playing?api_key=" + StringKeys.API_KEY);
+            }
+
             URLConnection connection = url.openConnection();
+
 
             bufferedReader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
 

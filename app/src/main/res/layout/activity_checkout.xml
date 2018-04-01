@@ -14,8 +14,7 @@
 
         <include
             android:id="@+id/tool_bar"
-            layout="@layout/tool_bar"
-            android:layout_width="match_parent" />
+            layout="@layout/tool_bar"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -23,14 +22,15 @@
             android:layout_margin="20dp"
             android:background="@color/CineAppListViewItemBackground"
             android:orientation="vertical"
-            android:paddingLeft="5dp"
-            android:paddingTop="5dp">
+            android:paddingLeft="10dp"
+            android:paddingTop="10dp">
 
             <TextView
                 android:id="@+id/CheckoutInfoHeader"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Order summary"
+                android:paddingBottom="15dp"
+                android:text="@string/checkout_info_header"
                 android:textColor="@android:color/background_light"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.037"
@@ -38,21 +38,21 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-            android:id="@+id/CheckoutInfoContent1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Content"
-            android:textColor="@android:color/background_light"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.037"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+                android:id="@+id/CheckoutInfoContent1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/checkout_adult_tickets"
+                android:textColor="@android:color/background_light"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.037"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/CheckoutInfoContent2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Content"
+                android:text="@string/checkout_child_tickets"
                 android:textColor="@android:color/background_light"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.037"
@@ -63,7 +63,7 @@
                 android:id="@+id/CheckoutInfoContent3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Content"
+                android:text="@string/checkout_student_tickets"
                 android:textColor="@android:color/background_light"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.037"
@@ -74,7 +74,7 @@
                 android:id="@+id/CheckoutInfoContent4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Content"
+                android:text="@string/checkout_senior_tickets"
                 android:textColor="@android:color/background_light"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.037"
@@ -85,7 +85,8 @@
                 android:id="@+id/CheckoutInfoContent5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Content"
+                android:paddingBottom="15dp"
+                android:text="@string/checkout_total_tickets"
                 android:textColor="@android:color/background_light"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.037"
@@ -96,7 +97,7 @@
                 android:id="@+id/CheckoutInfoContent6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Content"
+                android:text="@string/checkout_payment_amount"
                 android:textColor="@android:color/background_light"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.037"
@@ -108,17 +109,18 @@
         <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-        <Button
-            android:id="@+id/CheckoutPaymentButton"
-            android:layout_width="250dp"
-            android:layout_height="50dp"
-            android:background="@color/CineAppListViewItemButtomBackground"
-            android:text="Pay now"
-            android:textColor="@android:color/background_light"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/CheckoutPaymentButton"
+                android:layout_width="250dp"
+                android:layout_height="50dp"
+                android:background="@color/CineAppListViewItemButtomBackground"
+                android:text="@string/checkout_button"
+                android:textColor="@android:color/background_light"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
         </android.support.constraint.ConstraintLayout>
 
 

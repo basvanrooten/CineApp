@@ -30,12 +30,14 @@
             android:id="@+id/myTicketTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/myTicketTime"
+            android:layout_alignLeft="@+id/myTicketDate"
             android:layout_alignParentTop="true"
-            android:layout_alignStart="@+id/myTicketTime"
-            android:layout_marginTop="23dp"
-            android:text="Film Title"
-            android:textColor="@android:color/background_light" />
+            android:layout_alignStart="@+id/myTicketDate"
+            android:layout_marginTop="11dp"
+            android:paddingLeft="10dp"
+            android:text="@string/my_ticket_title"
+            android:textColor="@android:color/background_light"
+            android:textSize="18sp" />
 
         <TextView
             android:id="@+id/myTicketDate"
@@ -43,8 +45,10 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/myTicketTitle"
             android:layout_centerHorizontal="true"
-            android:text="Date"
-            android:textColor="@android:color/background_light" />
+            android:paddingLeft="10dp"
+            android:text="@string/my_ticket_date"
+            android:textColor="@android:color/background_light"
+            android:textSize="14sp" />
 
         <TextView
             android:id="@+id/myTicketTime"
@@ -52,10 +56,11 @@
             android:layout_height="wrap_content"
             android:layout_alignLeft="@+id/myTicketDate"
             android:layout_alignStart="@+id/myTicketDate"
-            android:layout_centerVertical="true"
-            android:text="Time"
+            android:layout_below="@+id/myTicketDate"
+            android:paddingLeft="10dp"
+            android:text="@string/my_ticket_time"
             android:textColor="@android:color/background_light"
-            android:textSize="12sp" />
+            android:textSize="14sp" />
 
     </RelativeLayout>
 </LinearLayout>

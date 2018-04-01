@@ -44,7 +44,7 @@ public class ConfirmationActivity extends AppCompatActivity {
         for(Ticket ticket : ticketArrayList){
             storageDB.addTicket(ticket);
         }
-        Toast.makeText(this, "Tickets added to My Tickets", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, R.string.confirmation_tickets_added, Toast.LENGTH_SHORT).show();
         Log.i(TAG,"Purchase complete. Tickets added to local storage.");
 
         Button button = findViewById(R.id.ViewTicketsButton);

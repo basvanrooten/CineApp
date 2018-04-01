@@ -35,7 +35,7 @@ public class MyTicketsDetailActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         // Hoofdtitel veranderen
-        getSupportActionBar().setTitle(StringLimiter.limit(getResources().getString(R.string.my_ticket_detail_title), 25));
+        getSupportActionBar().setTitle(R.string.my_ticket_detail_title);
 
         // Intent met data van film vanuit MyTicketsActivity
         Intent intent = getIntent();
@@ -63,16 +63,18 @@ public class MyTicketsDetailActivity extends AppCompatActivity {
         TextView movieTitle = (TextView) findViewById(R.id.ticketDetailMovieTitle);
         movieTitle.setText(clickedTicket.getMovie());
         TextView movieDate = (TextView) findViewById(R.id.ticketDetailDate);
-        movieDate.setText("Date: " + clickedTicket.getDate());
+        String movieDateText = "" + this.getString(R.string.my_ticket_detail_date) + clickedTicket.getDate();
+        movieDate.setText(movieDateText);
         TextView movieTime = (TextView) findViewById(R.id.ticketDetailTime);
-        movieTime.setText("Time: " + clickedTicket.getTime());
+        String movieTimeText = "" + this.getString(R.string.my_ticket_detail_time) + clickedTicket.getTime();
+        movieTime.setText(movieTimeText);
 
         TextView movieTheater = (TextView) findViewById(R.id.ticketDetailTheater);
-        movieTheater.setText("Theater: " + clickedTicket.getTheater());
+        movieTheater.setText(this.getString(R.string.my_ticket_detail_theater) + clickedTicket.getTheater());
         TextView movieSeat = (TextView) findViewById(R.id.ticketDetailSeat);
-        movieSeat.setText("Seat: " + clickedTicket.getSeat());
+        movieSeat.setText(this.getString(R.string.my_ticket_detail_seat) + clickedTicket.getSeat());
         TextView movieType = (TextView) findViewById(R.id.ticketDetailType);
-        movieType.setText("Type: " + clickedTicket.getPaymentCategory());
+        movieType.setText(this.getString(R.string.my_ticket_detail_type) + clickedTicket.getPaymentCategory());
 
     }
     @Override

@@ -47,7 +47,7 @@
             android:layout_marginEnd="54dp"
             android:layout_marginRight="54dp"
             android:layout_marginTop="17dp"
-            android:text="Beschikbaarheid: 99%"
+            android:text="@string/schedule_availability"
             android:textColor="@android:color/background_light"
             android:textSize="12sp" />
 

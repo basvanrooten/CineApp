@@ -67,7 +67,7 @@ public class DetailActivity extends AppCompatActivity implements OnItemClickList
         if(clickedMovie.isAdultOnly()){
             detailActivityFilmAge.setText("18+");
         } else {
-            detailActivityFilmAge.setText("all ages");
+            detailActivityFilmAge.setText(R.string.detail_all_ages);
         }
         TextView detailCommentHeader = (TextView) findViewById(R.id.detailFilmDescriptionHeader);
         TextView detailCommentContent = (TextView) findViewById(R.id.detailFilmDescriptionContent);

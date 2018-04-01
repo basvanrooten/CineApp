@@ -1,8 +1,10 @@
 package com.avans2018.klasd.cineapp.data_access_layer.movie;
 
+import android.content.Context;
 import android.os.AsyncTask;
 import android.util.Log;
 
+import com.avans2018.klasd.cineapp.R;
 import com.avans2018.klasd.cineapp.application_logic_layer.StringKeys;
 import com.avans2018.klasd.cineapp.domain_layer.Movie;
 
@@ -14,6 +16,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
+import java.util.Locale;
 
 /**
  * Created by Gebruiker on 27-3-2018.
@@ -22,6 +25,7 @@ import java.net.URLConnection;
 public class MovieTask extends AsyncTask<String, Void, String> {
 
     private MovieListener movieListener;
+    private Context context;
 
     public MovieTask(MovieListener movieListener) {
         this.movieListener = movieListener;
@@ -29,6 +33,8 @@ public class MovieTask extends AsyncTask<String, Void, String> {
 
     @Override
     protected String doInBackground(String... strings) {
+
+        String language = Locale.getDefault().getDisplayLanguage();
 
         BufferedReader bufferedReader = null;
         String response = "";
@@ -40,7 +46,16 @@ public class MovieTask extends AsyncTask<String, Void, String> {
         String id = strings[0];
 
         try {
-            java.net.URL url = new URL("https://api.themoviedb.org/3/movie/" + id + "?api_key=" + StringKeys.API_KEY);
+            java.net.URL url;
+
+            if(language.equals("Nederlands")){
+                 url = new URL("https://api.themoviedb.org/3/movie/" + id + "?api_key=" + StringKeys.API_KEY + "&language=nl");
+            } else if(language.equals("English")){
+                url = new URL("https://api.themoviedb.org/3/movie/" + id + "?api_key=" + StringKeys.API_KEY + "&language=pt_PT");
+            } else {
+                url = new URL("https://api.themoviedb.org/3/movie/" + id + "?api_key=" + StringKeys.API_KEY);
+            }
+
             URLConnection connection = url.openConnection();
 
             bufferedReader = new BufferedReader(new InputStreamReader(connection.getInputStream()));

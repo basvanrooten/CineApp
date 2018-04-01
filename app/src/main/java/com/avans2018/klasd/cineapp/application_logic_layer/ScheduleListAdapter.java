@@ -46,9 +46,13 @@ public class ScheduleListAdapter extends RecyclerView.Adapter<ScheduleListAdapte
 
         MovieSchedule schedule = scheduleList.get(position);
 
-        holder.scheduleListStartTime.setText("" + schedule.getStartTime());
-        holder.scheduleListEndTime.setText("" + schedule.getEndTime());
-        holder.scheduleListTakenPerc.setText("Beschikbaarheid: " + schedule.getTakenPerc() + "%");
+        String startTime = "" + schedule.getStartTime();
+        String endTime = "" + schedule.getEndTime();
+        String takenPerc = mContext.getString(R.string.schedule_availability) +""+ schedule.getTakenPerc() + "%";
+
+        holder.scheduleListStartTime.setText(startTime);
+        holder.scheduleListEndTime.setText(endTime);
+        holder.scheduleListTakenPerc.setText(takenPerc);
     }
 
     @Override

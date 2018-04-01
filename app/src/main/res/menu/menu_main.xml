@@ -8,6 +8,6 @@
         android:id="@+id/action_my_tickets"
         android:icon="@android:drawable/ic_menu_gallery"
         android:orderInCategory="100"
-        android:title="My tickets"
-        app:showAsAction="ifRoom" />
+        android:title="@string/topbar_my_tickets"
+        app:showAsAction="never" />
 </menu>

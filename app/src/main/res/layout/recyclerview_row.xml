@@ -35,7 +35,7 @@
             android:layout_marginTop="14dp"
             android:layout_toEndOf="@+id/listFilmImg"
             android:layout_toRightOf="@+id/listFilmImg"
-            android:text="Film Title"
+            android:text="@string/list_film_title"
             android:textColor="@android:color/background_light" />
 
         <TextView
@@ -48,7 +48,7 @@
             android:layout_marginRight="15dp"
             android:width="50dp"
             android:height="93dp"
-            android:text="Description"
+            android:text="@string/list_film_description"
             android:textColor="@android:color/background_light"
             android:textSize="10sp" />
 

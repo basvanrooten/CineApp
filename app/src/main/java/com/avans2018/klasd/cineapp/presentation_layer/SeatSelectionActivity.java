@@ -1,5 +1,6 @@
 package com.avans2018.klasd.cineapp.presentation_layer;
 
+        import android.content.Context;
         import android.content.Intent;
         import android.support.v7.app.AppCompatActivity;
         import android.os.Bundle;
@@ -44,6 +45,7 @@ public class SeatSelectionActivity extends AppCompatActivity implements OnSeatSe
     private ArrayList<String> selectedSeats = new ArrayList<>();
     private int selectedSeatsCount = 0;
     private Toolbar toolbar;
+    private Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,7 +69,10 @@ public class SeatSelectionActivity extends AppCompatActivity implements OnSeatSe
         getSupportActionBar().setTitle(StringLimiter.limit(getResources().getString(R.string.seat_selection_title), 25));
 
         totalSeatsText = (TextView) findViewById(R.id.totalSeats);
-        totalSeatsText.setText("Select " + totalTickets + " seats");
+        String totalSeatsTextBeginPart = this.getString(R.string.select_seats_start);
+        String totalSeatsTextEndPart = this.getString(R.string.select_seats_end);
+        String totalSeatsTextString = totalSeatsTextBeginPart + totalTickets + totalSeatsTextEndPart;
+        totalSeatsText.setText(totalSeatsTextString);
         txtSeatSelected = (TextView) findViewById(R.id.txt_seat_selected);
         bookSeatsButton = (Button) findViewById(R.id.bookSeatsButton);
         List<SelectionSeat> items = new ArrayList<>();
@@ -110,7 +115,7 @@ public class SeatSelectionActivity extends AppCompatActivity implements OnSeatSe
                     startActivity(confirmationIntent);
                     Log.i(TAG, "Starting CheckoutActivity...");
                 } else {
-                    Toast.makeText(SeatSelectionActivity.this, "Select correct amount of seats.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(SeatSelectionActivity.this, R.string.seat_selection_select_correct_amount, Toast.LENGTH_SHORT).show();
                     Log.i(TAG,"Incorrect amount of seats selected.");
                 }
             }
@@ -120,7 +125,9 @@ public class SeatSelectionActivity extends AppCompatActivity implements OnSeatSe
 
     @Override
     public void onSeatSelected(int count) {
-        txtSeatSelected.setText(count + " seats selected");
+        String textEndPart = " " + this.getString(R.string.amount_selected);
+        String text = "" + count + textEndPart;
+        txtSeatSelected.setText(text);
         selectedSeatsCount = count;
     }
     @Override

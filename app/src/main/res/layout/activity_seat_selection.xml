@@ -15,9 +15,7 @@
 
         <include
             android:id="@+id/tool_bar"
-            layout="@layout/tool_bar"
-            android:layout_width="match_parent"
-            android:layout_weight="1" />
+            layout="@layout/tool_bar" />
 
         <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
@@ -45,7 +43,7 @@
                     android:layout_weight="1"
                     android:background="@color/CineAppListViewItemBackground"
                     android:gravity="center"
-                    android:text="Select 0 seats"
+                    android:text="@string/select_seats"
                     android:textColor="@android:color/white" />
 
                 <android.support.v7.widget.RecyclerView
@@ -62,7 +60,7 @@
                     android:layout_weight="1"
                     android:background="@color/CineAppListViewItemBackground"
                     android:gravity="center"
-                    android:text="0 seats selected"
+                    android:text="@string/seat_selection_nothing_selected"
                     android:textColor="@android:color/white" />
 
                 <Button
@@ -70,7 +68,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:background="@color/CineAppListViewItemButtomBackground"
-                    android:text="Book seats"
+                    android:text="@string/book_seats"
                     android:textColor="@android:color/background_light"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"

@@ -15,9 +15,7 @@
 
         <include
             android:id="@+id/tool_bar"
-            layout="@layout/tool_bar"
-            android:layout_width="match_parent"
-            android:layout_weight="1" />
+            layout="@layout/tool_bar" />
 
         <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
@@ -30,7 +28,11 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                tools:layout_editor_absoluteX="0dp"
+                tools:layout_editor_absoluteY="0dp">
 
                 <ImageView
                     android:id="@+id/ticketQRCodeBig"
@@ -43,7 +45,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
                     android:layout_marginTop="20dp"
-                    android:text="Movie title"
+                    android:text="@string/my_ticket_detail_movie"
                     android:textColor="@android:color/background_light"
                     android:textSize="18sp" />
 
@@ -51,35 +53,35 @@
                     android:id="@+id/ticketDetailDate"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Date: xxx"
+                    android:text="@string/my_ticket_detail_date"
                     android:textColor="@android:color/background_light" />
 
                 <TextView
                     android:id="@+id/ticketDetailTime"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Time: xxx"
+                    android:text="@string/my_ticket_detail_time"
                     android:textColor="@android:color/background_light" />
 
                 <TextView
                     android:id="@+id/ticketDetailTheater"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Theater: xxx"
+                    android:text="@string/my_ticket_detail_theater"
                     android:textColor="@android:color/background_light" />
 
                 <TextView
                     android:id="@+id/ticketDetailSeat"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Seat: xxx"
+                    android:text="@string/my_ticket_detail_seat"
                     android:textColor="@android:color/background_light" />
 
                 <TextView
                     android:id="@+id/ticketDetailType"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Type: xxx"
+                    android:text="@string/my_ticket_detail_type"
                     android:textColor="@android:color/background_light" />
 
             </LinearLayout>
