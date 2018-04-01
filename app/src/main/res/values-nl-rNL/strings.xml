@@ -33,7 +33,7 @@
     <string name="my_tickets_title">Mijn tickets</string>
     <string name="my_ticket_detail_title">Ticketselectie</string>
     <string name="checkout_title">Afrekenen</string>
-    <string name="checkout_info_header">Overzicht tickets</string>
+    <string name="checkout_info_header">Overzicht bestelling</string>
     <string name="checkout_info_content">Inhoud</string>
     <string name="checkout_button">Betaal nu</string>
     <string name="checkout_adult_tickets">"Volwassenen: "</string>

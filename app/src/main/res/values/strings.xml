@@ -70,7 +70,7 @@
 
     <!-- CheckoutActivity!-->
     <string name="checkout_title">Checkout</string>
-    <string name="checkout_info_header">Ticket summary</string>
+    <string name="checkout_info_header">Order summary</string>
     <string name="checkout_info_content">Content</string>
     <string name="checkout_button">Pay now</string>
 
