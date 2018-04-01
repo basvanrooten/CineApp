@@ -89,6 +89,7 @@ public class DetailActivity extends AppCompatActivity implements OnItemClickList
         adapter.setOnItemClickListener(DetailActivity.this);
         adapter.notifyDataSetChanged();
 
+
         // Picasso voor invullen ImageView
         String imageUrl = clickedMovie.getImageUrl();
         Picasso.with(mContext).load(imageUrl).fit().centerInside().into(detailImageView);

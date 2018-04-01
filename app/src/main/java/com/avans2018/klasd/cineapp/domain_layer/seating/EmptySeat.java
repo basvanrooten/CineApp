@@ -1,5 +1,7 @@
 package com.avans2018.klasd.cineapp.domain_layer.seating;
 
+import com.avans2018.klasd.cineapp.domain_layer.Seat;
+
 /**
  * Created by Tom on 31-3-2018.
  */
@@ -7,8 +9,8 @@ package com.avans2018.klasd.cineapp.domain_layer.seating;
 public class EmptySeat extends SelectionSeat{
 
 
-    public EmptySeat(String label) {
-        super(label);
+    public EmptySeat(String label, Seat seat) {
+        super(label, seat);
     }
 
 

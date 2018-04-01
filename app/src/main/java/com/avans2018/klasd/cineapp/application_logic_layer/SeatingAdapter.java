@@ -116,6 +116,7 @@ public class SeatingAdapter extends SelectableAdapter<RecyclerView.ViewHolder> {
                 }
             });
 
+
             holder.imgSeatSelected.setVisibility(isSelected(position) ? View.VISIBLE : View.INVISIBLE);
 
         } else if (type == SelectionSeat.TYPE_EDGE) {

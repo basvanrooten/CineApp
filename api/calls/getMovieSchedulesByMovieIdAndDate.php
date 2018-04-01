@@ -29,6 +29,7 @@ if(checkFields($fields) && checkValidApiKey()) {
         $theater = array();
         $theater["id"] = $result["TheaterId"];
         $theater["name"] = $result["Name"];
+        $theater["seats"] = getSeatsByScheduleId($result["Id"]);
         $movieSchedule["theater"] = $theater;
         $movieSchedule["takenPerc"] = getTakenPercentage($movieSchedule["id"], $theater["id"]);
         $movieSchedules["results"][] = $movieSchedule;
@@ -167,6 +168,41 @@ function insertMovieSchedules($startDate, $movieId, $theaters) {
 
         $date = $date->add(new DateInterval("PT5H"));
     }
+}
+
+function getSeatsByScheduleId($scheduleId){
+
+    $seats = array();
+
+    $statement = Database::getConnection()->prepare("SELECT m.TheaterId, s.Id, s.SeatNumber, s.RowNumber, t.Taken FROM MovieSchedule m JOIN Seat s ON m.TheaterId = s.TheaterId JOIN Taken t ON t.SeatId = s.Id && m.id = t.MovieScheduleId WHERE m.Id = ?");
+    $statement->bindValue(1, $scheduleId, Database::PARAM_STR);
+
+    try
+    {
+        $statement->execute();
+    }
+    catch (\Exception $e)
+    {
+        //Return just the empty array.
+        //Do a die(); method so the code stops running and doesn't crash, because the statement->fetchAll() will throw another exception.
+        return $seats;
+    }
+
+    $results = $statement->fetchAll();
+
+    foreach($results as $result){
+
+        $seat["theaterId"] = $result["TheaterId"];
+        $seat["seatId"] = $result["Id"];
+        $seat["seatNumber"] = $result["SeatNumber"];
+        $seat["rowNumber"] = $result["RowNumber"];
+        $seat["taken"] = $result["Taken"];
+
+        $seats[] = $seat;
+    }
+
+    return $seats;
+
 }
 
 

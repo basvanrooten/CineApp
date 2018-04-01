@@ -31,6 +31,7 @@ public class TicketSelectionActivity extends AppCompatActivity{
     final static String TOTAL_STUDENT_TICKETS = "totalStudentTickets";
     final static String TOTAL_SENIOR_TICKETS = "totalSeniorTickets";
     final static String TOTAL_AMOUNT = "totalAmount";
+    final static String SEAT_LIST = "seatList";
     double totalPriceAmount = 0;
     private Toolbar toolbar;
     private Context context;

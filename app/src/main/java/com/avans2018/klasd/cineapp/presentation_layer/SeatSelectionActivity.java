@@ -1,40 +1,42 @@
 package com.avans2018.klasd.cineapp.presentation_layer;
 
-        import android.content.Context;
-        import android.content.Intent;
-        import android.support.v7.app.AppCompatActivity;
-        import android.os.Bundle;
-        import android.support.v7.widget.GridLayoutManager;
-        import android.support.v7.widget.RecyclerView;
-        import android.util.Log;
-        import android.view.Menu;
-        import android.view.MenuItem;
-        import android.view.View;
-        import android.widget.Button;
-        import android.widget.TextView;
-        import android.widget.Toast;
-        import android.support.v7.widget.Toolbar;
+import android.content.Context;
+import android.content.Intent;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
+import android.widget.Toast;
+import android.support.v7.widget.Toolbar;
 
-        import com.avans2018.klasd.cineapp.R;
-        import com.avans2018.klasd.cineapp.application_logic_layer.OnSeatSelected;
-        import com.avans2018.klasd.cineapp.application_logic_layer.SeatingAdapter;
-        import com.avans2018.klasd.cineapp.domain_layer.MovieSchedule;
-        import com.avans2018.klasd.cineapp.domain_layer.seating.CenterSeat;
-        import com.avans2018.klasd.cineapp.domain_layer.seating.EdgeSeat;
-        import com.avans2018.klasd.cineapp.domain_layer.seating.EmptySeat;
-        import com.avans2018.klasd.cineapp.domain_layer.seating.SelectionSeat;
-        import com.avans2018.klasd.cineapp.util_layer.StringLimiter;
+import com.avans2018.klasd.cineapp.R;
+import com.avans2018.klasd.cineapp.application_logic_layer.OnSeatSelected;
+import com.avans2018.klasd.cineapp.application_logic_layer.SeatingAdapter;
+import com.avans2018.klasd.cineapp.domain_layer.MovieSchedule;
+import com.avans2018.klasd.cineapp.domain_layer.Seat;
+import com.avans2018.klasd.cineapp.domain_layer.seating.CenterSeat;
+import com.avans2018.klasd.cineapp.domain_layer.seating.EdgeSeat;
+import com.avans2018.klasd.cineapp.domain_layer.seating.EmptySeat;
+import com.avans2018.klasd.cineapp.domain_layer.seating.SelectionSeat;
+import com.avans2018.klasd.cineapp.util_layer.StringLimiter;
 
-        import java.util.ArrayList;
-        import java.util.List;
+import java.util.ArrayList;
+import java.util.List;
 
-        import static com.avans2018.klasd.cineapp.presentation_layer.DetailActivity.CLICKED_SCHEDULE;
-        import static com.avans2018.klasd.cineapp.presentation_layer.TicketSelectionActivity.TOTAL_ADULT_TICKETS;
-        import static com.avans2018.klasd.cineapp.presentation_layer.TicketSelectionActivity.TOTAL_AMOUNT;
-        import static com.avans2018.klasd.cineapp.presentation_layer.TicketSelectionActivity.TOTAL_CHILD_TICKETS;
-        import static com.avans2018.klasd.cineapp.presentation_layer.TicketSelectionActivity.TOTAL_SENIOR_TICKETS;
-        import static com.avans2018.klasd.cineapp.presentation_layer.TicketSelectionActivity.TOTAL_STUDENT_TICKETS;
-        import static com.avans2018.klasd.cineapp.presentation_layer.TicketSelectionActivity.TOTAL_TICKETS;
+import static com.avans2018.klasd.cineapp.presentation_layer.DetailActivity.CLICKED_SCHEDULE;
+import static com.avans2018.klasd.cineapp.presentation_layer.TicketSelectionActivity.SEAT_LIST;
+import static com.avans2018.klasd.cineapp.presentation_layer.TicketSelectionActivity.TOTAL_ADULT_TICKETS;
+import static com.avans2018.klasd.cineapp.presentation_layer.TicketSelectionActivity.TOTAL_AMOUNT;
+import static com.avans2018.klasd.cineapp.presentation_layer.TicketSelectionActivity.TOTAL_CHILD_TICKETS;
+import static com.avans2018.klasd.cineapp.presentation_layer.TicketSelectionActivity.TOTAL_SENIOR_TICKETS;
+import static com.avans2018.klasd.cineapp.presentation_layer.TicketSelectionActivity.TOTAL_STUDENT_TICKETS;
+import static com.avans2018.klasd.cineapp.presentation_layer.TicketSelectionActivity.TOTAL_TICKETS;
 
 public class SeatSelectionActivity extends AppCompatActivity implements OnSeatSelected{
     private final static String TAG = "SeatSelectionActivity";
@@ -75,15 +77,16 @@ public class SeatSelectionActivity extends AppCompatActivity implements OnSeatSe
         totalSeatsText.setText(totalSeatsTextString);
         txtSeatSelected = (TextView) findViewById(R.id.txt_seat_selected);
         bookSeatsButton = (Button) findViewById(R.id.bookSeatsButton);
-        List<SelectionSeat> items = new ArrayList<>();
+        final List<SelectionSeat> items = new ArrayList<>();
+        Seat seat;
         for (int i=0; i<72; i++) {
-
+        seat = receivedMovieSchedule.getTheater().getSeats().get(i);
         if (i%COLUMNS==0 || i%COLUMNS==9) {
-            items.add(new EdgeSeat(String.valueOf(i)));
+            items.add(new EdgeSeat(String.valueOf(i), seat));
         } else if (i%COLUMNS==1 || i%COLUMNS==2 || i%COLUMNS==3 || i%COLUMNS==4 || i%COLUMNS==5 || i%COLUMNS==6 || i%COLUMNS==7 || i%COLUMNS==8) {
-            items.add(new CenterSeat(String.valueOf(i)));
+            items.add(new CenterSeat(String.valueOf(i), seat));
         } else {
-            items.add(new EmptySeat(String.valueOf(i)));
+            items.add(new EmptySeat(String.valueOf(i), seat));
         }
     }
 
@@ -91,33 +94,41 @@ public class SeatSelectionActivity extends AppCompatActivity implements OnSeatSe
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.seatRecyclerView);
         recyclerView.setLayoutManager(manager);
 
-        SeatingAdapter adapter = new SeatingAdapter(this, items);
+        final SeatingAdapter adapter = new SeatingAdapter(this, items);
         recyclerView.setAdapter(adapter);
 
         bookSeatsButton.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        // Code voor Intent doorgeven stoelselectie aan ConfirmationActivity
-                        // nog schrijven
-                        //
-                        if(selectedSeatsCount == totalTickets) {
-                            Intent confirmationIntent = new Intent(view.getContext(), CheckoutActivity.class);
+            @Override
+            public void onClick(View view) {
+                // Code voor Intent doorgeven stoelselectie aan ConfirmationActivity
+                // nog schrijven
+                //
+                if (selectedSeatsCount == totalTickets) {
+                    Intent confirmationIntent = new Intent(view.getContext(), CheckoutActivity.class);
 
-                            MovieSchedule schedule = receivedMovieSchedule;
-                            confirmationIntent.putExtra(CLICKED_SCHEDULE, schedule);
-                            confirmationIntent.putExtra(TOTAL_TICKETS, totalTickets);
-                            confirmationIntent.putExtra(TOTAL_ADULT_TICKETS, adultTickets);
-                            confirmationIntent.putExtra(TOTAL_CHILD_TICKETS, childTickets);
-                            confirmationIntent.putExtra(TOTAL_STUDENT_TICKETS, studentTickets);
-                            confirmationIntent.putExtra(TOTAL_SENIOR_TICKETS, seniorTickets);
-                            confirmationIntent.putExtra(TOTAL_AMOUNT, totalPaymentAmount);
+                    ArrayList<Seat> seats = new ArrayList<>();
 
-                            startActivity(confirmationIntent);
-                            Log.i(TAG, "Starting CheckoutActivity...");
-                        } else {
-                            Toast.makeText(SeatSelectionActivity.this, R.string.seat_selection_select_correct_amount, Toast.LENGTH_SHORT).show();
-                            Log.i(TAG,"Incorrect amount of seats selected.");
-                        }
+                    for (Integer i : adapter.getSelectedItems()) {
+                        seats.add(items.get(i).getSeat());
+                    }
+
+
+                    MovieSchedule schedule = receivedMovieSchedule;
+                    confirmationIntent.putExtra(CLICKED_SCHEDULE, schedule);
+                    confirmationIntent.putExtra(TOTAL_TICKETS, totalTickets);
+                    confirmationIntent.putExtra(TOTAL_ADULT_TICKETS, adultTickets);
+                    confirmationIntent.putExtra(TOTAL_CHILD_TICKETS, childTickets);
+                    confirmationIntent.putExtra(TOTAL_STUDENT_TICKETS, studentTickets);
+                    confirmationIntent.putExtra(TOTAL_SENIOR_TICKETS, seniorTickets);
+                    confirmationIntent.putExtra(TOTAL_AMOUNT, totalPaymentAmount);
+                    confirmationIntent.putExtra(SEAT_LIST, seats);
+
+                    startActivity(confirmationIntent);
+                    Log.i(TAG, "Starting CheckoutActivity...");
+                } else {
+                    Toast.makeText(SeatSelectionActivity.this, R.string.seat_selection_select_correct_amount, Toast.LENGTH_SHORT).show();
+                    Log.i(TAG, "Incorrect amount of seats selected.");
+                }
             }
         });
 
@@ -126,8 +137,6 @@ public class SeatSelectionActivity extends AppCompatActivity implements OnSeatSe
 
     }
 
-
-
     @Override
     public void onSeatSelected(int count) {
         String textEndPart = " " + this.getString(R.string.amount_selected);
@@ -135,6 +144,7 @@ public class SeatSelectionActivity extends AppCompatActivity implements OnSeatSe
         txtSeatSelected.setText(text);
         selectedSeatsCount = count;
     }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_main, menu);
