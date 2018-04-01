@@ -20,6 +20,7 @@
     <string name="detail_all_ages">All ages</string>
     <string name="detail_get_date">View times</string>
     <string name="detail_choosedate">Slide to view date</string>
+    <string name="until">until</string>
 
     <!-- TicketSelectionActivity!-->
     <string name="ticket_selection_title">Ticket selection</string>

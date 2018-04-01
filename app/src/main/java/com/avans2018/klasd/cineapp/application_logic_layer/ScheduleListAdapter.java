@@ -11,7 +11,10 @@ import android.widget.TextView;
 import com.avans2018.klasd.cineapp.R;
 import com.avans2018.klasd.cineapp.domain_layer.MovieSchedule;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 /**
  * Created by Tom on 28-3-2018. Voor gebruik in DetailActivity om Schedules weer te geven in lijst
@@ -46,10 +49,15 @@ public class ScheduleListAdapter extends RecyclerView.Adapter<ScheduleListAdapte
 
         MovieSchedule schedule = scheduleList.get(position);
 
+        DateFormat df = new SimpleDateFormat("dd-MM");
+        String dateAsString = df.format(schedule.getDate());
+
+        String scheduleDate = dateAsString;
         String startTime = "" + schedule.getStartTime();
         String endTime = "" + schedule.getEndTime();
         String takenPerc = mContext.getString(R.string.schedule_availability) +""+ schedule.getTakenPerc() + "%";
 
+        holder.scheduleListDate.setText(scheduleDate);
         holder.scheduleListStartTime.setText(startTime);
         holder.scheduleListEndTime.setText(endTime);
         holder.scheduleListTakenPerc.setText(takenPerc);
@@ -62,12 +70,14 @@ public class ScheduleListAdapter extends RecyclerView.Adapter<ScheduleListAdapte
 
     public class ScheduleViewHolder extends RecyclerView.ViewHolder {
 
+        private TextView scheduleListDate;
         private TextView scheduleListStartTime;
         private TextView scheduleListEndTime;
         private TextView scheduleListTakenPerc;
 
         private ScheduleViewHolder(View itemView) {
             super(itemView);
+            scheduleListDate = itemView.findViewById(R.id.scheduleListDate);
             scheduleListStartTime = itemView.findViewById(R.id.scheduleListStartTime);
             scheduleListEndTime = itemView.findViewById(R.id.scheduleListEndTime);
             scheduleListTakenPerc = itemView.findViewById(R.id.scheduleListTakenPerc);

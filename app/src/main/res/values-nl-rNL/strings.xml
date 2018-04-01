@@ -70,4 +70,5 @@
     <string name="movie_screen">Scherm</string>
     <string name="detail_get_date">Bekijk tijden</string>
     <string name="detail_choosedate">Slide naar gewenste datum</string>
+    <string name="until">tot</string>
 </resources>
