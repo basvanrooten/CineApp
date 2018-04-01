@@ -29,7 +29,7 @@
     <string name="ticket_selection_info_date">Date: </string>
     <string name="ticket_selection_info_start_time">Start time: </string>
     <string name="ticket_selection_info_end_time">End time: </string>
-    <string name="ticket_selection_selector_header">Ticket selection</string>
+    <string name="ticket_selection_selector_header">Select tickets</string>
     <string name="ticket_selection_adult">Adult - €5,99</string>
     <string name="ticket_selection_amount">amount</string>
     <string name="ticket_selection_child">Child - €5,99</string>
@@ -50,7 +50,7 @@
 
 
     <!-- MyTicketsDetailActivity!-->
-    <string name="my_ticket_detail_title">Ticket details</string>
+    <string name="my_ticket_detail_title">Ticket selection</string>
 
     <string name="my_ticket_detail_movie">Movie: </string>
     <string name="my_ticket_detail_date">Date: </string>

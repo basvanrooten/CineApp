@@ -20,7 +20,7 @@
     <string name="ticket_selection_info_date">"Datum: "</string>
     <string name="ticket_selection_info_start_time">"Starttijd: "</string>
     <string name="ticket_selection_info_end_time">"Eindtijd: "</string>
-    <string name="ticket_selection_selector_header">"Ticketselectie"</string>
+    <string name="ticket_selection_selector_header">Selecteer tickets</string>
     <string name="ticket_selection_adult">Volwassene: €5,99</string>
     <string name="ticket_selection_amount">aantal</string>
     <string name="ticket_selection_child">Kind: €5,99</string>
@@ -31,7 +31,7 @@
     <string name="select_seats">Selecteer 0 stoelen</string>
     <string name="book_seats">Reserveer stoelen</string>
     <string name="my_tickets_title">Mijn tickets</string>
-    <string name="my_ticket_detail_title">Ticketdetails</string>
+    <string name="my_ticket_detail_title">Ticketselectie</string>
     <string name="checkout_title">Afrekenen</string>
     <string name="checkout_info_header">Overzicht tickets</string>
     <string name="checkout_info_content">Inhoud</string>
