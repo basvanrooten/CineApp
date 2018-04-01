@@ -4,7 +4,7 @@ import android.util.Log;
 
 import java.io.Serializable;
 
-import static com.avans2018.klasd.cineapp.application_logic_layer.TicketPrices.childTicketPrice;
+import static com.avans2018.klasd.cineapp.application_logic_layer.TicketPrices.CHILD_TICKET_PRICE;
 
 /**
  * Created by HeyRobin on 26-3-2018.
@@ -13,7 +13,7 @@ import static com.avans2018.klasd.cineapp.application_logic_layer.TicketPrices.c
 
 public class ChildPayment implements PaymentCategory, Serializable {
     private final String CUSTOMER_TYPE = "Child";
-    private final double PRICE = childTicketPrice;
+    private final double PRICE = CHILD_TICKET_PRICE;
     private static final String TAG = "ChildPayment";
 
 

@@ -73,6 +73,11 @@ public class MovieSchedule implements Serializable{
         SimpleDateFormat format = new SimpleDateFormat("HH:mm");
         return format.format(this.time);
     }
+
+    public Date getDate(){
+        return this.time;
+    }
+
     public String getEndTime() {
         SimpleDateFormat format = new SimpleDateFormat("HH:mm");
         return format.format(this.endTime);

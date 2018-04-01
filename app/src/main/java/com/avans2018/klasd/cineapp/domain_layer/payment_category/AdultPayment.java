@@ -4,7 +4,7 @@ import android.util.Log;
 
 import java.io.Serializable;
 
-import static com.avans2018.klasd.cineapp.application_logic_layer.TicketPrices.adultTicketPrice;
+import static com.avans2018.klasd.cineapp.application_logic_layer.TicketPrices.ADULT_TICKET_PRICE;
 
 /**
  * Created by HeyRobin on 26-3-2018.
@@ -14,7 +14,7 @@ import static com.avans2018.klasd.cineapp.application_logic_layer.TicketPrices.a
 public class AdultPayment implements PaymentCategory, Serializable {
     private final String CUSTOMER_TYPE = "Adult";
 
-    private final double PRICE = adultTicketPrice;
+    private final double PRICE = ADULT_TICKET_PRICE;
     private static final String TAG = "AdultPayment";
 
     @Override

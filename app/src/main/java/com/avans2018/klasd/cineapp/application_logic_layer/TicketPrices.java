@@ -5,8 +5,8 @@ package com.avans2018.klasd.cineapp.application_logic_layer;
  */
 
 public class TicketPrices {
-    public final static double adultTicketPrice = 5.99;
-    public final static double childTicketPrice = 5.99;
-    public final static double studentTicketPrice = 2.99;
-    public final static double seniorTicketPrice = 4.99;
+    public final static double ADULT_TICKET_PRICE = 5.99;
+    public final static double CHILD_TICKET_PRICE = 5.99;
+    public final static double STUDENT_TICKET_PRICE = 2.99;
+    public final static double SENIOR_TICKET_PRICE = 4.99;
 }

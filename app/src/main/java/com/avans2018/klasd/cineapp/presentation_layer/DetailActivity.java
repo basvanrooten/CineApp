@@ -2,6 +2,7 @@ package com.avans2018.klasd.cineapp.presentation_layer;
 
 import android.content.Context;
 import android.content.Intent;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -9,11 +10,14 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.support.v7.widget.Toolbar;
 
 import com.avans2018.klasd.cineapp.R;
+import com.avans2018.klasd.cineapp.application_logic_layer.DatePagerAdapter;
 import com.avans2018.klasd.cineapp.application_logic_layer.MovieListAdapter;
 import com.avans2018.klasd.cineapp.application_logic_layer.OnItemClickListener;
 import com.avans2018.klasd.cineapp.application_logic_layer.ScheduleListAdapter;
@@ -32,10 +36,14 @@ public class DetailActivity extends AppCompatActivity implements OnItemClickList
     private final static String TAG = "DetailActivity";
     private Context mContext;
     private ArrayList<MovieSchedule> scheduleList = new ArrayList<>();
+    private ArrayList<Date> dateList = new ArrayList<>();
     private RecyclerView recyclerView;
+    private ViewPager datePager;
     private ScheduleListAdapter adapter = new ScheduleListAdapter(DetailActivity.this, scheduleList);
+    private DatePagerAdapter datePagerAdapter = new DatePagerAdapter(this,dateList);;
     final static String CLICKED_SCHEDULE = "clickedSchedule";
     private Toolbar toolbar;
+    private Button dateButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,11 +54,9 @@ public class DetailActivity extends AppCompatActivity implements OnItemClickList
         toolbar = (Toolbar) findViewById(R.id.tool_bar);
         setSupportActionBar(toolbar);
 
-
-
         // Intent met data van film vanuit MainActivity
         Intent intent = getIntent();
-        Movie clickedMovie = (Movie) intent.getSerializableExtra(MainActivity.CLICKED_MOVIE);
+        final Movie clickedMovie = (Movie) intent.getSerializableExtra(MainActivity.CLICKED_MOVIE);
         Date currentDate = new Date();
         GetMovieSchedulesTask getMovieSchedulesTask = new GetMovieSchedulesTask(this, clickedMovie, currentDate);
         getMovieSchedulesTask.execute();
@@ -86,11 +92,30 @@ public class DetailActivity extends AppCompatActivity implements OnItemClickList
         // Picasso voor invullen ImageView
         String imageUrl = clickedMovie.getImageUrl();
         Picasso.with(mContext).load(imageUrl).fit().centerInside().into(detailImageView);
+
+        // ViewPager voor datumselectie
+        for (int i=0; i<30; i++){
+            Date date = new Date();
+            date.setTime((System.currentTimeMillis()) + (86400000 * i));
+            dateList.add(date) ;
+        }
+        dateButton = (Button) findViewById(R.id.date_selection_button);
+        datePager = (ViewPager) findViewById(R.id.datePager);
+        datePager.setAdapter(datePagerAdapter);
+
+        dateButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                GetMovieSchedulesTask getMovieSchedulesTaskSpecified = new GetMovieSchedulesTask(DetailActivity.this, clickedMovie, dateList.get(datePager.getCurrentItem()));
+                getMovieSchedulesTaskSpecified.execute();
+            }
+        });
     }
 
     @Override
     public void onItemClick(int position) {
         // Klik logica voor meegeven film en opstarten DetailActivity
+
         Log.i(TAG, "onItemClick() called.");
         Intent ticketSelectionIntent = new Intent(this, TicketSelectionActivity.class);
         MovieSchedule schedule = scheduleList.get(position);
@@ -101,9 +126,12 @@ public class DetailActivity extends AppCompatActivity implements OnItemClickList
 
     @Override
     public void onMovieSchedulesRecieved(ArrayList<MovieSchedule> movieSchedules) {
+        scheduleList.clear();
         for (int i = 0; i < movieSchedules.size(); i++) {
+            dateList.add(movieSchedules.get(i).getDate());
             scheduleList.add(movieSchedules.get(i));
         }
+        datePagerAdapter.notifyDataSetChanged();
         adapter.notifyDataSetChanged();
     }
     @Override

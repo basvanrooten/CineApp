@@ -95,29 +95,29 @@ public class SeatSelectionActivity extends AppCompatActivity implements OnSeatSe
         recyclerView.setAdapter(adapter);
 
         bookSeatsButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                // Code voor Intent doorgeven stoelselectie aan ConfirmationActivity
-                // nog schrijven
-                //
-                if(selectedSeatsCount == totalTickets) {
-                    Intent confirmationIntent = new Intent(view.getContext(), CheckoutActivity.class);
+                    @Override
+                    public void onClick(View view) {
+                        // Code voor Intent doorgeven stoelselectie aan ConfirmationActivity
+                        // nog schrijven
+                        //
+                        if(selectedSeatsCount == totalTickets) {
+                            Intent confirmationIntent = new Intent(view.getContext(), CheckoutActivity.class);
 
-                    MovieSchedule schedule = receivedMovieSchedule;
-                    confirmationIntent.putExtra(CLICKED_SCHEDULE, schedule);
-                    confirmationIntent.putExtra(TOTAL_TICKETS, totalTickets);
-                    confirmationIntent.putExtra(TOTAL_ADULT_TICKETS, adultTickets);
-                    confirmationIntent.putExtra(TOTAL_CHILD_TICKETS, childTickets);
-                    confirmationIntent.putExtra(TOTAL_STUDENT_TICKETS, studentTickets);
-                    confirmationIntent.putExtra(TOTAL_SENIOR_TICKETS, seniorTickets);
-                    confirmationIntent.putExtra(TOTAL_AMOUNT, totalPaymentAmount);
+                            MovieSchedule schedule = receivedMovieSchedule;
+                            confirmationIntent.putExtra(CLICKED_SCHEDULE, schedule);
+                            confirmationIntent.putExtra(TOTAL_TICKETS, totalTickets);
+                            confirmationIntent.putExtra(TOTAL_ADULT_TICKETS, adultTickets);
+                            confirmationIntent.putExtra(TOTAL_CHILD_TICKETS, childTickets);
+                            confirmationIntent.putExtra(TOTAL_STUDENT_TICKETS, studentTickets);
+                            confirmationIntent.putExtra(TOTAL_SENIOR_TICKETS, seniorTickets);
+                            confirmationIntent.putExtra(TOTAL_AMOUNT, totalPaymentAmount);
 
-                    startActivity(confirmationIntent);
-                    Log.i(TAG, "Starting CheckoutActivity...");
-                } else {
-                    Toast.makeText(SeatSelectionActivity.this, R.string.seat_selection_select_correct_amount, Toast.LENGTH_SHORT).show();
-                    Log.i(TAG,"Incorrect amount of seats selected.");
-                }
+                            startActivity(confirmationIntent);
+                            Log.i(TAG, "Starting CheckoutActivity...");
+                        } else {
+                            Toast.makeText(SeatSelectionActivity.this, R.string.seat_selection_select_correct_amount, Toast.LENGTH_SHORT).show();
+                            Log.i(TAG,"Incorrect amount of seats selected.");
+                        }
             }
         });
 

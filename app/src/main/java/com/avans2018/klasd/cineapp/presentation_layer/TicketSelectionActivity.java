@@ -17,10 +17,10 @@ import com.avans2018.klasd.cineapp.R;
 import com.avans2018.klasd.cineapp.domain_layer.MovieSchedule;
 import com.avans2018.klasd.cineapp.util_layer.StringLimiter;
 
-import static com.avans2018.klasd.cineapp.application_logic_layer.TicketPrices.adultTicketPrice;
-import static com.avans2018.klasd.cineapp.application_logic_layer.TicketPrices.childTicketPrice;
-import static com.avans2018.klasd.cineapp.application_logic_layer.TicketPrices.seniorTicketPrice;
-import static com.avans2018.klasd.cineapp.application_logic_layer.TicketPrices.studentTicketPrice;
+import static com.avans2018.klasd.cineapp.application_logic_layer.TicketPrices.ADULT_TICKET_PRICE;
+import static com.avans2018.klasd.cineapp.application_logic_layer.TicketPrices.CHILD_TICKET_PRICE;
+import static com.avans2018.klasd.cineapp.application_logic_layer.TicketPrices.SENIOR_TICKET_PRICE;
+import static com.avans2018.klasd.cineapp.application_logic_layer.TicketPrices.STUDENT_TICKET_PRICE;
 import static com.avans2018.klasd.cineapp.presentation_layer.DetailActivity.CLICKED_SCHEDULE;
 
 public class TicketSelectionActivity extends AppCompatActivity{
@@ -109,10 +109,10 @@ public class TicketSelectionActivity extends AppCompatActivity{
                     int totalTicketCount = adultTicketsAmount + childTicketsAmount + studentTicketsAmount + seniorTicketsAmount;
 
                     totalPriceAmount = (double) 0;
-                    totalPriceAmount = (double) totalPriceAmount + (adultTicketsAmount * adultTicketPrice);
-                    totalPriceAmount = (double) totalPriceAmount + (childTicketsAmount * childTicketPrice);
-                    totalPriceAmount = (double) totalPriceAmount + (studentTicketsAmount * studentTicketPrice);
-                    totalPriceAmount = (double) totalPriceAmount + (seniorTicketsAmount * seniorTicketPrice);
+                    totalPriceAmount = (double) totalPriceAmount + (adultTicketsAmount * ADULT_TICKET_PRICE);
+                    totalPriceAmount = (double) totalPriceAmount + (childTicketsAmount * CHILD_TICKET_PRICE);
+                    totalPriceAmount = (double) totalPriceAmount + (studentTicketsAmount * STUDENT_TICKET_PRICE);
+                    totalPriceAmount = (double) totalPriceAmount + (seniorTicketsAmount * SENIOR_TICKET_PRICE);
 
                     if(totalTicketCount<=0){
 
