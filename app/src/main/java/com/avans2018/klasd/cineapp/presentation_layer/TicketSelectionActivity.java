@@ -34,6 +34,10 @@ public class TicketSelectionActivity extends AppCompatActivity{
     double totalPriceAmount = 0;
     private Toolbar toolbar;
     private Context context;
+    private int valueAdult = 0;
+    private int valueChild = 0;
+    private int valueStudent = 0;
+    private int valueSenior = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,19 +78,21 @@ public class TicketSelectionActivity extends AppCompatActivity{
 
         TextView selectorAdult = (TextView) findViewById(R.id.ticketSelectorTextAdult);
         final TextView selectorAdultInput = (TextView) findViewById(R.id.ticketSelectorInputAdult);
-        selectorAdultInput.setText("0");
+        selectorAdultInput.setText("" + valueAdult);
 
         TextView selectorChild = (TextView) findViewById(R.id.ticketSelectorTextChild);
         final TextView selectorChildInput = (TextView) findViewById(R.id.ticketSelectorInputChild);
-        selectorChildInput.setText("0");
+        selectorChildInput.setText("" + valueChild);
 
         TextView selectorStudent = (TextView) findViewById(R.id.ticketSelectorTextStudent);
         final TextView selectorStudentInput = (TextView) findViewById(R.id.ticketSelectorInputStudent);
-        selectorStudentInput.setText("0");
+        selectorStudentInput.setText("" + valueStudent);
 
         TextView selectorSenior = (TextView) findViewById(R.id.ticketSelectorTextSenior);
         final TextView selectorSeniorInput = (TextView) findViewById(R.id.ticketSelectorInputSenior);
-        selectorSeniorInput.setText("0");
+        selectorSeniorInput.setText("" + valueSenior);
+
+
 
         // Buttons
         Button continueToSeatSelectionButton = (Button) findViewById(R.id.ticketSelectionContinueToSeatSelectionButton);
@@ -153,6 +159,74 @@ public class TicketSelectionActivity extends AppCompatActivity{
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    // Increase/Decrease button logic Adult
+    public void increaseIntegerAdult(View view) {
+        valueAdult = valueAdult + 1;
+        displayAdult(valueAdult);
+    }
+    public void decreaseIntegerAdult(View view) {
+        if(valueAdult >= 1) {
+            valueAdult = valueAdult - 1;
+        }
+        displayAdult(valueAdult);
+    }
+    private void displayAdult(int number) {
+        TextView displayInteger = (TextView) findViewById(
+                R.id.ticketSelectorInputAdult);
+        displayInteger.setText("" + number);
+    }
+
+    // Increase/Decrease button logic Child
+    public void increaseIntegerChild(View view) {
+        valueChild = valueChild + 1;
+        displayChild(valueChild);
+    }
+    public void decreaseIntegerChild(View view) {
+        if(valueChild >= 1){
+            valueChild = valueChild - 1;
+        }
+        displayChild(valueChild);
+    }
+    private void displayChild(int number) {
+        TextView displayInteger = (TextView) findViewById(
+                R.id.ticketSelectorInputChild);
+        displayInteger.setText("" + number);
+    }
+
+    // Increase/Decrease button logic Student
+    public void increaseIntegerStudent(View view) {
+        valueStudent = valueStudent + 1;
+        displayStudent(valueStudent);
+    }
+    public void decreaseIntegerStudent(View view) {
+        if(valueStudent >= 1){
+            valueStudent = valueStudent - 1;
+        }
+        displayStudent(valueStudent);
+    }
+    private void displayStudent(int number) {
+        TextView displayInteger = (TextView) findViewById(
+                R.id.ticketSelectorInputStudent);
+        displayInteger.setText("" + number);
+    }
+
+    // Increase/Decrease button logic Senior
+    public void increaseIntegerSenior(View view) {
+        valueSenior = valueSenior + 1;
+        displaySenior(valueSenior);
+    }
+    public void decreaseIntegerSenior(View view) {
+        if(valueSenior >= 1){
+            valueSenior = valueSenior - 1;
+        }
+        displaySenior(valueSenior);
+    }
+    private void displaySenior(int number) {
+        TextView displayInteger = (TextView) findViewById(
+                R.id.ticketSelectorInputSenior);
+        displayInteger.setText("" + number);
     }
 
 

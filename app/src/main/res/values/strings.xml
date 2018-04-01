@@ -27,11 +27,11 @@
     <string name="ticket_selection_info_start_time">Start time: </string>
     <string name="ticket_selection_info_end_time">End time: </string>
     <string name="ticket_selection_selector_header">Ticket selection</string>
-    <string name="ticket_selection_adult">Adult - 5,99</string>
+    <string name="ticket_selection_adult">Adult - €5,99</string>
     <string name="ticket_selection_amount">amount</string>
-    <string name="ticket_selection_child">Child - 5,99</string>
-    <string name="ticket_selection_student">Student - 2,99</string>
-    <string name="ticket_selection_senior">Senior - 4,99</string>
+    <string name="ticket_selection_child">Child - €5,99</string>
+    <string name="ticket_selection_student">Student - €2,99</string>
+    <string name="ticket_selection_senior">Senior - €4,99</string>
     <string name="ticket_selection_continue_button">Continue to seat selection</string>
 
     <!-- SeatSelectionActivity!-->
@@ -68,7 +68,7 @@
     <string name="checkout_student_tickets">Student tickets: </string>
     <string name="checkout_senior_tickets">Senior tickets: </string>
     <string name="checkout_total_tickets">Total: </string>
-    <string name="checkout_payment_amount">Amount to be paid: </string>
+    <string name="checkout_payment_amount">Amount to be paid: €</string>
 
 
     <!-- ConfirmationActivity!-->

@@ -21,11 +21,11 @@
     <string name="ticket_selection_info_start_time">"Starttijd: "</string>
     <string name="ticket_selection_info_end_time">"Eindtijd: "</string>
     <string name="ticket_selection_selector_header">"Ticketselectie"</string>
-    <string name="ticket_selection_adult">Volwassene: 5,99</string>
+    <string name="ticket_selection_adult">Volwassene: €5,99</string>
     <string name="ticket_selection_amount">aantal</string>
-    <string name="ticket_selection_child">Kind: 5,99</string>
-    <string name="ticket_selection_student">Student: 2,99</string>
-    <string name="ticket_selection_senior">Senior: 4,99</string>
+    <string name="ticket_selection_child">Kind: €5,99</string>
+    <string name="ticket_selection_student">Student: €2,99</string>
+    <string name="ticket_selection_senior">Senior: €4,99</string>
     <string name="ticket_selection_continue_button">Ga door naar stoelselectie</string>
     <string name="seat_selection_title">Stoelselectie</string>
     <string name="select_seats">Selecteer 0 stoelen</string>
@@ -41,7 +41,7 @@
     <string name="checkout_student_tickets">"Studenten: "</string>
     <string name="checkout_senior_tickets">"Senioren: "</string>
     <string name="checkout_total_tickets">"Totaal aantal:  "</string>
-    <string name="checkout_payment_amount">"Totaal af te rekenen: "</string>
+    <string name="checkout_payment_amount">Totaal af te rekenen: €</string>
     <string name="confirmationHeader">Bestelling bevestigd</string>
     <string name="confirmationContent">Betaling geslaagd. Aangeschafte tickets zijn ten alle tijden te benaderen via de knop rechtsboven in de app.</string>
     <string name="confirmationButton">Naar \'Mijn tickets\'</string>

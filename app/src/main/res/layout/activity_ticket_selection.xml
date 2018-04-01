@@ -115,23 +115,43 @@
 
                 <TextView
                     android:id="@+id/ticketSelectorTextAdult"
-                    android:layout_width="235dp"
+                    android:layout_width="210dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:paddingLeft="5dp"
                     android:text="@string/ticket_selection_adult"
                     android:textColor="@android:color/background_light" />
 
+                <Button
+                    android:id="@+id/buttonIncreaseAdult"
+                    android:layout_width="8dp"
+                    android:layout_height="30dp"
+                    android:layout_weight="1"
+                    android:onClick="increaseIntegerAdult"
+                    android:text="+"
+                    android:textSize="8sp" />
+
+                <Button
+                    android:id="@+id/buttonDecreaseAdult"
+                    android:layout_width="8dp"
+                    android:layout_height="30dp"
+                    android:layout_weight="1"
+                    android:onClick="decreaseIntegerAdult"
+                    android:text="-"
+                    android:textSize="8sp" />
+
                 <EditText
                     android:id="@+id/ticketSelectorInputAdult"
-                    android:layout_width="10dp"
-                    android:layout_height="40dp"
+                    android:layout_width="30dp"
+                    android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:ems="10"
                     android:hint="@string/ticket_selection_amount"
                     android:inputType="number"
                     android:paddingRight="5dp"
+                    android:selectAllOnFocus="true"
                     android:singleLine="true"
+                    android:textAlignment="center"
                     android:textColor="@android:color/background_light"
                     android:textSize="12sp" />
             </LinearLayout>
@@ -143,23 +163,43 @@
 
                 <TextView
                     android:id="@+id/ticketSelectorTextChild"
-                    android:layout_width="235dp"
+                    android:layout_width="210dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:paddingLeft="5dp"
                     android:text="@string/ticket_selection_child"
                     android:textColor="@android:color/background_light" />
 
+                <Button
+                    android:id="@+id/buttonIncreaseChild"
+                    android:layout_width="8dp"
+                    android:layout_height="30dp"
+                    android:layout_weight="1"
+                    android:onClick="increaseIntegerChild"
+                    android:text="+"
+                    android:textSize="8sp" />
+
+                <Button
+                    android:id="@+id/buttonDecreaseChild"
+                    android:layout_width="8dp"
+                    android:layout_height="30dp"
+                    android:layout_weight="1"
+                    android:onClick="decreaseIntegerChild"
+                    android:text="-"
+                    android:textSize="8sp" />
+
                 <EditText
                     android:id="@+id/ticketSelectorInputChild"
-                    android:layout_width="10dp"
+                    android:layout_width="30dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:ems="10"
                     android:hint="@string/ticket_selection_amount"
                     android:inputType="number"
                     android:paddingRight="5dp"
+                    android:selectAllOnFocus="true"
                     android:singleLine="true"
+                    android:textAlignment="center"
                     android:textColor="@android:color/background_light"
                     android:textSize="12sp" />
             </LinearLayout>
@@ -172,23 +212,43 @@
 
                 <TextView
                     android:id="@+id/ticketSelectorTextStudent"
-                    android:layout_width="235dp"
+                    android:layout_width="210dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:paddingLeft="5dp"
                     android:text="@string/ticket_selection_student"
                     android:textColor="@android:color/background_light" />
 
+                <Button
+                    android:id="@+id/buttonIncreaseStudent"
+                    android:layout_width="8dp"
+                    android:layout_height="30dp"
+                    android:layout_weight="1"
+                    android:onClick="increaseIntegerStudent"
+                    android:text="+"
+                    android:textSize="8sp" />
+
+                <Button
+                    android:id="@+id/buttonDecreaseStudent"
+                    android:layout_width="8dp"
+                    android:layout_height="30dp"
+                    android:layout_weight="1"
+                    android:onClick="decreaseIntegerStudent"
+                    android:text="-"
+                    android:textSize="8sp" />
+
                 <EditText
                     android:id="@+id/ticketSelectorInputStudent"
-                    android:layout_width="10dp"
+                    android:layout_width="30dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:ems="10"
                     android:hint="@string/ticket_selection_amount"
                     android:inputType="number"
                     android:paddingRight="5dp"
+                    android:selectAllOnFocus="true"
                     android:singleLine="true"
+                    android:textAlignment="center"
                     android:textColor="@android:color/background_light"
                     android:textSize="12sp" />
             </LinearLayout>
@@ -201,23 +261,43 @@
 
                 <TextView
                     android:id="@+id/ticketSelectorTextSenior"
-                    android:layout_width="235dp"
+                    android:layout_width="210dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:paddingLeft="5dp"
                     android:text="@string/ticket_selection_senior"
                     android:textColor="@android:color/background_light" />
 
+                <Button
+                    android:id="@+id/buttonIncreaseSenior"
+                    android:layout_width="8dp"
+                    android:layout_height="30dp"
+                    android:layout_weight="1"
+                    android:onClick="increaseIntegerSenior"
+                    android:text="+"
+                    android:textSize="8sp" />
+
+                <Button
+                    android:id="@+id/buttonDecreaseSenior"
+                    android:layout_width="8dp"
+                    android:layout_height="30dp"
+                    android:layout_weight="1"
+                    android:onClick="decreaseIntegerSenior"
+                    android:text="-"
+                    android:textSize="8sp" />
+
                 <EditText
                     android:id="@+id/ticketSelectorInputSenior"
-                    android:layout_width="10dp"
+                    android:layout_width="30dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:ems="10"
                     android:hint="@string/ticket_selection_amount"
                     android:inputType="number"
                     android:paddingRight="5dp"
+                    android:selectAllOnFocus="true"
                     android:singleLine="true"
+                    android:textAlignment="center"
                     android:textColor="@android:color/background_light"
                     android:textSize="12sp" />
             </LinearLayout>
