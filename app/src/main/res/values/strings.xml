@@ -40,6 +40,7 @@
     <string name="select_seats_end"> seats</string>
     <string name="book_seats">Book seats</string>
     <string name ="seat_selection_nothing_selected">0 seats selected</string>
+    <string name ="movie_screen">Screen</string>
 
     <!-- MyTicketsActivity!-->
     <string name="my_tickets_title">My Tickets</string>

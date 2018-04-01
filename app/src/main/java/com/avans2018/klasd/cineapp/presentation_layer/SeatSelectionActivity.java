@@ -38,7 +38,7 @@ package com.avans2018.klasd.cineapp.presentation_layer;
 
 public class SeatSelectionActivity extends AppCompatActivity implements OnSeatSelected{
     private final static String TAG = "SeatSelectionActivity";
-    private final static int COLUMNS = 5;
+    private final static int COLUMNS = 9;
     private TextView txtSeatSelected;
     private TextView totalSeatsText;
     private Button bookSeatsButton;
@@ -76,11 +76,11 @@ public class SeatSelectionActivity extends AppCompatActivity implements OnSeatSe
         txtSeatSelected = (TextView) findViewById(R.id.txt_seat_selected);
         bookSeatsButton = (Button) findViewById(R.id.bookSeatsButton);
         List<SelectionSeat> items = new ArrayList<>();
-        for (int i=0; i<30; i++) {
+        for (int i=0; i<72; i++) {
 
-        if (i%COLUMNS==0 || i%COLUMNS==4) {
+        if (i%COLUMNS==0 || i%COLUMNS==9) {
             items.add(new EdgeSeat(String.valueOf(i)));
-        } else if (i%COLUMNS==1 || i%COLUMNS==3) {
+        } else if (i%COLUMNS==1 || i%COLUMNS==2 || i%COLUMNS==3 || i%COLUMNS==4 || i%COLUMNS==5 || i%COLUMNS==6 || i%COLUMNS==7 || i%COLUMNS==8) {
             items.add(new CenterSeat(String.valueOf(i)));
         } else {
             items.add(new EmptySeat(String.valueOf(i)));
