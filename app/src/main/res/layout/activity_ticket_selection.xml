@@ -197,13 +197,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal"
-                android:paddingLeft="5dp">
+                android:paddingBottom="5dp">
 
                 <TextView
                     android:id="@+id/ticketSelectorTextSenior"
-                    android:layout_width="231dp"
+                    android:layout_width="235dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:paddingLeft="5dp"
                     android:text="@string/ticket_selection_senior"
                     android:textColor="@android:color/background_light" />
 

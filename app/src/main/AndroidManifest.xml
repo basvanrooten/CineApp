@@ -12,20 +12,36 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".presentation_layer.MainActivity">
+        <activity android:name=".presentation_layer.MainActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".presentation_layer.DetailActivity" />
-        <activity android:name=".presentation_layer.SeatSelectionActivity" />
-        <activity android:name=".presentation_layer.TicketSelectionActivity" />
-        <activity android:name=".presentation_layer.CheckoutActivity" />
-        <activity android:name=".presentation_layer.MyTicketsActivity" />
-        <activity android:name=".presentation_layer.MyTicketsDetailActivity" />
-        <activity android:name=".presentation_layer.ConfirmationActivity" />
+        <activity android:name=".presentation_layer.DetailActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".presentation_layer.SeatSelectionActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".presentation_layer.TicketSelectionActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".presentation_layer.CheckoutActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".presentation_layer.MyTicketsActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".presentation_layer.MyTicketsDetailActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".presentation_layer.ConfirmationActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>
