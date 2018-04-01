@@ -2,7 +2,7 @@
     <string name="app_name">CineApp</string>
 
     <!-- MainActivity!-->
-    <string name="movies_to_watch">Movies to watch</string>
+    <string name="movies_to_watch">CineApp: Movies to watch</string>
 
     <!-- DetailActivity!-->
     <string name="detail_film_title">Film Title</string>
@@ -21,7 +21,7 @@
 
     <!-- TicketSelectionActivity!-->
     <string name="ticket_selection_title">Ticket selection</string>
-    <string name="ticket_selection_info_header">Ticket information</string>
+    <string name="ticket_selection_info_header">Movie info</string>
     <string name="ticket_selection_info_movie">Movie: xxx</string>
     <string name="ticket_selection_info_date">Date: 05-04-2018</string>
     <string name="ticket_selection_info_start_time">Start time: </string>

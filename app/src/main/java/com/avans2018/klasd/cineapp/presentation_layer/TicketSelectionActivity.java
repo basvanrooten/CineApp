@@ -52,7 +52,6 @@ public class TicketSelectionActivity extends AppCompatActivity{
         getSupportActionBar().setTitle(StringLimiter.limit(getResources().getString(R.string.my_ticket_detail_title), 25));
 
         // TextViews
-        TextView ticketInfoHeader = (TextView) findViewById(R.id.ticketSelectionInfoHeader);
         TextView ticketMovie = (TextView) findViewById(R.id.ticketSelectionInfoMovie);
         ticketMovie.setText(clickedSchedule.getMovie().getName());
 

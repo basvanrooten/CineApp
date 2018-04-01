@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">CineApp</string>
-    <string name="movies_to_watch">Films om te kijken</string>
+    <string name="movies_to_watch">CineApp: Films om te kijken</string>
     <string name="detail_film_title">Filmtitel</string>
     <string name="detail_imdb_rating_top">IMDB score</string>
     <string name="detail_playtime_top">Tijdsduur</string>
@@ -15,12 +15,12 @@
     <string name="detail_times_and_tickets">Tijden en tickets</string>
     <string name="detail_times_and_tickets_nocontent">Geen tijden of tickets gevonden.</string>
     <string name="ticket_selection_title">Ticketselectie</string>
-    <string name="ticket_selection_info_header">Ticket informatie</string>
+    <string name="ticket_selection_info_header">Filmdetails</string>
     <string name="ticket_selection_info_movie">"Film: "</string>
     <string name="ticket_selection_info_date">Datum: 05-04-2018</string>
     <string name="ticket_selection_info_start_time">"Starttijd: "</string>
     <string name="ticket_selection_info_end_time">"Eindtijd: "</string>
-    <string name="ticket_selection_selector_header">"Ticketselectie: "</string>
+    <string name="ticket_selection_selector_header">"Ticketselectie"</string>
     <string name="ticket_selection_adult">Volwassene: 5,99</string>
     <string name="ticket_selection_amount">aantal</string>
     <string name="ticket_selection_child">Kind: 5,99</string>

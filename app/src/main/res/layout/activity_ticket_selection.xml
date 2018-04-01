@@ -22,7 +22,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="105dp"
+            android:layout_height="wrap_content"
             android:layout_margin="20dp"
             android:background="@color/CineAppListViewItemBackground"
             android:orientation="vertical"
@@ -30,22 +30,14 @@
             android:paddingTop="5dp">
 
             <TextView
-                android:id="@+id/ticketSelectionInfoHeader"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/ticket_selection_info_header"
-                android:textColor="@android:color/background_light"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.037"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
                 android:id="@+id/ticketSelectionInfoMovie"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:paddingLeft="5dp"
+                android:paddingTop="5dp"
                 android:text="@string/ticket_selection_info_movie"
                 android:textColor="@android:color/background_light"
+                android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.03"
                 app:layout_constraintStart_toStartOf="parent"
@@ -55,6 +47,7 @@
                 android:id="@+id/ticketSelectionInfoDate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:paddingLeft="5dp"
                 android:text="@string/ticket_selection_info_date"
                 android:textColor="@android:color/background_light"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -66,6 +59,7 @@
                 android:id="@+id/ticketSelectionInfoStartTime"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:paddingLeft="5dp"
                 android:text="@string/ticket_selection_info_start_time"
                 android:textColor="@android:color/background_light"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -77,6 +71,8 @@
                 android:id="@+id/ticketSelectionInfoEndTime"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:paddingBottom="10dp"
+                android:paddingLeft="5dp"
                 android:text="@string/ticket_selection_info_end_time"
                 android:textColor="@android:color/background_light"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -102,6 +98,8 @@
                 android:id="@+id/ticketSelectionSelectorHeader"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:paddingBottom="10dp"
+                android:paddingLeft="10dp"
                 android:text="@string/ticket_selection_selector_header"
                 android:textColor="@android:color/background_light"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -120,17 +118,19 @@
                     android:layout_width="235dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:paddingLeft="5dp"
                     android:text="@string/ticket_selection_adult"
                     android:textColor="@android:color/background_light" />
 
                 <EditText
                     android:id="@+id/ticketSelectorInputAdult"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="10dp"
+                    android:layout_height="40dp"
                     android:layout_weight="1"
                     android:ems="10"
                     android:hint="@string/ticket_selection_amount"
                     android:inputType="number"
+                    android:paddingRight="5dp"
                     android:singleLine="true"
                     android:textColor="@android:color/background_light"
                     android:textSize="12sp" />
@@ -146,17 +146,19 @@
                     android:layout_width="235dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:paddingLeft="5dp"
                     android:text="@string/ticket_selection_child"
                     android:textColor="@android:color/background_light" />
 
                 <EditText
                     android:id="@+id/ticketSelectorInputChild"
-                    android:layout_width="wrap_content"
+                    android:layout_width="10dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:ems="10"
                     android:hint="@string/ticket_selection_amount"
                     android:inputType="number"
+                    android:paddingRight="5dp"
                     android:singleLine="true"
                     android:textColor="@android:color/background_light"
                     android:textSize="12sp" />
@@ -173,17 +175,19 @@
                     android:layout_width="235dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:paddingLeft="5dp"
                     android:text="@string/ticket_selection_student"
                     android:textColor="@android:color/background_light" />
 
                 <EditText
                     android:id="@+id/ticketSelectorInputStudent"
-                    android:layout_width="wrap_content"
+                    android:layout_width="10dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:ems="10"
                     android:hint="@string/ticket_selection_amount"
                     android:inputType="number"
+                    android:paddingRight="5dp"
                     android:singleLine="true"
                     android:textColor="@android:color/background_light"
                     android:textSize="12sp" />
@@ -192,11 +196,12 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:paddingLeft="5dp">
 
                 <TextView
                     android:id="@+id/ticketSelectorTextSenior"
-                    android:layout_width="235dp"
+                    android:layout_width="231dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="@string/ticket_selection_senior"
@@ -204,12 +209,13 @@
 
                 <EditText
                     android:id="@+id/ticketSelectorInputSenior"
-                    android:layout_width="wrap_content"
+                    android:layout_width="10dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:ems="10"
                     android:hint="@string/ticket_selection_amount"
                     android:inputType="number"
+                    android:paddingRight="5dp"
                     android:singleLine="true"
                     android:textColor="@android:color/background_light"
                     android:textSize="12sp" />
