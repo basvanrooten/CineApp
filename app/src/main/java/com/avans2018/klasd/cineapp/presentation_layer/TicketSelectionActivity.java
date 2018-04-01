@@ -108,6 +108,7 @@ public class TicketSelectionActivity extends AppCompatActivity{
                     int seniorTicketsAmount = Integer.parseInt(selectorSeniorInput.getText().toString());
                     int totalTicketCount = adultTicketsAmount + childTicketsAmount + studentTicketsAmount + seniorTicketsAmount;
 
+                    totalPriceAmount = (double) 0;
                     totalPriceAmount = (double) totalPriceAmount + (adultTicketsAmount * adultTicketPrice);
                     totalPriceAmount = (double) totalPriceAmount + (childTicketsAmount * childTicketPrice);
                     totalPriceAmount = (double) totalPriceAmount + (studentTicketsAmount * studentTicketPrice);
