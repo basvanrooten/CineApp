@@ -18,8 +18,8 @@
     <string name="detail_times_and_tickets">Times and tickets</string>
     <string name="detail_times_and_tickets_nocontent">No times or tickets found.</string>
     <string name="detail_all_ages">All ages</string>
-    <string name="detail_get_date">View date</string>
-    <string name="detail_choosedate">Choose date</string>
+    <string name="detail_get_date">Confirm</string>
+    <string name="detail_choosedate">Slide date</string>
 
     <!-- TicketSelectionActivity!-->
     <string name="ticket_selection_title">Ticket selection</string>

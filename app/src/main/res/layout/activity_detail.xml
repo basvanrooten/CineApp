@@ -242,9 +242,9 @@
                     <Button
                         android:id="@+id/date_selection_button"
                         android:layout_width="match_parent"
-                        android:layout_height="20dp"
-                        android:layout_marginLeft="50dp"
-                        android:layout_marginRight="50dp"
+                        android:layout_height="30dp"
+                        android:layout_marginLeft="100dp"
+                        android:layout_marginRight="100dp"
                         android:background="@color/CineAppListViewItemButtomBackground"
                         android:text="@string/detail_get_date"
                         android:textColor="@color/zxing_status_text" />

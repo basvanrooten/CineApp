@@ -68,6 +68,6 @@
     <string name="amount_selected"> stoelen geselecteerd</string>
     <string name="topbar_my_tickets">Mijn tickets</string>
     <string name="movie_screen">Scherm</string>
-    <string name="detail_get_date">Pas datum toe</string>
-    <string name="detail_choosedate">Kies datum</string>
+    <string name="detail_get_date">Pas toe</string>
+    <string name="detail_choosedate">Slide gewenste datum</string>
 </resources>
