@@ -9,10 +9,13 @@
         android:id="@+id/datePagerContentDate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
+        android:layout_margin="0dp"
+        android:background="@color/CineAppHeader"
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp"
         android:text="@string/my_ticket_date"
         android:textAlignment="center"
         android:textColor="@color/zxing_status_text"
-        android:textSize="14dp" />
+        android:textSize="18sp" />
 
 </LinearLayout>

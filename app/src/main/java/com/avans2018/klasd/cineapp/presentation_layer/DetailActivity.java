@@ -95,7 +95,7 @@ public class DetailActivity extends AppCompatActivity implements OnItemClickList
         Picasso.with(mContext).load(imageUrl).fit().centerInside().into(detailImageView);
 
         // ViewPager voor datumselectie
-        for (int i=0; i<30; i++){
+        for (int i=1; i<=30; i++){
             Date date = new Date();
             date.setTime((System.currentTimeMillis()) + (86400000 * i));
             dateList.add(date) ;
