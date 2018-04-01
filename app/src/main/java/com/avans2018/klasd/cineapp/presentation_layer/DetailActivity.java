@@ -76,6 +76,15 @@ public class DetailActivity extends AppCompatActivity implements OnItemClickList
         } else {
             detailActivityFilmAge.setText(R.string.detail_all_ages);
         }
+
+        TextView genreHeader = (TextView) findViewById(R.id.detailFilmGenreHeader);
+
+        TextView genreContent = (TextView) findViewById(R.id.detailFilmGenreContent);
+
+        String genre = clickedMovie.getGenre();
+        String genreWithSpaces = genre.replaceAll("(\\p{Ll})(\\p{Lu})","$1 $2");
+        genreContent.setText(genreWithSpaces);
+
         TextView detailCommentHeader = (TextView) findViewById(R.id.detailFilmDescriptionHeader);
         TextView detailCommentContent = (TextView) findViewById(R.id.detailFilmDescriptionContent);
         detailCommentContent.setText(clickedMovie.getInfo());

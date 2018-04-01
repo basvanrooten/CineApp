@@ -66,6 +66,15 @@ public class ConfirmationActivity extends AppCompatActivity {
     }
 
     @Override
+    public void onBackPressed()
+    {
+        super.onBackPressed();
+        startActivity(new Intent(ConfirmationActivity.this, MainActivity.class));
+        finish();
+
+    }
+
+    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
 

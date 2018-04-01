@@ -21,6 +21,8 @@ import com.google.zxing.common.BitMatrix;
 import com.journeyapps.barcodescanner.BarcodeEncoder;
 import com.squareup.picasso.Picasso;
 
+import java.util.Locale;
+
 public class MyTicketsDetailActivity extends AppCompatActivity {
     private final static String TAG = "MyTicketsDetailActivity";
     private Context mContext;
@@ -58,9 +60,6 @@ public class MyTicketsDetailActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
-
-
-
         TextView movieTitle = (TextView) findViewById(R.id.ticketDetailMovieTitle);
         movieTitle.setText(clickedTicket.getMovie());
         TextView movieDate = (TextView) findViewById(R.id.ticketDetailDate);
@@ -75,8 +74,20 @@ public class MyTicketsDetailActivity extends AppCompatActivity {
         TextView movieSeat = (TextView) findViewById(R.id.ticketDetailSeat);
         movieSeat.setText(this.getString(R.string.my_ticket_detail_seat) + clickedTicket.getSeat());
         TextView movieType = (TextView) findViewById(R.id.ticketDetailType);
-        movieType.setText(this.getString(R.string.my_ticket_detail_type) + clickedTicket.getPaymentCategory());
 
+        String category = "";
+
+            if(clickedTicket.getPaymentCategory().equals("Adult")){
+                category = "" + this.getString(R.string.adult);
+            } else if (clickedTicket.getPaymentCategory().equals("Child")){
+                category = "" + this.getString(R.string.child);
+            } else if (clickedTicket.getPaymentCategory().equals("Student")){
+                category = "" + this.getString(R.string.student);
+            } else if (clickedTicket.getPaymentCategory().equals("Senior")){
+                category = "" + this.getString(R.string.senior);
+            }
+
+        movieType.setText(this.getString(R.string.my_ticket_detail_type) + category);
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

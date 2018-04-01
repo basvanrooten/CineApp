@@ -42,7 +42,7 @@
     <string name="checkout_senior_tickets">"Senioren: "</string>
     <string name="checkout_total_tickets">"Totaal aantal:  "</string>
     <string name="checkout_payment_amount">Totaal af te rekenen: €</string>
-    <string name="confirmationHeader">Bestelling bevestigd</string>
+    <string name="confirmationHeader">Bestelling voltooid</string>
     <string name="confirmationContent">Betaling geslaagd. Aangeschafte tickets zijn ten alle tijden te benaderen via de knop rechtsboven in de app.</string>
     <string name="confirmationButton">Naar \'Mijn tickets\'</string>
     <string name="list_film_title">Filmtitel</string>
@@ -71,4 +71,10 @@
     <string name="detail_get_date">Bekijk tijden</string>
     <string name="detail_choosedate">Slide naar gewenste datum</string>
     <string name="until">tot</string>
+    <string name="adult">Volwassene</string>
+    <string name="child">Kind</string>
+    <string name="student">Student</string>
+    <string name="senior">Senior</string>
+    <string name="genre_header">Genre</string>
+    <string name="genre_content">Actie</string>
 </resources>
