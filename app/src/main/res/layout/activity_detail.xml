@@ -129,6 +129,101 @@
             <android.support.constraint.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginBottom="0dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_weight="1"
+                android:background="@color/CineAppListViewItemBackground"
+                tools:layout_editor_absoluteX="20dp"
+                tools:layout_editor_absoluteY="580dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/detailFilmDateHeader"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="14dp"
+                        android:paddingBottom="10dp"
+                        android:paddingLeft="6dp"
+                        android:text="@string/detail_choosedate"
+                        android:textColor="@android:color/background_light"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.029"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <android.support.constraint.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="42dp"
+                        android:orientation="horizontal">
+
+
+                        <android.support.v4.view.ViewPager
+                            android:id="@+id/datePager"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"></android.support.v4.view.ViewPager>
+
+
+                    </android.support.constraint.ConstraintLayout>
+
+                    <Button
+                        android:id="@+id/date_selection_button"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_marginLeft="100dp"
+                        android:layout_marginRight="100dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@color/CineAppListViewItemButtomBackground"
+                        android:text="@string/detail_get_date"
+                        android:textColor="@color/zxing_status_text" />
+
+                    <TextView
+                        android:id="@+id/detailFilmTimesHeader"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="29dp"
+                        android:paddingLeft="6dp"
+                        android:text="@string/detail_choosetime"
+                        android:textColor="@android:color/background_light"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.029"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/scheduleRecyclerView"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginBottom="0dp"
+                        android:paddingBottom="12dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent">
+
+                    </android.support.v7.widget.RecyclerView>
+
+                </LinearLayout>
+
+            </android.support.constraint.ConstraintLayout>
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_margin="20dp"
                 android:layout_weight="1"
                 android:background="@color/CineAppListViewItemBackground">
@@ -210,101 +305,6 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintVertical_bias="1.0" />
-                </LinearLayout>
-
-            </android.support.constraint.ConstraintLayout>
-
-            <android.support.constraint.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginBottom="20dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:layout_weight="1"
-                android:background="@color/CineAppListViewItemBackground"
-                tools:layout_editor_absoluteX="20dp"
-                tools:layout_editor_absoluteY="580dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/detailFilmDateHeader"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="8dp"
-                        android:layout_marginStart="8dp"
-                        android:layout_marginTop="14dp"
-                        android:paddingBottom="10dp"
-                        android:paddingLeft="6dp"
-                        android:text="@string/detail_choosedate"
-                        android:textColor="@android:color/background_light"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.029"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <android.support.constraint.ConstraintLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="42dp"
-                        android:orientation="horizontal">
-
-
-                        <android.support.v4.view.ViewPager
-                            android:id="@+id/datePager"
-                            android:layout_width="0dp"
-                            android:layout_height="40dp"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"></android.support.v4.view.ViewPager>
-
-
-
-                    </android.support.constraint.ConstraintLayout>
-
-                    <Button
-                        android:id="@+id/date_selection_button"
-                        android:layout_width="match_parent"
-                        android:layout_height="30dp"
-                        android:layout_marginLeft="100dp"
-                        android:layout_marginRight="100dp"
-                        android:layout_marginTop="10dp"
-                        android:background="@color/CineAppListViewItemButtomBackground"
-                        android:text="@string/detail_get_date"
-                        android:textColor="@color/zxing_status_text" />
-
-                    <TextView
-                        android:id="@+id/detailFilmTimesHeader"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="5dp"
-                        android:layout_marginEnd="8dp"
-                        android:layout_marginStart="8dp"
-                        android:layout_marginTop="29dp"
-                        android:paddingLeft="6dp"
-                        android:text="@string/detail_choosetime"
-                        android:textColor="@android:color/background_light"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.029"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <android.support.v7.widget.RecyclerView
-                        android:id="@+id/scheduleRecyclerView"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_alignParentLeft="true"
-                        android:layout_alignParentStart="true"
-                        android:layout_marginBottom="0dp"
-                        android:paddingBottom="12dp"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.0"
-                        app:layout_constraintStart_toStartOf="parent">
-
-                    </android.support.v7.widget.RecyclerView>
-
                 </LinearLayout>
 
             </android.support.constraint.ConstraintLayout>
