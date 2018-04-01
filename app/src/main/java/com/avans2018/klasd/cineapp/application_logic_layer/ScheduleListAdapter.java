@@ -73,14 +73,9 @@ public class ScheduleListAdapter extends RecyclerView.Adapter<ScheduleListAdapte
             holder.scheduleListTakenPerc.setTextColor(Color.WHITE);
             holder.scheduleListTakenPerc.setText(takenPerc);
         }
-
         holder.scheduleListDate.setText(scheduleDate);
         holder.scheduleListStartTime.setText(startTime);
         holder.scheduleListEndTime.setText(endTime);
-
-
-
-
     }
 
     @Override

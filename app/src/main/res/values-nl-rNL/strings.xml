@@ -78,4 +78,5 @@
     <string name="genre_header">Genre</string>
     <string name="genre_content">Actie</string>
     <string name="unavailable">Niet beschikbaar</string>
+    <string name="invalid_date_selected">Niet beschikbaar</string>
 </resources>

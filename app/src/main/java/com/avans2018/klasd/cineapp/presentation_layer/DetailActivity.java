@@ -15,6 +15,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.support.v7.widget.Toolbar;
+import android.widget.Toast;
 
 import com.avans2018.klasd.cineapp.R;
 import com.avans2018.klasd.cineapp.application_logic_layer.DatePagerAdapter;
@@ -128,12 +129,19 @@ public class DetailActivity extends AppCompatActivity implements OnItemClickList
         // Klik logica voor meegeven film en opstarten DetailActivity
 
         Log.i(TAG, "onItemClick() called.");
-        Intent ticketSelectionIntent = new Intent(this, TicketSelectionActivity.class);
         MovieSchedule schedule = scheduleList.get(position);
-        ticketSelectionIntent.putExtra(CLICKED_SCHEDULE, schedule);
-        startActivity(ticketSelectionIntent);
-        Log.i(TAG, "Starting TicketSelectionActivity...");
+
+        if(schedule.getDate().getTime() >= System.currentTimeMillis()){
+            Intent ticketSelectionIntent = new Intent(this, TicketSelectionActivity.class);
+            ticketSelectionIntent.putExtra(CLICKED_SCHEDULE, schedule);
+            startActivity(ticketSelectionIntent);
+            Log.i(TAG, "Starting TicketSelectionActivity...");
+        } else {
+            Log.i(TAG,"Clicked MovieSchedule invalid.");
+            Toast.makeText(this, R.string.unavailable, Toast.LENGTH_SHORT).show();
+        }
     }
+
 
     @Override
     public void onMovieSchedulesRecieved(ArrayList<MovieSchedule> movieSchedules) {
