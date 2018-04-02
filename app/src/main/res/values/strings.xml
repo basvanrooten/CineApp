@@ -44,8 +44,9 @@
     <string name="seat_selection_title">Seat Selection</string>
     <string name="select_seats_start">"Select "</string>
     <string name="select_seats_end">" seats"</string>
+    <string name="select_seats_end_single">" seat"</string>
     <string name="book_seats">Book seats</string>
-    <string name ="seat_selection_nothing_selected">0 seats selected</string>
+    <string name ="seat_selection_nothing_selected">No seats selected</string>
     <string name ="movie_screen">Screen</string>
 
     <!-- MyTicketsActivity!-->
@@ -108,6 +109,7 @@
     <string name="url_language">pt_PT</string>
     <string name="seat_selection_select_correct_amount">Incorrect amount selected.</string>
     <string name="amount_selected">" seats selected"</string>
+    <string name="single_selected">" seat selected"</string>
     <string name="select_seats">Select 0 seats</string>
     <string name="invalid_date_selected">Unavailable</string>
 

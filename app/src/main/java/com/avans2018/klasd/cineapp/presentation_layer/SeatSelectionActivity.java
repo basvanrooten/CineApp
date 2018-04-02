@@ -73,7 +73,13 @@ public class SeatSelectionActivity extends AppCompatActivity implements OnSeatSe
 
         totalSeatsText = (TextView) findViewById(R.id.totalSeats);
         String totalSeatsTextBeginPart = this.getString(R.string.select_seats_start);
-        String totalSeatsTextEndPart = this.getString(R.string.select_seats_end);
+        String totalSeatsTextEndPart = "";
+        if(totalTickets == 1){
+            totalSeatsTextEndPart = this.getString(R.string.select_seats_end_single);
+        } else {
+            totalSeatsTextEndPart = this.getString(R.string.select_seats_end);
+        }
+
         String totalSeatsTextString = totalSeatsTextBeginPart + totalTickets + totalSeatsTextEndPart;
         totalSeatsText.setText(totalSeatsTextString);
         txtSeatSelected = (TextView) findViewById(R.id.txt_seat_selected);
@@ -140,8 +146,21 @@ public class SeatSelectionActivity extends AppCompatActivity implements OnSeatSe
 
     @Override
     public void onSeatSelected(int count) {
-        String textEndPart = " " + this.getString(R.string.amount_selected);
-        String text = "" + count + textEndPart;
+
+        String textEndPart = "";
+        if(count == 1){
+            textEndPart = "" + this.getString(R.string.single_selected);
+        } else {
+            textEndPart = "" + this.getString(R.string.amount_selected);
+        }
+
+        String text = "";
+        if(count == 0){
+            text = "" + this.getString(R.string.seat_selection_nothing_selected);
+        } else {
+            text = "" + count + textEndPart;
+        }
+
         txtSeatSelected.setText(text);
         selectedSeatsCount = count;
     }

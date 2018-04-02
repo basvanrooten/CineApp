@@ -63,7 +63,7 @@
     <string name="select_seats_end">" stoelen"</string>
     <string name="confirmation_tickets_added">Tickets toegevoegd aan Mijn Tickets</string>
     <string name="url_language">nl</string>
-    <string name="seat_selection_nothing_selected">0 stoelen geselecteerd</string>
+    <string name="seat_selection_nothing_selected">Geen stoelen geselecteerd</string>
     <string name="seat_selection_select_correct_amount">Incorrect aantal stoelen gekozen.</string>
     <string name="amount_selected">" stoelen geselecteerd"</string>
     <string name="topbar_my_tickets">Mijn tickets</string>
@@ -79,4 +79,6 @@
     <string name="genre_content">Actie</string>
     <string name="unavailable">Niet beschikbaar</string>
     <string name="invalid_date_selected">Niet beschikbaar</string>
+    <string name="single_selected">" stoel geselecteerd"</string>
+    <string name="select_seats_end_single">" stoel"</string>
 </resources>
