@@ -24,6 +24,7 @@ public class SeatingAdapter extends SelectableAdapter<RecyclerView.ViewHolder> {
     private static class EdgeViewHolder extends RecyclerView.ViewHolder {
 
         ImageView imgSeat;
+        ImageView imgSeatBooked;
         private final ImageView imgSeatSelected;
 
 
@@ -31,6 +32,7 @@ public class SeatingAdapter extends SelectableAdapter<RecyclerView.ViewHolder> {
             super(itemView);
             imgSeat = (ImageView) itemView.findViewById(R.id.img_seat);
             imgSeatSelected = (ImageView) itemView.findViewById(R.id.img_seat_selected);
+            imgSeatBooked = (ImageView) itemView.findViewById(R.id.img_seat_booked);
 
         }
 
@@ -39,13 +41,14 @@ public class SeatingAdapter extends SelectableAdapter<RecyclerView.ViewHolder> {
     private static class CenterViewHolder extends RecyclerView.ViewHolder {
 
         ImageView imgSeat;
+        ImageView imgSeatBooked;
         private final ImageView imgSeatSelected;
 
         public CenterViewHolder(View itemView) {
             super(itemView);
             imgSeat = (ImageView) itemView.findViewById(R.id.img_seat);
             imgSeatSelected = (ImageView) itemView.findViewById(R.id.img_seat_selected);
-
+            imgSeatBooked = (ImageView) itemView.findViewById(R.id.img_seat_booked);
 
         }
 

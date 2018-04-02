@@ -12,7 +12,6 @@
         android:layout_centerHorizontal="true"
         android:src="@drawable/seat_normal">
 
-
     </ImageView>
 
     <ImageView
@@ -23,6 +22,16 @@
         android:src="@drawable/seat_normal_selected"
         android:visibility="invisible">
 
+    </ImageView>
+
+    <ImageView
+        android:id="@+id/img_seat_booked"
+        android:layout_width="30dp"
+        android:layout_height="25dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/seat_normal_booked"
+        android:visibility="invisible">
 
     </ImageView>
+
 </RelativeLayout>
