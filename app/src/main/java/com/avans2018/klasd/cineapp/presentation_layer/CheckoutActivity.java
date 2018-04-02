@@ -30,6 +30,7 @@ import java.util.ArrayList;
 import java.util.Random;
 
 import static com.avans2018.klasd.cineapp.presentation_layer.DetailActivity.CLICKED_SCHEDULE;
+import static com.avans2018.klasd.cineapp.presentation_layer.TicketSelectionActivity.SEAT_LIST;
 import static com.avans2018.klasd.cineapp.presentation_layer.TicketSelectionActivity.TOTAL_ADULT_TICKETS;
 import static com.avans2018.klasd.cineapp.presentation_layer.TicketSelectionActivity.TOTAL_AMOUNT;
 import static com.avans2018.klasd.cineapp.presentation_layer.TicketSelectionActivity.TOTAL_CHILD_TICKETS;
@@ -60,6 +61,7 @@ public class CheckoutActivity extends AppCompatActivity{
         final int studentTickets = (int) scheduleSeatsTicketAmounts.getSerializableExtra(TOTAL_STUDENT_TICKETS);
         final int seniorTickets = (int) scheduleSeatsTicketAmounts.getSerializableExtra(TOTAL_SENIOR_TICKETS);
         final double totalPayment = (double) scheduleSeatsTicketAmounts.getSerializableExtra(TOTAL_AMOUNT);
+        final ArrayList<Seat> seats = (ArrayList<Seat>) scheduleSeatsTicketAmounts.getSerializableExtra(SEAT_LIST);
 
         // Hoofdtitel veranderen
         getSupportActionBar().setTitle(StringLimiter.limit(getResources().getString(R.string.checkout_title), 25));
@@ -90,39 +92,46 @@ public class CheckoutActivity extends AppCompatActivity{
 
         Button checkoutPaymentButton = (Button) findViewById(R.id.CheckoutPaymentButton);
         checkoutPaymentButton.setOnClickListener(new View.OnClickListener() {
+
+            private ArrayList<Seat> bookedSeats;
+            private Random random;
+
             @Override
             public void onClick(View view) {
                 Intent paymentIntent = new Intent(view.getContext(), ConfirmationActivity.class);
                 ArrayList<Ticket> tickets = new ArrayList<>();
-                Random random = new Random();
+                random = new Random();
                 DateFormat df = new SimpleDateFormat("dd-MM-YY");
                 String dateAsString = df.format(receivedMovieSchedule.getDate());
+
+                bookedSeats = new ArrayList<>();
+                bookedSeats.addAll(seats);
 
                 // (String date, String time, Theater theater, Seat seat, Movie movie, PaymentCategory paymentCategory)
                 for(int i = 0; i < adultTickets; i++){
                     // Logica van stoelnummer nog toevoegen
-                    Seat seat = new Seat();
+                    Seat seat = getBookedSeat();
                     Ticket ticket = new Ticket(dateAsString,receivedMovieSchedule.getStartTime(),receivedMovieSchedule.getTheater(),seat,receivedMovieSchedule.getMovie(),new AdultPayment());
                     tickets.add(ticket);
                 }
 
                 for(int i = 0; i < childTickets; i++){
                     // Logica van stoelnummer nog toevoegen
-                    Seat seat = new Seat();
+                    Seat seat = getBookedSeat();
                     Ticket ticket = new Ticket(dateAsString,receivedMovieSchedule.getStartTime(),receivedMovieSchedule.getTheater(),seat,receivedMovieSchedule.getMovie(),new ChildPayment());
                     tickets.add(ticket);
                 }
 
                 for(int i = 0; i < studentTickets; i++){
                     // Logica van stoelnummer nog toevoegen
-                    Seat seat = new Seat();
+                    Seat seat = getBookedSeat();
                     Ticket ticket = new Ticket(dateAsString,receivedMovieSchedule.getStartTime(),receivedMovieSchedule.getTheater(),seat,receivedMovieSchedule.getMovie(),new StudentPayment());
                     tickets.add(ticket);
                 }
 
                 for(int i = 0; i < seniorTickets; i++){
                     // Logica van stoelnummer nog toevoegen
-                    Seat seat = new Seat();
+                    Seat seat = getBookedSeat();
                     Ticket ticket = new Ticket(dateAsString,receivedMovieSchedule.getStartTime(),receivedMovieSchedule.getTheater(),seat,receivedMovieSchedule.getMovie(),new SeniorPayment());
                     tickets.add(ticket);
                 }
@@ -132,6 +141,13 @@ public class CheckoutActivity extends AppCompatActivity{
                 startActivity(paymentIntent);
                 Log.i(TAG, "Starting ConfirmationActivity...");
             }
+
+            private Seat getBookedSeat(){
+                Seat s = bookedSeats.get(random.nextInt(bookedSeats.size()));
+                bookedSeats.remove(s);
+                return s;
+            }
+
         });
     }
 

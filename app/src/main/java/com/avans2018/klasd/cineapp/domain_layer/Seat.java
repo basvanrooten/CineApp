@@ -83,7 +83,7 @@ public class Seat implements Serializable {
     }
 
     public String returnTheaterForDB() {
-        return this.theater + "";
+        return this.theater.getTheaterName() + " : " + getSeatNumber();
     }
 
     public int returnSeatNumberForDB() {

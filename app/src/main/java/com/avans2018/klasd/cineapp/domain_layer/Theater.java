@@ -43,6 +43,10 @@ public class Theater implements Serializable{
         this.theaterName = theaterName;
     }
 
+    public String getTheaterName(){
+        return theaterName;
+    }
+
     public ArrayList<Seat> getSeats() {
         return seats;
     }

@@ -101,8 +101,11 @@ public class SeatingAdapter extends SelectableAdapter<RecyclerView.ViewHolder> {
                 if (type == SelectionSeat.TYPE_CENTER) {
                     final CenterSeat item = (CenterSeat) mItems.get(position);
                     CenterViewHolder holder = (CenterViewHolder) viewHolder;
-
-
+                    if(item.getSeat().isTaken() == 1){
+                        // Dit moet worden veranderd in een gereserveerde stoel
+                        holder.imgSeatSelected.setVisibility(View.VISIBLE);
+                        return;
+                    }
 
 
             holder.imgSeat.setOnClickListener(new View.OnClickListener() {
@@ -122,7 +125,11 @@ public class SeatingAdapter extends SelectableAdapter<RecyclerView.ViewHolder> {
         } else if (type == SelectionSeat.TYPE_EDGE) {
             final EdgeSeat item = (EdgeSeat) mItems.get(position);
             EdgeViewHolder holder = (EdgeViewHolder) viewHolder;
-
+            if(item.getSeat().isTaken() == 1){
+                // Dit moet worden veranderd in een gereserveerde stoel
+                holder.imgSeatSelected.setVisibility(View.VISIBLE);
+                return;
+            }
 
 
             holder.imgSeat.setOnClickListener(new View.OnClickListener() {
