@@ -49,8 +49,8 @@ public class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.Movi
         holder.movieTitle.setText(StringLimiter.limit(movie.getName(),35));
         holder.movieDescription.setText(movie.getInfo());
         
-        String imageUrl = movie.getImageUrl();
-        Picasso.with(mContext).load(imageUrl).fit().centerInside().into(holder.movieImage);
+        String posterUrl = movie.getPosterUrl();
+        Picasso.with(mContext).load(posterUrl).fit().centerInside().into(holder.movieImage);
 
     }
 

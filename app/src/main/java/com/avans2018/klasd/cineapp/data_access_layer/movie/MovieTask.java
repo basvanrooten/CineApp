@@ -4,7 +4,6 @@ import android.content.Context;
 import android.os.AsyncTask;
 import android.util.Log;
 
-import com.avans2018.klasd.cineapp.R;
 import com.avans2018.klasd.cineapp.application_logic_layer.StringKeys;
 import com.avans2018.klasd.cineapp.domain_layer.Movie;
 
@@ -46,7 +45,7 @@ public class MovieTask extends AsyncTask<String, Void, String> {
         String id = strings[0];
 
         try {
-            java.net.URL url;
+            URL url;
 
             if(language.equals("Nederlands")){
                  url = new URL("https://api.themoviedb.org/3/movie/" + id + "?api_key=" + StringKeys.API_KEY + "&language=nl");
@@ -106,6 +105,7 @@ public class MovieTask extends AsyncTask<String, Void, String> {
             }
 
             String imageUrl = "http://image.tmdb.org/t/p/original" + jsonObject.getString("backdrop_path");
+            String posterUrl = "http://image.tmdb.org/t/p/original" + jsonObject.getString("poster_path");
             int duration = jsonObject.getInt("runtime");
             String info = jsonObject.getString("overview");
             String language = jsonObject.getString("original_language");
@@ -115,7 +115,7 @@ public class MovieTask extends AsyncTask<String, Void, String> {
             int rating = jsonObject.getInt("vote_average");
             int ratingCount = jsonObject.getInt("vote_count");
 
-            Movie movie = new Movie(id, name, adultOnly, genre, imageUrl, duration, info, language, releaseDate, homePageUrl, status, rating, ratingCount);
+            Movie movie = new Movie(id, name, adultOnly, genre, imageUrl, posterUrl, duration, info, language, releaseDate, homePageUrl, status, rating, ratingCount);
 
             movieListener.onMovieRecieved(movie);
 

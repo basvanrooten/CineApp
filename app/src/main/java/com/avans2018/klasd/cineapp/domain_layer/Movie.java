@@ -19,13 +19,14 @@ public class Movie implements Serializable {
     private String language;
     private String releaseDate;
     private String homePageUrl;
+    private String posterUrl;
     private String status;
     private int rating;
     private int ratingCount;
 
     private static final String TAG = "Domain: Movie";
 
-    public Movie(int id, String name, boolean adultOnly, String genre, String imageUrl, int duration,
+    public Movie(int id, String name, boolean adultOnly, String genre, String imageUrl, String posterUrl, int duration,
                  String info, String language, String releaseDate, String homePageUrl, String status,
                  int rating, int ratingCount) {
 
@@ -40,6 +41,7 @@ public class Movie implements Serializable {
         this.language = language;
         this.releaseDate = releaseDate;
         this.homePageUrl = homePageUrl;
+        this.posterUrl = posterUrl;
         this.status = status;
         this.rating = rating;
         this.ratingCount = ratingCount;
@@ -152,6 +154,10 @@ public class Movie implements Serializable {
 
     public void setRatingCount(int ratingCount) {
         this.ratingCount = ratingCount;
+    }
+
+    public String getPosterUrl() {
+        return posterUrl;
     }
 
     @Override
