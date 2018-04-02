@@ -50,8 +50,6 @@ public class MovieTask extends AsyncTask<String, Void, String> {
 
             if(language.equals("Nederlands")){
                  url = new URL("https://api.themoviedb.org/3/movie/" + id + "?api_key=" + StringKeys.API_KEY + "&language=nl");
-            } else if(language.equals("English")){
-                url = new URL("https://api.themoviedb.org/3/movie/" + id + "?api_key=" + StringKeys.API_KEY + "&language=pt_PT");
             } else {
                 url = new URL("https://api.themoviedb.org/3/movie/" + id + "?api_key=" + StringKeys.API_KEY);
             }
@@ -107,7 +105,7 @@ public class MovieTask extends AsyncTask<String, Void, String> {
                 genre += genres.getJSONObject(i).getString("name");
             }
 
-            String imageUrl = "http://image.tmdb.org/t/p/w500" + jsonObject.getString("backdrop_path");
+            String imageUrl = "http://image.tmdb.org/t/p/original" + jsonObject.getString("backdrop_path");
             int duration = jsonObject.getInt("runtime");
             String info = jsonObject.getString("overview");
             String language = jsonObject.getString("original_language");

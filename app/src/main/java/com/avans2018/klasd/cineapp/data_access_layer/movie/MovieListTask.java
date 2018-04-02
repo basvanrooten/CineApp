@@ -92,7 +92,7 @@ public class MovieListTask extends AsyncTask<String, Void, String> {
 
             JSONArray results = jsonObject.getJSONArray("results");
 
-            Log.i(getClass().getSimpleName(), "Recieved " + results.length() + " objects");
+            Log.i(getClass().getSimpleName(), "Received " + results.length() + " objects");
 
             for (int i = 0; i < results.length(); i++) {
                 JSONObject object = results.getJSONObject(i);

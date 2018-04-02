@@ -179,7 +179,7 @@ public class TicketSelectionActivity extends AppCompatActivity{
     }
     public void decreaseIntegerAdult(View view) {
         if(valueAdult >= 1) {
-            valueAdult = valueAdult - 1;
+            valueAdult = 0;
         }
         displayAdult(valueAdult);
     }
@@ -196,7 +196,7 @@ public class TicketSelectionActivity extends AppCompatActivity{
     }
     public void decreaseIntegerChild(View view) {
         if(valueChild >= 1){
-            valueChild = valueChild - 1;
+            valueChild = 0;
         }
         displayChild(valueChild);
     }
@@ -213,7 +213,7 @@ public class TicketSelectionActivity extends AppCompatActivity{
     }
     public void decreaseIntegerStudent(View view) {
         if(valueStudent >= 1){
-            valueStudent = valueStudent - 1;
+            valueStudent = 0;
         }
         displayStudent(valueStudent);
     }
@@ -223,12 +223,6 @@ public class TicketSelectionActivity extends AppCompatActivity{
         displayInteger.setText("" + number);
     }
 
-    @Override
-    public boolean onSupportNavigateUp(){
-        finish();
-        return true;
-    }
-
     // Increase/Decrease button logic Senior
     public void increaseIntegerSenior(View view) {
         valueSenior = valueSenior + 1;
@@ -236,7 +230,7 @@ public class TicketSelectionActivity extends AppCompatActivity{
     }
     public void decreaseIntegerSenior(View view) {
         if(valueSenior >= 1){
-            valueSenior = valueSenior - 1;
+            valueSenior = 0;
         }
         displaySenior(valueSenior);
     }
@@ -244,6 +238,12 @@ public class TicketSelectionActivity extends AppCompatActivity{
         TextView displayInteger = (TextView) findViewById(
                 R.id.ticketSelectorInputSenior);
         displayInteger.setText("" + number);
+    }
+
+    @Override
+    public boolean onSupportNavigateUp(){
+        finish();
+        return true;
     }
 
 

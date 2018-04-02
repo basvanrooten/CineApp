@@ -28,10 +28,10 @@
     <!-- TicketSelectionActivity!-->
     <string name="ticket_selection_title">Ticket selection</string>
     <string name="ticket_selection_info_header">Movie info</string>
-    <string name="ticket_selection_info_movie">Movie: xxx</string>
-    <string name="ticket_selection_info_date">Date: </string>
-    <string name="ticket_selection_info_start_time">Start time: </string>
-    <string name="ticket_selection_info_end_time">End time: </string>
+    <string name="ticket_selection_info_movie">"Movie: "</string>
+    <string name="ticket_selection_info_date">"Date: "</string>
+    <string name="ticket_selection_info_start_time">"Start time: "</string>
+    <string name="ticket_selection_info_end_time">"End time: "</string>
     <string name="ticket_selection_selector_header">Select tickets</string>
     <string name="ticket_selection_adult">Adult - €5,99</string>
     <string name="ticket_selection_amount">amount</string>
@@ -42,8 +42,8 @@
 
     <!-- SeatSelectionActivity!-->
     <string name="seat_selection_title">Seat Selection</string>
-    <string name="select_seats_start">Select </string>
-    <string name="select_seats_end"> seats</string>
+    <string name="select_seats_start">"Select "</string>
+    <string name="select_seats_end">" seats"</string>
     <string name="book_seats">Book seats</string>
     <string name ="seat_selection_nothing_selected">0 seats selected</string>
     <string name ="movie_screen">Screen</string>
@@ -55,13 +55,13 @@
     <!-- MyTicketsDetailActivity!-->
     <string name="my_ticket_detail_title">Ticket selection</string>
 
-    <string name="my_ticket_detail_movie">Movie: </string>
-    <string name="my_ticket_detail_date">Date: </string>
-    <string name="my_ticket_detail_time">Time: </string>
-    <string name="my_ticket_detail_theater">Theater: </string>
+    <string name="my_ticket_detail_movie">"Movie: "</string>
+    <string name="my_ticket_detail_date">"Date: "</string>
+    <string name="my_ticket_detail_time">"Time: "</string>
+    <string name="my_ticket_detail_theater">"Theater: "</string>
 
-    <string name="my_ticket_detail_seat">Seat: </string>
-    <string name="my_ticket_detail_type">Type: </string>
+    <string name="my_ticket_detail_seat">"Seat: "</string>
+    <string name="my_ticket_detail_type">"Type: "</string>
 
     <string name="adult">Adult</string>
     <string name="child">Child</string>
@@ -75,12 +75,12 @@
     <string name="checkout_info_content">Content</string>
     <string name="checkout_button">Pay now</string>
 
-    <string name="checkout_adult_tickets">Adult tickets: </string>
-    <string name="checkout_child_tickets">Child tickets: </string>
-    <string name="checkout_student_tickets">Student tickets: </string>
-    <string name="checkout_senior_tickets">Senior tickets: </string>
-    <string name="checkout_total_tickets">Total: </string>
-    <string name="checkout_payment_amount">Amount to be paid: €</string>
+    <string name="checkout_adult_tickets">"Adult tickets: "</string>
+    <string name="checkout_child_tickets">"Child tickets: "</string>
+    <string name="checkout_student_tickets">"Student tickets: "</string>
+    <string name="checkout_senior_tickets">"Senior tickets: "</string>
+    <string name="checkout_total_tickets">"Total: "</string>
+    <string name="checkout_payment_amount">"Amount to be paid: €"</string>
 
 
     <!-- ConfirmationActivity!-->
@@ -104,7 +104,7 @@
     <string name="my_ticket_detail_content">Content</string>
 
     <!-- schedule_row.xml!-->
-    <string name="schedule_availability">Availability: </string>
+    <string name="schedule_availability">"Availability: "</string>
     <string name="url_language">pt_PT</string>
     <string name="seat_selection_select_correct_amount">Incorrect amount selected.</string>
     <string name="amount_selected">" seats selected"</string>
