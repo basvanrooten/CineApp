@@ -15,7 +15,6 @@ import com.avans2018.klasd.cineapp.domain_layer.MovieSchedule;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 
 /**
  * Created by Tom on 28-3-2018. Voor gebruik in DetailActivity om Schedules weer te geven in lijst

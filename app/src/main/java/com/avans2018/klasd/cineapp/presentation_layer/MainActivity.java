@@ -5,19 +5,17 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
 import com.avans2018.klasd.cineapp.R;
 import com.avans2018.klasd.cineapp.application_logic_layer.MovieListAdapter;
 import com.avans2018.klasd.cineapp.application_logic_layer.OnItemClickListener;
-import com.avans2018.klasd.cineapp.data_access_layer.TicketStorageDB;
 import com.avans2018.klasd.cineapp.data_access_layer.movie.MovieListTask;
 import com.avans2018.klasd.cineapp.data_access_layer.movie.MovieListener;
 import com.avans2018.klasd.cineapp.domain_layer.Movie;
-import com.avans2018.klasd.cineapp.util_layer.StringLimiter;
 
 import java.util.ArrayList;
 
@@ -30,8 +28,6 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
     private RecyclerView recyclerView;
     private ArrayList<Movie> movieList = new ArrayList<>();
     private MovieListAdapter adapter = new MovieListAdapter(MainActivity.this, movieList);
-    private TicketStorageDB storageDB = new TicketStorageDB(this);
-
 
 
     @Override
@@ -40,6 +36,7 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
         language = this.getString(R.string.url_language);
 
         // Onderstaande uitgecommente regel gebruiken om alle tickets te verwijderen voor peer-test
+//        TicketStorageDB storageDB = new TicketStorageDB(this);
 //        storageDB.deleteAllFromDb();
 
         super.onCreate(savedInstanceState);
@@ -104,10 +101,8 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
         return super.onOptionsItemSelected(item);
     }
 
-
-
-
     public String getLanguage() {
         return this.language;
     }
+
 }

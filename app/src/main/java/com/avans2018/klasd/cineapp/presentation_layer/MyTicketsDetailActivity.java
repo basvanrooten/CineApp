@@ -1,31 +1,25 @@
 package com.avans2018.klasd.cineapp.presentation_layer;
 
-import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.support.v7.widget.Toolbar;
 
 import com.avans2018.klasd.cineapp.R;
-import com.avans2018.klasd.cineapp.domain_layer.Ticket;
 import com.avans2018.klasd.cineapp.domain_layer.TicketPrint;
-import com.avans2018.klasd.cineapp.util_layer.StringLimiter;
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.MultiFormatWriter;
 import com.google.zxing.common.BitMatrix;
 import com.journeyapps.barcodescanner.BarcodeEncoder;
 import com.squareup.picasso.Picasso;
 
-import java.util.Locale;
-
 public class MyTicketsDetailActivity extends AppCompatActivity {
     private final static String TAG = "MyTicketsDetailActivity";
-    private Context mContext;
     private Toolbar toolbar;
 
     @Override
@@ -48,7 +42,7 @@ public class MyTicketsDetailActivity extends AppCompatActivity {
 
 //      String QRUrl = clickedTicket.getId() + "";    // placeholder voor QR-code
         String QRUrl = "https://cdn.crunchify.com/wp-content/uploads/2013/01/CrunchifyQR-Tutorial.png";    // placeholder voor QR-code
-        Picasso.with(mContext).load(QRUrl).fit().centerInside().into(QRCode);
+        Picasso.with(getApplicationContext()).load(QRUrl).fit().centerInside().into(QRCode);
 
         MultiFormatWriter multiFormatWriter = new MultiFormatWriter();
         try {

@@ -2,10 +2,11 @@ package com.avans2018.klasd.cineapp.presentation_layer;
 
 import android.content.Context;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -13,7 +14,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.support.v7.widget.Toolbar;
 
 import com.avans2018.klasd.cineapp.R;
 import com.avans2018.klasd.cineapp.application_logic_layer.OnSeatSelected;
@@ -110,9 +110,7 @@ public class SeatSelectionActivity extends AppCompatActivity implements OnSeatSe
         bookSeatsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // Code voor Intent doorgeven stoelselectie aan ConfirmationActivity
-                // nog schrijven
-                //
+
                 if (selectedSeatsCount == totalTickets) {
                     Intent confirmationIntent = new Intent(view.getContext(), CheckoutActivity.class);
 
@@ -122,9 +120,7 @@ public class SeatSelectionActivity extends AppCompatActivity implements OnSeatSe
                         seats.add(items.get(i).getSeat());
                     }
 
-
-                    MovieSchedule schedule = receivedMovieSchedule;
-                    confirmationIntent.putExtra(CLICKED_SCHEDULE, schedule);
+                    confirmationIntent.putExtra(CLICKED_SCHEDULE, receivedMovieSchedule);
                     confirmationIntent.putExtra(TOTAL_TICKETS, totalTickets);
                     confirmationIntent.putExtra(TOTAL_ADULT_TICKETS, adultTickets);
                     confirmationIntent.putExtra(TOTAL_CHILD_TICKETS, childTickets);

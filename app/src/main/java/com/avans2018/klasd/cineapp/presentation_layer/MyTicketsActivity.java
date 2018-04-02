@@ -1,12 +1,12 @@
 package com.avans2018.klasd.cineapp.presentation_layer;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -14,9 +14,7 @@ import com.avans2018.klasd.cineapp.R;
 import com.avans2018.klasd.cineapp.application_logic_layer.MyTicketsListAdapter;
 import com.avans2018.klasd.cineapp.application_logic_layer.OnItemClickListener;
 import com.avans2018.klasd.cineapp.data_access_layer.TicketStorageDB;
-import com.avans2018.klasd.cineapp.domain_layer.Ticket;
 import com.avans2018.klasd.cineapp.domain_layer.TicketPrint;
-import com.avans2018.klasd.cineapp.util_layer.StringLimiter;
 
 import java.util.ArrayList;
 

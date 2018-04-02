@@ -13,8 +13,6 @@ import android.widget.TextView;
 
 import com.avans2018.klasd.cineapp.R;
 import com.avans2018.klasd.cineapp.domain_layer.TicketPrint;
-import com.google.zxing.qrcode.encoder.QRCode;
-import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 

@@ -11,8 +11,6 @@ import android.widget.TextView;
 
 import com.avans2018.klasd.cineapp.R;
 import com.avans2018.klasd.cineapp.domain_layer.Movie;
-
-
 import com.avans2018.klasd.cineapp.util_layer.StringLimiter;
 import com.squareup.picasso.Picasso;
 

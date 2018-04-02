@@ -1,9 +1,5 @@
 package com.avans2018.klasd.cineapp.application_logic_layer;
 
-import android.content.Context;
-
-import com.avans2018.klasd.cineapp.R;
-
 /**
  * Created by Gebruiker on 27-3-2018.
  */

@@ -1,9 +1,9 @@
 package com.avans2018.klasd.cineapp.presentation_layer;
 
-import android.content.Context;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -11,7 +11,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.support.v7.widget.Toolbar;
 
 import com.avans2018.klasd.cineapp.R;
 import com.avans2018.klasd.cineapp.domain_layer.MovieSchedule;
@@ -19,7 +18,6 @@ import com.avans2018.klasd.cineapp.util_layer.StringLimiter;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.Date;
 
 import static com.avans2018.klasd.cineapp.application_logic_layer.TicketPrices.ADULT_TICKET_PRICE;
 import static com.avans2018.klasd.cineapp.application_logic_layer.TicketPrices.CHILD_TICKET_PRICE;
@@ -38,7 +36,6 @@ public class TicketSelectionActivity extends AppCompatActivity{
     final static String SEAT_LIST = "seatList";
     double totalPriceAmount = 0;
     private Toolbar toolbar;
-    private Context context;
     private int valueAdult = 0;
     private int valueChild = 0;
     private int valueStudent = 0;

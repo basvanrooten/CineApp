@@ -1,12 +1,12 @@
 package com.avans2018.klasd.cineapp.presentation_layer;
 
-import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -14,12 +14,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.support.v7.widget.Toolbar;
 import android.widget.Toast;
 
 import com.avans2018.klasd.cineapp.R;
 import com.avans2018.klasd.cineapp.application_logic_layer.DatePagerAdapter;
-import com.avans2018.klasd.cineapp.application_logic_layer.MovieListAdapter;
 import com.avans2018.klasd.cineapp.application_logic_layer.OnItemClickListener;
 import com.avans2018.klasd.cineapp.application_logic_layer.ScheduleListAdapter;
 import com.avans2018.klasd.cineapp.data_access_layer.movieschedule.GetMovieSchedulesListener;
@@ -27,7 +25,6 @@ import com.avans2018.klasd.cineapp.data_access_layer.movieschedule.GetMovieSched
 import com.avans2018.klasd.cineapp.domain_layer.Movie;
 import com.avans2018.klasd.cineapp.domain_layer.MovieSchedule;
 import com.squareup.picasso.Picasso;
-import com.avans2018.klasd.cineapp.util_layer.StringLimiter;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -36,7 +33,6 @@ import java.util.Locale;
 // Activity voor detailscherm bij onItemClick in MainActivity
 public class DetailActivity extends AppCompatActivity implements OnItemClickListener, GetMovieSchedulesListener {
     private final static String TAG = "DetailActivity";
-    private Context mContext;
     private ArrayList<MovieSchedule> scheduleList = new ArrayList<>();
     private ArrayList<Date> dateList = new ArrayList<>();
     private RecyclerView recyclerView;
@@ -109,7 +105,7 @@ public class DetailActivity extends AppCompatActivity implements OnItemClickList
 
         // Picasso voor invullen ImageView
         String imageUrl = clickedMovie.getImageUrl();
-        Picasso.with(mContext).load(imageUrl).fit().centerInside().into(detailImageView);
+        Picasso.with(getApplicationContext()).load(imageUrl).fit().centerInside().into(detailImageView);
 
         // ViewPager voor datumselectie
         for (int i=0; i<30; i++){
