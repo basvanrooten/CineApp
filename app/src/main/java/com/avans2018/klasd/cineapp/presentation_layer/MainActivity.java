@@ -27,20 +27,20 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
     final static String CLICKED_MOVIE = "clickedMovie";
     private Toolbar toolbar;
     private String language = "pt_PT";
-
-
     private RecyclerView recyclerView;
     private ArrayList<Movie> movieList = new ArrayList<>();
     private MovieListAdapter adapter = new MovieListAdapter(MainActivity.this, movieList);
-
-    // Misschien overbodig
     private TicketStorageDB storageDB = new TicketStorageDB(this);
+
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         Log.i(TAG, "onCreate() called.");
         language = this.getString(R.string.url_language);
+
+        // Onderstaande uitgecommente regel gebruiken om alle tickets te verwijderen voor peer-test
+//        storageDB.deleteAllFromDb();
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -103,6 +103,9 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
 
         return super.onOptionsItemSelected(item);
     }
+
+
+
 
     public String getLanguage() {
         return this.language;

@@ -115,8 +115,9 @@ public class TicketStorageDB extends SQLiteOpenHelper implements Serializable{
         return tickets;
     }
 
-
-    // Hier nog methodes toevoegen voor ticketstuff
-
+    public void deleteAllFromDb(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.execSQL("delete from "+ TABLE_NAME);
+    }
 
 }
