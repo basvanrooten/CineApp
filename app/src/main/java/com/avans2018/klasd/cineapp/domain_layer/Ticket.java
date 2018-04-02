@@ -5,6 +5,8 @@ import android.util.Log;
 import com.avans2018.klasd.cineapp.domain_layer.payment_category.PaymentCategory;
 
 import java.io.Serializable;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 
 /**
  * Created by HeyRobin on 26-3-2018.
@@ -14,34 +16,25 @@ import java.io.Serializable;
 public class Ticket implements Serializable{
 
     private int id;
-    private String date;
-    private String time;
-    private Theater theater;
     private Seat seat;
-    private Movie movie;
     private PaymentCategory paymentCategory;
+    private MovieSchedule movieSchedule;
 
     private static final String TAG = "Domain: Ticket";
 
-    public Ticket(int id, String date, String time, Theater theater, Seat seat, Movie movie, PaymentCategory paymentCategory) {
+    public Ticket(int id, MovieSchedule movieSchedule, Seat seat, PaymentCategory paymentCategory) {
         this.id = id;
-        this.date = date;
-        this.time = time;
-        this.theater = theater;
         this.seat = seat;
-        this.movie = movie;
+        this.movieSchedule = movieSchedule;
         this.paymentCategory = paymentCategory;
 
         Log.d(TAG, "Ticket-Constructor (extended) called");
     }
 
-    public Ticket(String date, String time, Theater theater, Seat seat, Movie movie, PaymentCategory paymentCategory) {
+    public Ticket(MovieSchedule movieSchedule, Seat seat, PaymentCategory paymentCategory) {
         this.id = 0;
-        this.date = date;
-        this.time = time;
-        this.theater = theater;
         this.seat = seat;
-        this.movie = movie;
+        this.movieSchedule = movieSchedule;
         this.paymentCategory = paymentCategory;
 
         Log.d(TAG, "Ticket-Constructor (extended) called");
@@ -62,15 +55,7 @@ public class Ticket implements Serializable{
     }
 
     public Theater getTheater() {
-        return theater;
-    }
-
-    public void setTheater(Theater theater) {
-        this.theater = theater;
-    }
-
-    public void setDate(String date) {
-        this.date = date;
+        return movieSchedule.getTheater();
     }
 
     public Seat getSeat() {
@@ -78,11 +63,7 @@ public class Ticket implements Serializable{
     }
 
     public String getTime() {
-        return time;
-    }
-
-    public void setTime(String time) {
-        this.time = time;
+        return movieSchedule.getStartTime();
     }
 
     public void setSeat(Seat seat) {
@@ -90,13 +71,13 @@ public class Ticket implements Serializable{
     }
 
     public Movie getMovie() {
-        return movie;
+        return movieSchedule.getMovie();
     }
 
-    public String getDate() { return this.date; }
-
-    public void setMovie(Movie movie) {
-        this.movie = movie;
+    public String getDate() {
+        DateFormat df = new SimpleDateFormat("dd-MM-YY");
+        String dateAsString = df.format(movieSchedule.getDate());
+        return dateAsString;
     }
 
     public PaymentCategory getPaymentCategory() {
@@ -105,5 +86,13 @@ public class Ticket implements Serializable{
 
     public void setPaymentCategory(PaymentCategory paymentCategory) {
         this.paymentCategory = paymentCategory;
+    }
+
+    public MovieSchedule getMovieSchedule() {
+        return movieSchedule;
+    }
+
+    public void setMovieSchedule(MovieSchedule movieSchedule) {
+        this.movieSchedule = movieSchedule;
     }
 }

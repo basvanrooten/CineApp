@@ -1,19 +1,21 @@
 package com.avans2018.klasd.cineapp.presentation_layer;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
-import android.support.v7.widget.Toolbar;
 
 import com.avans2018.klasd.cineapp.R;
 import com.avans2018.klasd.cineapp.data_access_layer.TicketStorageDB;
-import com.avans2018.klasd.cineapp.domain_layer.MovieSchedule;
+import com.avans2018.klasd.cineapp.data_access_layer.seat.UpdateSeatStatusListener;
+import com.avans2018.klasd.cineapp.data_access_layer.seat.UpdateSeatStatusTask;
+import com.avans2018.klasd.cineapp.domain_layer.Seat;
 import com.avans2018.klasd.cineapp.domain_layer.Ticket;
 import com.avans2018.klasd.cineapp.util_layer.StringLimiter;
 
@@ -43,6 +45,12 @@ public class ConfirmationActivity extends AppCompatActivity {
         ArrayList<Ticket> ticketArrayList = (ArrayList<Ticket>) intent.getSerializableExtra(CheckoutActivity.PROCESSED_TICKETLIST);
         for(Ticket ticket : ticketArrayList){
             storageDB.addTicket(ticket);
+            new UpdateSeatStatusTask(new UpdateSeatStatusListener() {
+                @Override
+                public void onSeatRecieved(Seat seat) {
+                    //TODO: Nothing.
+                }
+            }, ticket.getMovieSchedule(), ticket.getSeat(), 1).execute();
         }
         Toast.makeText(this, R.string.confirmation_tickets_added, Toast.LENGTH_SHORT).show();
         Log.i(TAG,"Purchase complete. Tickets added to local storage.");

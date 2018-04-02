@@ -1,20 +1,19 @@
 package com.avans2018.klasd.cineapp.presentation_layer;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.support.v7.widget.Toolbar;
 
 import com.avans2018.klasd.cineapp.R;
 import com.avans2018.klasd.cineapp.domain_layer.MovieSchedule;
 import com.avans2018.klasd.cineapp.domain_layer.Seat;
-import com.avans2018.klasd.cineapp.domain_layer.Theater;
 import com.avans2018.klasd.cineapp.domain_layer.Ticket;
 import com.avans2018.klasd.cineapp.domain_layer.payment_category.AdultPayment;
 import com.avans2018.klasd.cineapp.domain_layer.payment_category.ChildPayment;
@@ -24,8 +23,6 @@ import com.avans2018.klasd.cineapp.util_layer.StringLimiter;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -38,7 +35,7 @@ import static com.avans2018.klasd.cineapp.presentation_layer.TicketSelectionActi
 import static com.avans2018.klasd.cineapp.presentation_layer.TicketSelectionActivity.TOTAL_STUDENT_TICKETS;
 import static com.avans2018.klasd.cineapp.presentation_layer.TicketSelectionActivity.TOTAL_TICKETS;
 
-public class CheckoutActivity extends AppCompatActivity{
+public class CheckoutActivity extends AppCompatActivity {
     final static String PENDING_PAYMENT = "payment";
     final static String TAG = "CheckoutActivity";
     final static String PROCESSED_TICKETLIST = "processedTickets";
@@ -100,39 +97,31 @@ public class CheckoutActivity extends AppCompatActivity{
             public void onClick(View view) {
                 Intent paymentIntent = new Intent(view.getContext(), ConfirmationActivity.class);
                 ArrayList<Ticket> tickets = new ArrayList<>();
-                random = new Random();
-                DateFormat df = new SimpleDateFormat("dd-MM-YY");
-                String dateAsString = df.format(receivedMovieSchedule.getDate());
 
                 bookedSeats = new ArrayList<>();
                 bookedSeats.addAll(seats);
 
-                // (String date, String time, Theater theater, Seat seat, Movie movie, PaymentCategory paymentCategory)
-                for(int i = 0; i < adultTickets; i++){
-                    // Logica van stoelnummer nog toevoegen
+                for (int i = 0; i < adultTickets; i++) {
                     Seat seat = getBookedSeat();
-                    Ticket ticket = new Ticket(dateAsString,receivedMovieSchedule.getStartTime(),receivedMovieSchedule.getTheater(),seat,receivedMovieSchedule.getMovie(),new AdultPayment());
+                    Ticket ticket = new Ticket(receivedMovieSchedule, seat, new AdultPayment());
                     tickets.add(ticket);
                 }
 
-                for(int i = 0; i < childTickets; i++){
-                    // Logica van stoelnummer nog toevoegen
+                for (int i = 0; i < childTickets; i++) {
                     Seat seat = getBookedSeat();
-                    Ticket ticket = new Ticket(dateAsString,receivedMovieSchedule.getStartTime(),receivedMovieSchedule.getTheater(),seat,receivedMovieSchedule.getMovie(),new ChildPayment());
+                    Ticket ticket = new Ticket(receivedMovieSchedule, seat, new ChildPayment());
                     tickets.add(ticket);
                 }
 
-                for(int i = 0; i < studentTickets; i++){
-                    // Logica van stoelnummer nog toevoegen
+                for (int i = 0; i < studentTickets; i++) {
                     Seat seat = getBookedSeat();
-                    Ticket ticket = new Ticket(dateAsString,receivedMovieSchedule.getStartTime(),receivedMovieSchedule.getTheater(),seat,receivedMovieSchedule.getMovie(),new StudentPayment());
+                    Ticket ticket = new Ticket(receivedMovieSchedule, seat, new StudentPayment());
                     tickets.add(ticket);
                 }
 
-                for(int i = 0; i < seniorTickets; i++){
-                    // Logica van stoelnummer nog toevoegen
+                for (int i = 0; i < seniorTickets; i++) {
                     Seat seat = getBookedSeat();
-                    Ticket ticket = new Ticket(dateAsString,receivedMovieSchedule.getStartTime(),receivedMovieSchedule.getTheater(),seat,receivedMovieSchedule.getMovie(),new SeniorPayment());
+                    Ticket ticket = new Ticket(receivedMovieSchedule, seat, new SeniorPayment());
                     tickets.add(ticket);
                 }
 
@@ -142,7 +131,7 @@ public class CheckoutActivity extends AppCompatActivity{
                 Log.i(TAG, "Starting ConfirmationActivity...");
             }
 
-            private Seat getBookedSeat(){
+            private Seat getBookedSeat() {
                 Seat s = bookedSeats.get(random.nextInt(bookedSeats.size()));
                 bookedSeats.remove(s);
                 return s;
@@ -158,7 +147,7 @@ public class CheckoutActivity extends AppCompatActivity{
     }
 
     @Override
-    public boolean onSupportNavigateUp(){
+    public boolean onSupportNavigateUp() {
         finish();
         return true;
     }
@@ -169,7 +158,7 @@ public class CheckoutActivity extends AppCompatActivity{
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_my_tickets) {
-            Intent intent = new Intent(this,MyTicketsActivity.class);
+            Intent intent = new Intent(this, MyTicketsActivity.class);
             startActivity(intent);
             return true;
         }
