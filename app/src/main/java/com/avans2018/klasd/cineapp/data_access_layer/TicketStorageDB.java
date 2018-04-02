@@ -75,7 +75,7 @@ public class TicketStorageDB extends SQLiteOpenHelper implements Serializable{
 //        toBeAdded.put(ID, ticket.getId());    AutoIncrement, niet meer nodig
         toBeAdded.put(DATE, ticket.getDate());
         toBeAdded.put(TIME, ticket.getTime());
-        toBeAdded.put(THEATER, ticket.getSeat().returnTheaterForDB());
+        toBeAdded.put(THEATER, ticket.getSeat().returnTheaterNumberForDB());
         toBeAdded.put(SEAT, ticket.getSeat().returnSeatNumberForDB());
         toBeAdded.put(MOVIE, ticket.getMovie().getName());
         toBeAdded.put(PAYMENTCATEGORY, ticket.getPaymentCategory().getPaymentMethodString());
