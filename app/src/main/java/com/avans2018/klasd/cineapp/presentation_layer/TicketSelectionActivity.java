@@ -124,7 +124,7 @@ public class TicketSelectionActivity extends AppCompatActivity{
                     totalPriceAmount = (double) totalPriceAmount + (studentTicketsAmount * STUDENT_TICKET_PRICE);
                     totalPriceAmount = (double) totalPriceAmount + (seniorTicketsAmount * SENIOR_TICKET_PRICE);
 
-                    if(totalTicketCount<=0){
+                    if(totalTicketCount <= 0 || totalTicketCount > 72 ){
 
                 } else {
                     Intent seatSelectionIntent = new Intent(v.getContext(), SeatSelectionActivity.class);

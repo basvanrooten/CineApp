@@ -86,7 +86,10 @@ public class SeatSelectionActivity extends AppCompatActivity implements OnSeatSe
         bookSeatsButton = (Button) findViewById(R.id.bookSeatsButton);
         final List<SelectionSeat> items = new ArrayList<>();
         Seat seat;
-        for (int i=0; i<72; i++) {
+
+        Log.i(TAG,"Theater " + receivedMovieSchedule.getTheater() + " has a total of " + receivedMovieSchedule.getTheater().getSeats().size() + " seats.");
+
+        for (int i=0; i < receivedMovieSchedule.getTheater().getSeats().size(); i++) {
         seat = receivedMovieSchedule.getTheater().getSeats().get(i);
         if (i%COLUMNS==0 || i%COLUMNS==9) {
             items.add(new EdgeSeat(String.valueOf(i), seat));

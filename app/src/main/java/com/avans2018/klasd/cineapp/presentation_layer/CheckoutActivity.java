@@ -91,7 +91,7 @@ public class CheckoutActivity extends AppCompatActivity {
         checkoutPaymentButton.setOnClickListener(new View.OnClickListener() {
 
             private ArrayList<Seat> bookedSeats;
-            private Random random;
+            private Random random = new Random();
 
             @Override
             public void onClick(View view) {

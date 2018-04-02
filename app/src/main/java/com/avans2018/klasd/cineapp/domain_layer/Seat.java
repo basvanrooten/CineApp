@@ -83,7 +83,8 @@ public class Seat implements Serializable {
     }
 
     public String returnTheaterForDB() {
-        return this.theater.getTheaterName() + " : " + getSeatNumber();
+//        return this.theater.getTheaterName() + " : " + getSeatNumber();    // Code van Wouter
+        return this.theater.getTheaterName();
     }
 
     public int returnSeatNumberForDB() {

@@ -59,4 +59,5 @@ public class Theater implements Serializable{
         return "This is theater '" + this.theaterNumber +
                 "', with the name " + this.theaterName;
     }
+
 }
