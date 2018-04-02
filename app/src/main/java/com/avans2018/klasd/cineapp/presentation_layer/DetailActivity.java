@@ -31,6 +31,7 @@ import com.avans2018.klasd.cineapp.util_layer.StringLimiter;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Locale;
 
 // Activity voor detailscherm bij onItemClick in MainActivity
 public class DetailActivity extends AppCompatActivity implements OnItemClickListener, GetMovieSchedulesListener {
@@ -70,7 +71,12 @@ public class DetailActivity extends AppCompatActivity implements OnItemClickList
         TextView detailActivityIMDB = (TextView) findViewById(R.id.detailFilmIMDB);
         detailActivityIMDB.setText("   " + clickedMovie.getRating() + "/10");
         TextView detailActivityPlaytime = (TextView) findViewById(R.id.detailFilmPlaytime);
-        detailActivityPlaytime.setText("       " + clickedMovie.getDuration() + "m");
+        if(Locale.getDefault().getDisplayLanguage().equals("Nederlands")){
+            detailActivityPlaytime.setText("  " + clickedMovie.getDuration() + "m");
+        } else {
+            detailActivityPlaytime.setText("       " + clickedMovie.getDuration() + "m");
+        }
+
         TextView detailActivityFilmAge = (TextView) findViewById(R.id.detailFilmAge);
         if(clickedMovie.isAdultOnly()){
             detailActivityFilmAge.setText("18+");
