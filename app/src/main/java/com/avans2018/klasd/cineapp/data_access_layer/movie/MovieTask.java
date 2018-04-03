@@ -25,9 +25,11 @@ public class MovieTask extends AsyncTask<String, Void, String> {
 
     private MovieListener movieListener;
     private Context context;
+    private boolean error;
 
-    public MovieTask(MovieListener movieListener) {
+    public MovieTask(MovieListener movieListener, boolean error) {
         this.movieListener = movieListener;
+        this.error = error;
     }
 
     @Override
@@ -47,7 +49,7 @@ public class MovieTask extends AsyncTask<String, Void, String> {
         try {
             URL url;
 
-            if(language.equals("Nederlands")){
+            if(language.equals("Nederlands") && !this.error){
                  url = new URL("https://api.themoviedb.org/3/movie/" + id + "?api_key=" + StringKeys.API_KEY + "&language=nl");
             } else {
                 url = new URL("https://api.themoviedb.org/3/movie/" + id + "?api_key=" + StringKeys.API_KEY);
@@ -115,9 +117,15 @@ public class MovieTask extends AsyncTask<String, Void, String> {
             int rating = jsonObject.getInt("vote_average");
             int ratingCount = jsonObject.getInt("vote_count");
 
-            Movie movie = new Movie(id, name, adultOnly, genre, imageUrl, posterUrl, duration, info, language, releaseDate, homePageUrl, status, rating, ratingCount);
+            if(info.isEmpty()) {
+                MovieTask task = new MovieTask(movieListener, true);
+                task.execute(Integer.toString(id));
+            } else {
+                Movie movie = new Movie(id, name, adultOnly, genre, imageUrl, posterUrl, duration, info, language, releaseDate, homePageUrl, status, rating, ratingCount);
+                movieListener.onMovieRecieved(movie);
+            }
 
-            movieListener.onMovieRecieved(movie);
+
 
         } catch (Exception e) {
             Log.e(getClass().getSimpleName(), e.getMessage());
