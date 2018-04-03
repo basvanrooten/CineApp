@@ -81,4 +81,5 @@
     <string name="invalid_date_selected">Niet beschikbaar</string>
     <string name="single_selected">" stoel geselecteerd"</string>
     <string name="select_seats_end_single">" stoel"</string>
+    <string name="fully_booked">Uitverkocht</string>
 </resources>
