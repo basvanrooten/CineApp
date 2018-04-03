@@ -127,11 +127,11 @@
 
                 <Button
                     android:id="@+id/buttonDecreaseAdult"
-                    android:layout_width="4dp"
-                    android:layout_height="24dp"
+                    android:layout_width="16dp"
+                    android:layout_height="30dp"
                     android:layout_marginRight="5dp"
                     android:layout_weight="1"
-                    android:background="@android:drawable/ic_delete"
+                    android:background="@drawable/icon_min"
                     android:onClick="decreaseIntegerAdult"
                     android:textSize="8sp" />
 
@@ -154,10 +154,10 @@
 
                 <Button
                     android:id="@+id/buttonIncreaseAdult"
-                    android:layout_width="8dp"
+                    android:layout_width="16dp"
                     android:layout_height="30dp"
                     android:layout_weight="1"
-                    android:background="@android:drawable/ic_input_add"
+                    android:background="@drawable/icon_plus"
                     android:onClick="increaseIntegerAdult"
                     android:textSize="8sp" />
 
@@ -181,11 +181,11 @@
 
                 <Button
                     android:id="@+id/buttonDecreaseChild"
-                    android:layout_width="4dp"
-                    android:layout_height="24dp"
+                    android:layout_width="16dp"
+                    android:layout_height="30dp"
                     android:layout_marginRight="5dp"
                     android:layout_weight="1"
-                    android:background="@android:drawable/ic_delete"
+                    android:background="@drawable/icon_min"
                     android:onClick="decreaseIntegerChild"
                     android:textSize="8sp" />
 
@@ -208,10 +208,10 @@
 
                 <Button
                     android:id="@+id/buttonIncreaseChild"
-                    android:layout_width="8dp"
+                    android:layout_width="16dp"
                     android:layout_height="30dp"
                     android:layout_weight="1"
-                    android:background="@android:drawable/ic_input_add"
+                    android:background="@drawable/icon_plus"
                     android:onClick="increaseIntegerChild"
                     android:textSize="8sp" />
 
@@ -236,11 +236,11 @@
 
                 <Button
                     android:id="@+id/buttonDecreaseStudent"
-                    android:layout_width="4dp"
-                    android:layout_height="24dp"
+                    android:layout_width="16dp"
+                    android:layout_height="30dp"
                     android:layout_marginRight="5dp"
                     android:layout_weight="1"
-                    android:background="@android:drawable/ic_delete"
+                    android:background="@drawable/icon_min"
                     android:onClick="decreaseIntegerStudent"
                     android:textSize="8sp" />
 
@@ -263,10 +263,10 @@
 
                 <Button
                     android:id="@+id/buttonIncreaseStudent"
-                    android:layout_width="8dp"
+                    android:layout_width="16dp"
                     android:layout_height="30dp"
                     android:layout_weight="1"
-                    android:background="@android:drawable/ic_input_add"
+                    android:background="@drawable/icon_plus"
                     android:onClick="increaseIntegerStudent"
                     android:textSize="8sp" />
 
@@ -292,11 +292,11 @@
 
                 <Button
                     android:id="@+id/buttonDecreaseSenior"
-                    android:layout_width="4dp"
-                    android:layout_height="24dp"
+                    android:layout_width="16dp"
+                    android:layout_height="30dp"
                     android:layout_marginRight="5dp"
                     android:layout_weight="1"
-                    android:background="@android:drawable/ic_delete"
+                    android:background="@drawable/icon_min"
                     android:onClick="decreaseIntegerSenior"
                     android:textSize="8sp" />
 
@@ -319,10 +319,10 @@
 
                 <Button
                     android:id="@+id/buttonIncreaseSenior"
-                    android:layout_width="8dp"
+                    android:layout_width="16dp"
                     android:layout_height="30dp"
                     android:layout_weight="1"
-                    android:background="@android:drawable/ic_input_add"
+                    android:background="@drawable/icon_plus"
                     android:onClick="increaseIntegerSenior"
                     android:textSize="8sp" />
             </LinearLayout>
