@@ -40,6 +40,8 @@
     <string name="ticket_selection_student">Student - €2,99</string>
     <string name="ticket_selection_senior">Senior - €4,99</string>
     <string name="ticket_selection_continue_button">Continue to seat selection</string>
+    <string name="no_tickets_selected">No tickets selected</string>
+    <string name="maximum_available_tickets">"Available tickets: "</string>
 
     <!-- SeatSelectionActivity!-->
     <string name="seat_selection_title">Seat Selection</string>
@@ -107,7 +109,7 @@
     <string name="my_ticket_detail_content">Content</string>
 
     <!-- schedule_row.xml!-->
-    <string name="schedule_availability">"Availability: "</string>
+    <string name="schedule_availability">" seats available"</string>
     <string name="url_language">pt_PT</string>
     <string name="seat_selection_select_correct_amount">Incorrect amount selected.</string>
     <string name="amount_selected">" seats selected"</string>

@@ -51,7 +51,7 @@
     <string name="my_ticket_date">Datum</string>
     <string name="my_ticket_time">Tijd</string>
     <string name="my_ticket_detail_content">Inhoud</string>
-    <string name="schedule_availability">"Beschikbaarheid: "</string>
+    <string name="schedule_availability">" stoelen beschikbaar"</string>
     <string name="my_ticket_detail_movie">"Film: "</string>
     <string name="my_ticket_detail_date">"Datum: "</string>
     <string name="my_ticket_detail_time">"Tijd: "</string>
@@ -83,4 +83,6 @@
     <string name="select_seats_end_single">" stoel"</string>
     <string name="fully_booked">Uitverkocht</string>
     <string name="selected_seats_unavailable">Geselecteerde stoelen niet beschikbaar</string>
+    <string name="no_tickets_selected">Geen tickets geselecteerd</string>
+    <string name="maximum_available_tickets">"Aantal beschikbare tickets: "</string>
 </resources>

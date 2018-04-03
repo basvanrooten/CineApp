@@ -55,7 +55,7 @@ public class ScheduleListAdapter extends RecyclerView.Adapter<ScheduleListAdapte
         String scheduleDate = dateAsString;
         String startTime = "" + schedule.getStartTime();
         String endTime = "" + schedule.getEndTime();
-        String takenPerc = mContext.getString(R.string.schedule_availability) +""+ schedule.getTakenPerc() + "%";
+        String takenPerc = "" + schedule.getTheater().getFreeSeats() + mContext.getString(R.string.schedule_availability);
 
         if(schedule.getDate().getTime() < System.currentTimeMillis()){
             holder.scheduleListDate.setTextColor(Color.GRAY);

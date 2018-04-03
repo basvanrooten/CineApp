@@ -17,6 +17,7 @@ import com.avans2018.klasd.cineapp.data_access_layer.TicketStorageDB;
 import com.avans2018.klasd.cineapp.domain_layer.TicketPrint;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class MyTicketsActivity extends AppCompatActivity implements OnItemClickListener {
     private final static String TAG = "MyTicketActivity";
@@ -50,6 +51,7 @@ public class MyTicketsActivity extends AppCompatActivity implements OnItemClickL
         adapter.setOnItemClickListener(MyTicketsActivity.this);
 
         ticketPrintList.addAll(ticketStorage.getAllTicketPrints());
+        Collections.reverse(ticketPrintList);
         adapter.notifyDataSetChanged();
     }
 
