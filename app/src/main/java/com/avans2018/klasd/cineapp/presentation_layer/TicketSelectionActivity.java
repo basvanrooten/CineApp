@@ -183,7 +183,7 @@ public class TicketSelectionActivity extends AppCompatActivity{
     }
     public void decreaseIntegerAdult(View view) {
         if(valueAdult >= 1) {
-            valueAdult = 0;
+            valueAdult = valueAdult - 1;
         }
         displayAdult(valueAdult);
     }
@@ -200,7 +200,7 @@ public class TicketSelectionActivity extends AppCompatActivity{
     }
     public void decreaseIntegerChild(View view) {
         if(valueChild >= 1){
-            valueChild = 0;
+            valueChild = valueChild - 1;
         }
         displayChild(valueChild);
     }
@@ -217,7 +217,7 @@ public class TicketSelectionActivity extends AppCompatActivity{
     }
     public void decreaseIntegerStudent(View view) {
         if(valueStudent >= 1){
-            valueStudent = 0;
+            valueStudent = valueStudent - 1;
         }
         displayStudent(valueStudent);
     }
@@ -234,7 +234,7 @@ public class TicketSelectionActivity extends AppCompatActivity{
     }
     public void decreaseIntegerSenior(View view) {
         if(valueSenior >= 1){
-            valueSenior = 0;
+            valueSenior = valueSenior - 1;
         }
         displaySenior(valueSenior);
     }

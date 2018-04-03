@@ -118,7 +118,7 @@
 
                 <TextView
                     android:id="@+id/ticketSelectorTextAdult"
-                    android:layout_width="240dp"
+                    android:layout_width="270dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:paddingLeft="10dp"
@@ -127,8 +127,8 @@
 
                 <Button
                     android:id="@+id/buttonDecreaseAdult"
-                    android:layout_width="16dp"
-                    android:layout_height="30dp"
+                    android:layout_width="12dp"
+                    android:layout_height="22dp"
                     android:layout_marginRight="5dp"
                     android:layout_weight="1"
                     android:background="@drawable/icon_min"
@@ -154,8 +154,8 @@
 
                 <Button
                     android:id="@+id/buttonIncreaseAdult"
-                    android:layout_width="16dp"
-                    android:layout_height="30dp"
+                    android:layout_width="12dp"
+                    android:layout_height="22dp"
                     android:layout_weight="1"
                     android:background="@drawable/icon_plus"
                     android:onClick="increaseIntegerAdult"
@@ -172,7 +172,7 @@
 
                 <TextView
                     android:id="@+id/ticketSelectorTextChild"
-                    android:layout_width="240dp"
+                    android:layout_width="270dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:paddingLeft="10dp"
@@ -181,8 +181,8 @@
 
                 <Button
                     android:id="@+id/buttonDecreaseChild"
-                    android:layout_width="16dp"
-                    android:layout_height="30dp"
+                    android:layout_width="12dp"
+                    android:layout_height="22dp"
                     android:layout_marginRight="5dp"
                     android:layout_weight="1"
                     android:background="@drawable/icon_min"
@@ -208,8 +208,8 @@
 
                 <Button
                     android:id="@+id/buttonIncreaseChild"
-                    android:layout_width="16dp"
-                    android:layout_height="30dp"
+                    android:layout_width="12dp"
+                    android:layout_height="22dp"
                     android:layout_weight="1"
                     android:background="@drawable/icon_plus"
                     android:onClick="increaseIntegerChild"
@@ -227,7 +227,7 @@
 
                 <TextView
                     android:id="@+id/ticketSelectorTextStudent"
-                    android:layout_width="240dp"
+                    android:layout_width="270dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:paddingLeft="10dp"
@@ -236,8 +236,8 @@
 
                 <Button
                     android:id="@+id/buttonDecreaseStudent"
-                    android:layout_width="16dp"
-                    android:layout_height="30dp"
+                    android:layout_width="12dp"
+                    android:layout_height="22dp"
                     android:layout_marginRight="5dp"
                     android:layout_weight="1"
                     android:background="@drawable/icon_min"
@@ -263,8 +263,8 @@
 
                 <Button
                     android:id="@+id/buttonIncreaseStudent"
-                    android:layout_width="16dp"
-                    android:layout_height="30dp"
+                    android:layout_width="12dp"
+                    android:layout_height="22dp"
                     android:layout_weight="1"
                     android:background="@drawable/icon_plus"
                     android:onClick="increaseIntegerStudent"
@@ -282,7 +282,7 @@
 
                 <TextView
                     android:id="@+id/ticketSelectorTextSenior"
-                    android:layout_width="240dp"
+                    android:layout_width="270dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:paddingLeft="10dp"
@@ -292,8 +292,8 @@
 
                 <Button
                     android:id="@+id/buttonDecreaseSenior"
-                    android:layout_width="16dp"
-                    android:layout_height="30dp"
+                    android:layout_width="12dp"
+                    android:layout_height="22dp"
                     android:layout_marginRight="5dp"
                     android:layout_weight="1"
                     android:background="@drawable/icon_min"
@@ -319,8 +319,8 @@
 
                 <Button
                     android:id="@+id/buttonIncreaseSenior"
-                    android:layout_width="16dp"
-                    android:layout_height="30dp"
+                    android:layout_width="12dp"
+                    android:layout_height="22dp"
                     android:layout_weight="1"
                     android:background="@drawable/icon_plus"
                     android:onClick="increaseIntegerSenior"
