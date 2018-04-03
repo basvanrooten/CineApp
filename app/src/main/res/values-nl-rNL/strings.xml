@@ -82,7 +82,10 @@
     <string name="single_selected">" stoel geselecteerd"</string>
     <string name="select_seats_end_single">" stoel"</string>
     <string name="fully_booked">Uitverkocht</string>
-    <string name="selected_seats_unavailable">Geselecteerde stoelen niet beschikbaar</string>
+    <string name="selected_seats_unavailable">Geselecteerde stoelen zijn niet beschikbaar</string>
     <string name="no_tickets_selected">Geen tickets geselecteerd</string>
     <string name="maximum_available_tickets">"Aantal beschikbare tickets: "</string>
+    <string name="failed_content">Betaling mislukt. Keer terug naar Movie details.</string>
+    <string name="back_to_detailed_activity">Terug naar Movie details</string>
+    <string name="not_enough_space">Zaal volgeboekt. Kies andere tijd.</string>
 </resources>

@@ -49,9 +49,10 @@
     <string name="select_seats_end">" seats"</string>
     <string name="select_seats_end_single">" seat"</string>
     <string name="book_seats">Book seats</string>
-    <string name ="seat_selection_nothing_selected">No seats selected</string>
-    <string name ="movie_screen">Screen</string>
-    <string name ="selected_seats_unavailable">"Selected seats unavailable"</string>
+    <string name="seat_selection_nothing_selected">No seats selected</string>
+    <string name="movie_screen">Screen</string>
+    <string name="selected_seats_unavailable">"Selected seats unavailable"</string>
+    <string name="not_enough_space">Theater fully booked. Please select different time.</string>
 
     <!-- MyTicketsActivity!-->
     <string name="my_tickets_title">My Tickets</string>
@@ -59,20 +60,16 @@
 
     <!-- MyTicketsDetailActivity!-->
     <string name="my_ticket_detail_title">Ticket selection</string>
-
     <string name="my_ticket_detail_movie">"Movie: "</string>
     <string name="my_ticket_detail_date">"Date: "</string>
     <string name="my_ticket_detail_time">"Time: "</string>
     <string name="my_ticket_detail_theater">"Theater: "</string>
-
     <string name="my_ticket_detail_seat">"Seat: "</string>
     <string name="my_ticket_detail_type">"Type: "</string>
-
     <string name="adult">Adult</string>
     <string name="child">Child</string>
     <string name="student">Student</string>
     <string name="senior">Senior</string>
-
 
     <!-- CheckoutActivity!-->
     <string name="checkout_title">Checkout</string>
@@ -87,15 +84,19 @@
     <string name="checkout_total_tickets">"Total: "</string>
     <string name="checkout_payment_amount">"Amount to be paid: €"</string>
 
+    <!-- FailedPaymentActivity!-->
+    <string name="failed_content">Payment failed. Return to Movie details.</string>
+    <string name="back_to_detailed_activity">"Return to Movie details"</string>
+
 
     <!-- ConfirmationActivity!-->
     <string name="confirmationHeader">Order complete</string>
-    <string name="confirmationContent">Payment succesful. You can view your purchased tickets at all times using the button on the top right.</string>
-    <string name="confirmationButton">View tickets</string>
+    <string name="confirmationContent">"Payment failed. You will be returned to Movie details. Please resubmit order."</string>
+    <string name="confirmationButton">"Go to Movie details"</string>
     <string name="confirmation_tickets_added">Tickets added to My Tickets</string>
 
     <!-- tool_bar.xml!-->
-    <string name ="topbar_my_tickets">My tickets</string>
+    <string name="topbar_my_tickets">My tickets</string>
 
     <!-- recyclerview_row.xml!-->
     <string name="list_film_title">Film Title</string>
