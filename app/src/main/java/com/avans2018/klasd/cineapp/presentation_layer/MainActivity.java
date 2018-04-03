@@ -13,6 +13,7 @@ import android.view.MenuItem;
 import com.avans2018.klasd.cineapp.R;
 import com.avans2018.klasd.cineapp.application_logic_layer.MovieListAdapter;
 import com.avans2018.klasd.cineapp.application_logic_layer.OnItemClickListener;
+import com.avans2018.klasd.cineapp.data_access_layer.TicketStorageDB;
 import com.avans2018.klasd.cineapp.data_access_layer.movie.MovieListTask;
 import com.avans2018.klasd.cineapp.data_access_layer.movie.MovieListener;
 import com.avans2018.klasd.cineapp.domain_layer.Movie;

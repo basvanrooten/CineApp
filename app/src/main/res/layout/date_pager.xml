@@ -1,21 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:textAlignment="center">
 
-    <TextView
-        android:id="@+id/datePagerContentDate"
+    <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="0dp"
-        android:background="@color/CineAppHeader"
-        android:paddingBottom="5dp"
-        android:paddingTop="5dp"
-        android:text="@string/my_ticket_date"
-        android:textAlignment="center"
-        android:textColor="@color/zxing_status_text"
-        android:textSize="18sp" />
+        android:layout_height="40dp"
+        android:background="@color/CineAppHeader">
+
+        <ImageView
+            android:id="@+id/slideIconLeft"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@android:drawable/ic_media_rew" />
+
+        <TextView
+            android:id="@+id/datePagerContentDate"
+            android:layout_width="315dp"
+            android:layout_height="39dp"
+            android:layout_margin="0dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/CineAppHeader"
+            android:paddingBottom="5dp"
+            android:paddingTop="5dp"
+            android:text="@string/my_ticket_date"
+            android:textAlignment="center"
+            android:textColor="@color/zxing_status_text"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/slideIconRight"
+            app:layout_constraintStart_toEndOf="@+id/slideIconLeft"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/slideIconRight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@android:drawable/ic_media_ff" />
+
+    </android.support.constraint.ConstraintLayout>
 
 </LinearLayout>

@@ -133,7 +133,8 @@ public class DetailActivity extends AppCompatActivity implements OnItemClickList
         Log.i(TAG, "onItemClick() called.");
         MovieSchedule schedule = scheduleList.get(position);
 
-        if(schedule.getDate().getTime() >= System.currentTimeMillis()){
+        // Als filmtijd niet in het verleden is en aantal beschikbare stoelen meer dan 0 is, dan start de Intent naar TicketSelectionActivity
+        if(schedule.getDate().getTime() >= System.currentTimeMillis() && schedule.getTakenPerc() > 0){
             Intent ticketSelectionIntent = new Intent(this, TicketSelectionActivity.class);
             ticketSelectionIntent.putExtra(CLICKED_SCHEDULE, schedule);
             startActivity(ticketSelectionIntent);
