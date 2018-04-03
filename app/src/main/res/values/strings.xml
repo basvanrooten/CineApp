@@ -49,7 +49,7 @@
     <string name="book_seats">Book seats</string>
     <string name ="seat_selection_nothing_selected">No seats selected</string>
     <string name ="movie_screen">Screen</string>
-    <string name ="selected_seats_unavailable"></string>
+    <string name ="selected_seats_unavailable">"Selected seats unavailable"</string>
 
     <!-- MyTicketsActivity!-->
     <string name="my_tickets_title">My Tickets</string>
