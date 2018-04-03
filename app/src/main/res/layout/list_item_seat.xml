@@ -34,4 +34,14 @@
 
     </ImageView>
 
+    <ImageView
+        android:id="@+id/img_seat_reserved"
+        android:layout_width="30dp"
+        android:layout_height="25dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/seat_is_reserved"
+        android:visibility="invisible">
+
+    </ImageView>
+
 </RelativeLayout>

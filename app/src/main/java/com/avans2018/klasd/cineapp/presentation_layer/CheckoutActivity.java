@@ -12,8 +12,11 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.avans2018.klasd.cineapp.R;
+import com.avans2018.klasd.cineapp.data_access_layer.seat.UpdateSeatStatusListener;
+import com.avans2018.klasd.cineapp.data_access_layer.seat.UpdateSeatStatusTask;
 import com.avans2018.klasd.cineapp.domain_layer.MovieSchedule;
 import com.avans2018.klasd.cineapp.domain_layer.Seat;
+import com.avans2018.klasd.cineapp.domain_layer.SeatStatus;
 import com.avans2018.klasd.cineapp.domain_layer.Ticket;
 import com.avans2018.klasd.cineapp.domain_layer.payment_category.AdultPayment;
 import com.avans2018.klasd.cineapp.domain_layer.payment_category.ChildPayment;
@@ -87,6 +90,16 @@ public class CheckoutActivity extends AppCompatActivity {
         String firstPart = this.getString(R.string.checkout_payment_amount);
         double roundedNumber = round(totalPayment, 2);
         checkoutOverviewContentSix.setText(firstPart + roundedNumber);
+
+        for(Seat seat : seats){
+            UpdateSeatStatusTask task = new UpdateSeatStatusTask(new UpdateSeatStatusListener() {
+                @Override
+                public void onSeatRecieved(Seat seat) {
+
+                }
+            }, receivedMovieSchedule, seat, SeatStatus.IS_RESERVATED);
+            task.execute();
+        }
 
         Button checkoutPaymentButton = (Button) findViewById(R.id.CheckoutPaymentButton);
         checkoutPaymentButton.setOnClickListener(new View.OnClickListener() {

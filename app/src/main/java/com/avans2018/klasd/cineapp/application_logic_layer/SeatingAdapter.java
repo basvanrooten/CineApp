@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.avans2018.klasd.cineapp.R;
+import com.avans2018.klasd.cineapp.domain_layer.SeatStatus;
 import com.avans2018.klasd.cineapp.domain_layer.seating.CenterSeat;
 import com.avans2018.klasd.cineapp.domain_layer.seating.EdgeSeat;
 import com.avans2018.klasd.cineapp.domain_layer.seating.SelectionSeat;
@@ -26,6 +27,7 @@ public class SeatingAdapter extends SelectableAdapter<RecyclerView.ViewHolder> {
         ImageView imgSeat;
         ImageView imgSeatBooked;
         private final ImageView imgSeatSelected;
+        private final ImageView imgSeatReserved;
 
 
         public EdgeViewHolder(View itemView) {
@@ -33,6 +35,8 @@ public class SeatingAdapter extends SelectableAdapter<RecyclerView.ViewHolder> {
             imgSeat = (ImageView) itemView.findViewById(R.id.img_seat);
             imgSeatSelected = (ImageView) itemView.findViewById(R.id.img_seat_selected);
             imgSeatBooked = (ImageView) itemView.findViewById(R.id.img_seat_booked);
+            imgSeatReserved = (ImageView) itemView.findViewById(R.id.img_seat_reserved);
+
 
         }
 
@@ -43,12 +47,14 @@ public class SeatingAdapter extends SelectableAdapter<RecyclerView.ViewHolder> {
         ImageView imgSeat;
         ImageView imgSeatBooked;
         private final ImageView imgSeatSelected;
+        private final ImageView imgSeatReserved;
 
         public CenterViewHolder(View itemView) {
             super(itemView);
             imgSeat = (ImageView) itemView.findViewById(R.id.img_seat);
             imgSeatSelected = (ImageView) itemView.findViewById(R.id.img_seat_selected);
             imgSeatBooked = (ImageView) itemView.findViewById(R.id.img_seat_booked);
+            imgSeatReserved = (ImageView) itemView.findViewById(R.id.img_seat_reserved);
 
         }
 
@@ -105,8 +111,13 @@ public class SeatingAdapter extends SelectableAdapter<RecyclerView.ViewHolder> {
                     final CenterSeat item = (CenterSeat) mItems.get(position);
                     CenterViewHolder holder = (CenterViewHolder) viewHolder;
                     if(item.getSeat().isTaken()){
-                        // Dit moet worden veranderd in een gereserveerde stoel
-                        holder.imgSeatBooked.setVisibility(View.VISIBLE);
+
+                        if(item.getSeat().getStatus() == SeatStatus.IS_RESERVATED){
+                            holder.imgSeatReserved.setVisibility(View.VISIBLE);
+                        } else if(item.getSeat().getStatus() == SeatStatus.IS_TAKEN){
+                            holder.imgSeatBooked.setVisibility(View.VISIBLE);
+                        }
+
                         holder.imgSeatSelected.setVisibility(View.INVISIBLE);
                         holder.imgSeat.setVisibility(View.INVISIBLE);
                         return;
@@ -131,8 +142,13 @@ public class SeatingAdapter extends SelectableAdapter<RecyclerView.ViewHolder> {
             final EdgeSeat item = (EdgeSeat) mItems.get(position);
             EdgeViewHolder holder = (EdgeViewHolder) viewHolder;
             if(item.getSeat().isTaken()){
-                // Dit moet worden veranderd in een gereserveerde stoel
-                holder.imgSeatBooked.setVisibility(View.VISIBLE);
+
+                if(item.getSeat().getStatus() == SeatStatus.IS_RESERVATED){
+                    holder.imgSeatReserved.setVisibility(View.VISIBLE);
+                } else if(item.getSeat().getStatus() == SeatStatus.IS_TAKEN){
+                    holder.imgSeatBooked.setVisibility(View.VISIBLE);
+                }
+
                 holder.imgSeatSelected.setVisibility(View.INVISIBLE);
                 holder.imgSeat.setVisibility(View.INVISIBLE);
                 return;
