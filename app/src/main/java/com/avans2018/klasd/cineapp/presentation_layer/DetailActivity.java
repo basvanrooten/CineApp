@@ -163,7 +163,16 @@ public class DetailActivity extends AppCompatActivity implements OnItemClickList
     }
 
     @Override
+    public void onBackPressed()
+    {
+        super.onBackPressed();
+        startActivity(new Intent(this, MainActivity.class));
+        finish();
+    }
+
+    @Override
     public boolean onSupportNavigateUp(){
+        startActivity(new Intent(this, MainActivity.class));
         finish();
         return true;
     }
