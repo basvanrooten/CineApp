@@ -27,6 +27,16 @@ public class Theater implements Serializable{
                 theaterNumber + ", with the name: " + theaterName + " and number of seats : " + seats.size());
     }
 
+    public int getFreeSeats() {
+        int freeSeats = 0;
+        for (Seat s : seats) {
+            if (!s.isTaken()) {
+                freeSeats++;
+            }
+        }
+        return freeSeats;
+    }
+
     public Theater()   {
         Log.d(TAG, "Theater-Constructor was called. Received nothing");
     }
