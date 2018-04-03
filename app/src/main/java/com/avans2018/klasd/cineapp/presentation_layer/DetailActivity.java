@@ -121,34 +121,6 @@ public class DetailActivity extends AppCompatActivity implements OnItemClickList
 
         // HELP
 
-//        prevDate = (Button) findViewById(R.id.slideIconLeft);
-//        nextDate = (Button) findViewById(R.id.slideIconRight);
-//
-//
-//
-//        prevDate.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                try{
-//                    datePager.setCurrentItem(getItem(-1), true);
-//                } catch(Exception e) {
-//                    Log.i(TAG,"prevDate.onClick() failed.");
-//                }
-//
-//            }
-//        });
-//
-//        nextDate.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//            try{
-//                datePager.setCurrentItem(getItem(+1), true);
-//            } catch(Exception e) {
-//                Log.i(TAG,"nextDate.onClick() failed.");
-//            }
-//            }
-//        });
-
 
 
 
@@ -162,6 +134,8 @@ public class DetailActivity extends AppCompatActivity implements OnItemClickList
                 getMovieSchedulesTaskSpecified.execute();
             }
         });
+
+
     }
 
     private int getItem(int i) {
