@@ -12,7 +12,7 @@
         android:layout_height="40dp"
         android:background="@color/CineAppHeader">
 
-        <ImageView
+        <Button
             android:id="@+id/slideIconLeft"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -43,7 +43,7 @@
             app:layout_constraintStart_toEndOf="@+id/slideIconLeft"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageView
+        <Button
             android:id="@+id/slideIconRight"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

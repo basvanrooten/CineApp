@@ -1,5 +1,6 @@
 package com.avans2018.klasd.cineapp.presentation_layer;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
@@ -42,6 +43,8 @@ public class DetailActivity extends AppCompatActivity implements OnItemClickList
     final static String CLICKED_SCHEDULE = "clickedSchedule";
     private Toolbar toolbar;
     private Button dateButton;
+    private Button prevDate;
+    private Button nextDate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -114,6 +117,41 @@ public class DetailActivity extends AppCompatActivity implements OnItemClickList
             dateList.add(date);
         }
         dateButton = (Button) findViewById(R.id.date_selection_button);
+
+
+        // HELP
+
+//        prevDate = (Button) findViewById(R.id.slideIconLeft);
+//        nextDate = (Button) findViewById(R.id.slideIconRight);
+//
+//
+//
+//        prevDate.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                try{
+//                    datePager.setCurrentItem(getItem(-1), true);
+//                } catch(Exception e) {
+//                    Log.i(TAG,"prevDate.onClick() failed.");
+//                }
+//
+//            }
+//        });
+//
+//        nextDate.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//            try{
+//                datePager.setCurrentItem(getItem(+1), true);
+//            } catch(Exception e) {
+//                Log.i(TAG,"nextDate.onClick() failed.");
+//            }
+//            }
+//        });
+
+
+
+
         datePager = (ViewPager) findViewById(R.id.datePager);
         datePager.setAdapter(datePagerAdapter);
 
@@ -124,6 +162,10 @@ public class DetailActivity extends AppCompatActivity implements OnItemClickList
                 getMovieSchedulesTaskSpecified.execute();
             }
         });
+    }
+
+    private int getItem(int i) {
+        return this.datePager.getCurrentItem() + i;
     }
 
     @Override
@@ -191,4 +233,6 @@ public class DetailActivity extends AppCompatActivity implements OnItemClickList
 
         return super.onOptionsItemSelected(item);
     }
+
+
 }
