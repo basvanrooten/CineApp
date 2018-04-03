@@ -107,6 +107,8 @@ public class SeatingAdapter extends SelectableAdapter<RecyclerView.ViewHolder> {
                     if(item.getSeat().isTaken()){
                         // Dit moet worden veranderd in een gereserveerde stoel
                         holder.imgSeatBooked.setVisibility(View.VISIBLE);
+                        holder.imgSeatSelected.setVisibility(View.INVISIBLE);
+                        holder.imgSeat.setVisibility(View.INVISIBLE);
                         return;
                     }
 
@@ -131,6 +133,8 @@ public class SeatingAdapter extends SelectableAdapter<RecyclerView.ViewHolder> {
             if(item.getSeat().isTaken()){
                 // Dit moet worden veranderd in een gereserveerde stoel
                 holder.imgSeatBooked.setVisibility(View.VISIBLE);
+                holder.imgSeatSelected.setVisibility(View.INVISIBLE);
+                holder.imgSeat.setVisibility(View.INVISIBLE);
                 return;
             }
 

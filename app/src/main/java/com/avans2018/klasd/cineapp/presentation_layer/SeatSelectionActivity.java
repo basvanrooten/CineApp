@@ -18,6 +18,8 @@ import android.widget.Toast;
 import com.avans2018.klasd.cineapp.R;
 import com.avans2018.klasd.cineapp.application_logic_layer.OnSeatSelected;
 import com.avans2018.klasd.cineapp.application_logic_layer.SeatingAdapter;
+import com.avans2018.klasd.cineapp.data_access_layer.seat.GetSeatsListener;
+import com.avans2018.klasd.cineapp.data_access_layer.seat.GetSeatsTask;
 import com.avans2018.klasd.cineapp.domain_layer.MovieSchedule;
 import com.avans2018.klasd.cineapp.domain_layer.Seat;
 import com.avans2018.klasd.cineapp.domain_layer.seating.CenterSeat;
@@ -27,9 +29,11 @@ import com.avans2018.klasd.cineapp.domain_layer.seating.SelectionSeat;
 import com.avans2018.klasd.cineapp.util_layer.StringLimiter;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 import static com.avans2018.klasd.cineapp.presentation_layer.DetailActivity.CLICKED_SCHEDULE;
+import static com.avans2018.klasd.cineapp.presentation_layer.MainActivity.CLICKED_MOVIE;
 import static com.avans2018.klasd.cineapp.presentation_layer.TicketSelectionActivity.SEAT_LIST;
 import static com.avans2018.klasd.cineapp.presentation_layer.TicketSelectionActivity.TOTAL_ADULT_TICKETS;
 import static com.avans2018.klasd.cineapp.presentation_layer.TicketSelectionActivity.TOTAL_AMOUNT;
@@ -90,16 +94,7 @@ public class SeatSelectionActivity extends AppCompatActivity implements OnSeatSe
 
         Log.i(TAG,"Theater " + receivedMovieSchedule.getTheater() + " has a total of " + receivedMovieSchedule.getTheater().getSeats().size() + " seats.");
 
-        for (int i=0; i < receivedMovieSchedule.getTheater().getSeats().size(); i++) {
-        seat = receivedMovieSchedule.getTheater().getSeats().get(i);
-        if (i%COLUMNS==0 || i%COLUMNS==9) {
-            items.add(new EdgeSeat(String.valueOf(i), seat));
-        } else if (i%COLUMNS==1 || i%COLUMNS==2 || i%COLUMNS==3 || i%COLUMNS==4 || i%COLUMNS==5 || i%COLUMNS==6 || i%COLUMNS==7 || i%COLUMNS==8) {
-            items.add(new CenterSeat(String.valueOf(i), seat));
-        } else {
-            items.add(new EmptySeat(String.valueOf(i), seat));
-        }
-    }
+        items.addAll(getSelectionSeats(receivedMovieSchedule.getTheater().getSeats()));
 
         GridLayoutManager manager = new GridLayoutManager(this, COLUMNS);
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.seatRecyclerView);
@@ -113,9 +108,9 @@ public class SeatSelectionActivity extends AppCompatActivity implements OnSeatSe
             public void onClick(View view) {
 
                 if (selectedSeatsCount == totalTickets) {
-                    Intent confirmationIntent = new Intent(view.getContext(), CheckoutActivity.class);
+                    final Intent confirmationIntent = new Intent(view.getContext(), CheckoutActivity.class);
 
-                    ArrayList<Seat> seats = new ArrayList<>();
+                    final ArrayList<Seat> seats = new ArrayList<>();
 
                     for (Integer i : adapter.getSelectedItems()) {
                         seats.add(items.get(i).getSeat());
@@ -130,7 +125,44 @@ public class SeatSelectionActivity extends AppCompatActivity implements OnSeatSe
                     confirmationIntent.putExtra(TOTAL_AMOUNT, totalPaymentAmount);
                     confirmationIntent.putExtra(SEAT_LIST, seats);
 
-                    startActivity(confirmationIntent);
+
+                    GetSeatsTask task = new GetSeatsTask(new GetSeatsListener() {
+                        @Override
+                        public void onSeatsRecieved(ArrayList<Seat> recievedSeats) {
+                            receivedMovieSchedule.getTheater().setSeats(recievedSeats);
+                            boolean taken = false;
+                            for (Seat rs : recievedSeats) {
+                                for (Seat s : seats) {
+                                    if (s.getSeatId() == rs.getSeatId()) {
+                                        if (rs.isTaken() && taken == false) {
+                                            taken = true;
+                                        }
+                                    }
+                                }
+                            }
+
+                            if (receivedMovieSchedule.getTheater().getFreeSeats() < selectedSeatsCount) {
+                                Toast.makeText(getApplicationContext(), getString(R.string.not_enough_space), Toast.LENGTH_LONG).show();
+                                Intent intent = new Intent(getApplicationContext(), DetailActivity.class);
+                                intent.putExtra(CLICKED_MOVIE, receivedMovieSchedule.getMovie());
+                                startActivity(intent);
+                            } else {
+
+                                if (taken) {
+                                    Toast.makeText(getApplicationContext(), getString(R.string.selected_seats_unavailable), Toast.LENGTH_SHORT).show();
+                                    adapter.clearSelection();
+                                    items.clear();
+                                    items.addAll(getSelectionSeats(recievedSeats));
+                                    adapter.notifyDataSetChanged();
+                                    onSeatSelected(0);
+                                } else {
+                                    startActivity(confirmationIntent);
+                                }
+                            }
+                        }
+                    }, receivedMovieSchedule);
+                    task.execute();
+
                     Log.i(TAG, "Starting CheckoutActivity...");
                 } else {
                     Toast.makeText(SeatSelectionActivity.this, R.string.seat_selection_select_correct_amount, Toast.LENGTH_SHORT).show();
@@ -142,6 +174,22 @@ public class SeatSelectionActivity extends AppCompatActivity implements OnSeatSe
 
 
 
+    }
+
+    private ArrayList<SelectionSeat> getSelectionSeats(ArrayList<Seat> seats) {
+        ArrayList<SelectionSeat> items = new ArrayList<>();
+        Seat seat = null;
+        for (int i=0; i < seats.size(); i++) {
+            seat = seats.get(i);
+            if (i%COLUMNS==0 || i%COLUMNS==9) {
+                items.add(new EdgeSeat(String.valueOf(i), seat));
+            } else if (i%COLUMNS==1 || i%COLUMNS==2 || i%COLUMNS==3 || i%COLUMNS==4 || i%COLUMNS==5 || i%COLUMNS==6 || i%COLUMNS==7 || i%COLUMNS==8) {
+                items.add(new CenterSeat(String.valueOf(i), seat));
+            } else {
+                items.add(new EmptySeat(String.valueOf(i), seat));
+            }
+        }
+        return items;
     }
 
     @Override
