@@ -24,6 +24,7 @@
     <string name="genre_header">Genre</string>
     <string name="genre_content">Action</string>
     <string name="unavailable">Unavailable</string>
+    <string name="fully_booked">Sold out</string>
 
     <!-- TicketSelectionActivity!-->
     <string name="ticket_selection_title">Ticket selection</string>
