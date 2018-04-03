@@ -57,14 +57,14 @@ public class ScheduleListAdapter extends RecyclerView.Adapter<ScheduleListAdapte
         String endTime = "" + schedule.getEndTime();
         String takenPerc = mContext.getString(R.string.schedule_availability) +""+ schedule.getTakenPerc() + "%";
 
-        if(schedule.getDate().getTime() < System.currentTimeMillis()){
+        if(schedule.getDate().getTime() < System.currentTimeMillis() || schedule.getTakenPerc() == 0){
             holder.scheduleListDate.setTextColor(Color.GRAY);
             holder.scheduleListStartTime.setTextColor(Color.GRAY);
             holder.until.setTextColor(Color.GRAY);
             holder.scheduleListEndTime.setTextColor(Color.GRAY);
             holder.scheduleListTakenPerc.setTextColor(Color.GRAY);
             holder.scheduleListTakenPerc.setText(mContext.getString(R.string.unavailable));
-        } else {
+        } else  {
             holder.scheduleListDate.setTextColor(Color.WHITE);
             holder.scheduleListStartTime.setTextColor(Color.WHITE);
             holder.until.setTextColor(Color.WHITE);

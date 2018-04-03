@@ -44,7 +44,7 @@ function getTakenPercentage($movieScheduleId, $theaterId) {
     $statement = Database::getConnection()->prepare("
         SELECT COUNT(*) as FreeSeats
       FROM Taken 
-      WHERE MovieScheduleId = ? AND Taken = 0;
+      WHERE MovieScheduleId = ? AND (Taken = 0 OR Taken = 1);
     ");
     $statement->bindValue(1, $movieScheduleId, Database::PARAM_STR);
 
