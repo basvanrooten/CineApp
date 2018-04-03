@@ -5,6 +5,7 @@ import android.util.Log;
 
 import com.avans2018.klasd.cineapp.domain_layer.MovieSchedule;
 import com.avans2018.klasd.cineapp.domain_layer.Seat;
+import com.avans2018.klasd.cineapp.domain_layer.SeatStatus;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -14,7 +15,6 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 /**
@@ -88,7 +88,7 @@ public class GetSeatsTask extends AsyncTask<String, Void, String> {
                 int rowNumber = object.getInt("rowNumber");
                 int taken = object.getInt("taken");
 
-                seats.add(new Seat(seatId, seatNumber, rowNumber, movieSchedule.getTheater(), taken));
+                seats.add(new Seat(seatId, seatNumber, rowNumber, movieSchedule.getTheater(), SeatStatus.getSeatByStatus(taken)));
 
             }
 

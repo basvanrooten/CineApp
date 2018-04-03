@@ -5,6 +5,7 @@ import android.util.Log;
 
 import com.avans2018.klasd.cineapp.domain_layer.MovieSchedule;
 import com.avans2018.klasd.cineapp.domain_layer.Seat;
+import com.avans2018.klasd.cineapp.domain_layer.SeatStatus;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -81,7 +82,7 @@ public class GetSeatStatusTask extends AsyncTask<String, Void, String> {
 
             for (int i = 0; i < results.length(); i++) {
                 JSONObject object = results.getJSONObject(i);
-                this.seat.setTaken(object.getInt("taken"));
+                this.seat.setStatus(SeatStatus.getSeatByStatus(object.getInt("taken")));
 
             }
 

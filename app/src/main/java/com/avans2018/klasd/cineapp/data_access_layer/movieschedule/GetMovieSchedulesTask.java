@@ -3,11 +3,10 @@ package com.avans2018.klasd.cineapp.data_access_layer.movieschedule;
 import android.os.AsyncTask;
 import android.util.Log;
 
-import com.avans2018.klasd.cineapp.application_logic_layer.StringKeys;
-import com.avans2018.klasd.cineapp.data_access_layer.movie.MovieTask;
 import com.avans2018.klasd.cineapp.domain_layer.Movie;
 import com.avans2018.klasd.cineapp.domain_layer.MovieSchedule;
 import com.avans2018.klasd.cineapp.domain_layer.Seat;
+import com.avans2018.klasd.cineapp.domain_layer.SeatStatus;
 import com.avans2018.klasd.cineapp.domain_layer.Theater;
 
 import org.json.JSONArray;
@@ -121,7 +120,7 @@ public class GetMovieSchedulesTask extends AsyncTask<String, Void, String> {
                     int rowNumber = temp.getInt("rowNumber");
                     int taken = temp.getInt("taken");
 
-                    seats.add(new Seat(seatId, seatNumber, rowNumber, theater, taken));
+                    seats.add(new Seat(seatId, seatNumber, rowNumber, theater, SeatStatus.getSeatByStatus(taken)));
                 }
 
                   movieSchedules.add(new MovieSchedule(id, startDate, this.movie, theater, endDate, takenPerc));

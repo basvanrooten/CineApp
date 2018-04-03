@@ -15,18 +15,18 @@ public class Seat implements Serializable {
     private int seatNumber;
     private int rowNumber;
     private Theater theater;
-    private int taken;
+    private SeatStatus status;
 
     private final static String TAG = "Domain: Seat";
 
-    public Seat(int seatId,int seatNumber, int rowNumber, Theater theater, int taken) {
+    public Seat(int seatId,int seatNumber, int rowNumber, Theater theater, SeatStatus status) {
 
         Log.d(TAG, "Seat-Constructor (extended) was called");
         this.seatId = seatId;
         this.seatNumber = seatNumber;
         this.rowNumber = rowNumber;
         this.theater = theater;
-        this.taken = taken;
+        this.status = status;
     }
 
     public Seat() {
@@ -57,8 +57,8 @@ public class Seat implements Serializable {
         return rowNumber;
     }
 
-    public int getTaken() {
-        return taken;
+    public SeatStatus getStatus() {
+        return status;
     }
 
     public void setSeatId(int seatId) {
@@ -70,12 +70,15 @@ public class Seat implements Serializable {
         this.rowNumber = rowNumber;
     }
 
-    public int isTaken() {
-        return taken;
+    public boolean isTaken() {
+        if(status == SeatStatus.IS_RESERVATED || status == SeatStatus.IS_TAKEN){
+            return true;
+        }
+        return false;
     }
 
-    public void setTaken(int taken) {
-        this.taken = taken;
+    public void setStatus(SeatStatus status) {
+        this.status = status;
     }
 
     public static String getTAG() {

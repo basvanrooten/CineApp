@@ -5,6 +5,7 @@ import android.util.Log;
 
 import com.avans2018.klasd.cineapp.domain_layer.MovieSchedule;
 import com.avans2018.klasd.cineapp.domain_layer.Seat;
+import com.avans2018.klasd.cineapp.domain_layer.SeatStatus;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -23,9 +24,9 @@ public class UpdateSeatStatusTask extends AsyncTask<String, Void, String> {
     private UpdateSeatStatusListener updateSeatStatusListener;
     private MovieSchedule movieSchedule;
     private Seat seat;
-    private int status;
+    private SeatStatus status;
 
-    public UpdateSeatStatusTask(UpdateSeatStatusListener updateSeatStatusListener, MovieSchedule movieSchedule, Seat seat, int status) {
+    public UpdateSeatStatusTask(UpdateSeatStatusListener updateSeatStatusListener, MovieSchedule movieSchedule, Seat seat, SeatStatus status) {
         this.updateSeatStatusListener = updateSeatStatusListener;
         this.movieSchedule = movieSchedule;
         this.seat = seat;
@@ -38,7 +39,7 @@ public class UpdateSeatStatusTask extends AsyncTask<String, Void, String> {
         String response = "";
 
         try {
-            URL url = new URL("http://api.gaikvanavondlam.nl/updateseatstatus?scheduleId="+this.movieSchedule.getId()+"&seatId="+this.seat.getSeatId()+"&status="+this.status);
+            URL url = new URL("http://api.gaikvanavondlam.nl/updateseatstatus?scheduleId="+this.movieSchedule.getId()+"&seatId="+this.seat.getSeatId()+"&status="+this.status.getStatus());
             URLConnection connection = url.openConnection();
 
             bufferedReader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
@@ -82,7 +83,7 @@ public class UpdateSeatStatusTask extends AsyncTask<String, Void, String> {
 
             for (int i = 0; i < results.length(); i++) {
                 JSONObject object = results.getJSONObject(i);
-                this.seat.setTaken(object.getInt("taken"));
+                this.seat.setStatus(SeatStatus.getSeatByStatus(object.getInt("taken")));
 
             }
 

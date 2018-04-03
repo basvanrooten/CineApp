@@ -16,6 +16,7 @@ import com.avans2018.klasd.cineapp.data_access_layer.TicketStorageDB;
 import com.avans2018.klasd.cineapp.data_access_layer.seat.UpdateSeatStatusListener;
 import com.avans2018.klasd.cineapp.data_access_layer.seat.UpdateSeatStatusTask;
 import com.avans2018.klasd.cineapp.domain_layer.Seat;
+import com.avans2018.klasd.cineapp.domain_layer.SeatStatus;
 import com.avans2018.klasd.cineapp.domain_layer.Ticket;
 import com.avans2018.klasd.cineapp.util_layer.StringLimiter;
 
@@ -50,7 +51,7 @@ public class ConfirmationActivity extends AppCompatActivity {
                 public void onSeatRecieved(Seat seat) {
                     //TODO: Nothing.
                 }
-            }, ticket.getMovieSchedule(), ticket.getSeat(), 1).execute();
+            }, ticket.getMovieSchedule(), ticket.getSeat(), SeatStatus.IS_TAKEN).execute();
         }
         Toast.makeText(this, R.string.confirmation_tickets_added, Toast.LENGTH_SHORT).show();
         Log.i(TAG,"Purchase complete. Tickets added to local storage.");
