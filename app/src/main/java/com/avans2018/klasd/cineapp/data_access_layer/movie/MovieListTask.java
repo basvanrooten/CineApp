@@ -98,7 +98,7 @@ public class MovieListTask extends AsyncTask<String, Void, String> {
                 JSONObject object = results.getJSONObject(i);
                 String id = object.getString("id");
 
-                MovieTask task = new MovieTask(movieListener);
+                MovieTask task = new MovieTask(movieListener, false);
                 task.execute(id);
 
             }
