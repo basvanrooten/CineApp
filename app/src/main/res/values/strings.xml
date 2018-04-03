@@ -85,9 +85,9 @@
     <string name="checkout_payment_amount">"Amount to be paid: €"</string>
 
     <!-- FailedPaymentActivity!-->
-    <string name="failed_content">Payment failed. Return to Movie details.</string>
-    <string name="back_to_detailed_activity">"Return to Movie details"</string>
-
+    <string name="failedHeader">"Transaction aborted"</string>
+    <string name="failed_content">Payment failed. Return to Movie list.</string>
+    <string name="back_to_detailed_activity">"Return to movie list"</string>
 
     <!-- ConfirmationActivity!-->
     <string name="confirmationHeader">Order complete</string>

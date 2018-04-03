@@ -51,6 +51,7 @@ public class SeatSelectionActivity extends AppCompatActivity implements OnSeatSe
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Log.i(TAG,"onCreate() called.");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_seat_selection);
         Log.i(TAG,"Started.");

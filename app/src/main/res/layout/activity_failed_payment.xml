@@ -45,7 +45,7 @@
             android:layout_height="wrap_content">
 
             <Button
-                android:id="@+id/ViewTicketsButton"
+                android:id="@+id/FailedButton"
                 android:layout_width="250dp"
                 android:layout_height="50dp"
                 android:background="@color/CineAppListViewItemButtomBackground"

@@ -128,6 +128,7 @@ public class DetailActivity extends AppCompatActivity implements OnItemClickList
 
     @Override
     public void onItemClick(int position) {
+        Log.i(TAG,"onCreate() called.");
         // Klik logica voor meegeven film en opstarten DetailActivity
 
         Log.i(TAG, "onItemClick() called.");

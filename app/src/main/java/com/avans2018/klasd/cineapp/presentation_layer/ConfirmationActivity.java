@@ -33,6 +33,7 @@ public class ConfirmationActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Log.i(TAG,"onCreate() called.");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_confirmation);
 
