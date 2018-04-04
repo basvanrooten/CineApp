@@ -12,6 +12,7 @@ import static org.junit.Assert.*;
 
 
 public class CineAppUnitTest {
+    private static String TAG = "CineAppUnitTest";
 
     @Test
     public void addition_isCorrect() throws Exception {
@@ -24,7 +25,7 @@ public class CineAppUnitTest {
         double actual = ADULT_TICKET_PRICE;
         double expected = 5.99;
 
-        assertEquals("Adult Price test failed.", expected, actual, 0.001);
+        assertEquals((TAG + ": Adult Price test failed."), expected, actual, 0.001);
     }
 
     @Test
@@ -32,7 +33,7 @@ public class CineAppUnitTest {
         double actual = CHILD_TICKET_PRICE;
         double expected = 5.99;
 
-        assertEquals("Child Price test failed.", expected, actual, 0.001);
+        assertEquals((TAG + ": Child Price test failed."), expected, actual, 0.001);
     }
 
     @Test
@@ -40,7 +41,7 @@ public class CineAppUnitTest {
         double actual = STUDENT_TICKET_PRICE;
         double expected = 2.99;
 
-        assertEquals("Student Price test failed.", expected, actual, 0.001);
+        assertEquals((TAG + ": Student Price test failed."), expected, actual, 0.001);
     }
 
     @Test
@@ -48,7 +49,7 @@ public class CineAppUnitTest {
         double actual = SENIOR_TICKET_PRICE;
         double expected = 4.99;
 
-        assertEquals("Senior Price test failed.", expected, actual, 0.001);
+        assertEquals((TAG + ": Senior Price test failed."), expected, actual, 0.001);
     }
 
     // Unit Test om API key lengte te valideren
@@ -57,7 +58,7 @@ public class CineAppUnitTest {
         int actual = StringKeys.API_KEY.length();
         int expected = 32;
 
-        assertEquals("Conversion from celsius to fahrenheit failed", expected, actual, 0.001);
+        assertEquals((TAG + ": API key length invalid."), expected, actual, 0.001);
     }
 
 
