@@ -5,9 +5,7 @@ import android.util.Log;
 
 import com.avans2018.klasd.cineapp.domain_layer.Payment;
 import com.avans2018.klasd.cineapp.domain_layer.Seat;
-import com.avans2018.klasd.cineapp.domain_layer.SeatStatus;
 
-import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
@@ -15,15 +13,14 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
-public class CreatePaymentTask extends AsyncTask<String, Void, String> {
+public class GetPaymentTask extends AsyncTask<String, Void, String> {
 
     private PaymentListener paymentListener;
     private Payment payment;
 
-    public CreatePaymentTask(PaymentListener paymentListener, Payment payment) {
+    public GetPaymentTask(PaymentListener paymentListener, Payment payment) {
         this.paymentListener = paymentListener;
         this.payment = payment;
     }
@@ -34,7 +31,7 @@ public class CreatePaymentTask extends AsyncTask<String, Void, String> {
         String response = "";
 
         try {
-            URL url = new URL("http://api.gaikvanavondlam.nl/createPayment?amount="+payment.getAmount()+"&description="+payment.getDescription());
+            URL url = new URL("http://api.gaikvanavondlam.nl/getPayment?id="+payment.getId());
             URLConnection connection = url.openConnection();
 
             bufferedReader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
@@ -62,7 +59,6 @@ public class CreatePaymentTask extends AsyncTask<String, Void, String> {
 
         return response;
     }
-
     @Override
     protected void onPostExecute(String response) {
 
@@ -74,14 +70,8 @@ public class CreatePaymentTask extends AsyncTask<String, Void, String> {
 
             JSONObject result = jsonObject.getJSONObject("payment");
 
-            String paymentId = result.getString("id");
-            String redirectUrl = result.getString("redirectUrl");
-            String webhookUrl = result.getString("webhookUrl");
-            String paymentUrl = result.getString("paymentUrl");
-            this.payment.setId(paymentId);
-            this.payment.setPaymentUrl(paymentUrl);
-            this.payment.setRedirectUrl(redirectUrl);
-            this.payment.setWebhookUrl(webhookUrl);
+            String status = result.getString("status");
+            this.payment.setStatus(status);
             paymentListener.onPaymentReceived(this.payment);
         } catch (Exception e) {
             Log.e(getClass().getSimpleName(), e.getMessage());

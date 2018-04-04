@@ -89,4 +89,5 @@
     <string name="back_to_detailed_activity">Keer terug</string>
     <string name="not_enough_space">Zaal volgeboekt. Kies andere tijd.</string>
     <string name="failedHeader">"Betaling mislukt"</string>
+    <string name="paymentHeader">"Betaling"</string>
 </resources>

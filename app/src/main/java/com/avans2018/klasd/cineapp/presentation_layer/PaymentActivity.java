@@ -33,7 +33,7 @@ public class PaymentActivity extends AppCompatActivity implements PaymentListene
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        getSupportActionBar().setTitle("Betaling");
+        getSupportActionBar().setTitle(StringLimiter.limit(getResources().getString(R.string.paymentHeader), 25));
 
         Intent paymentData = getIntent();
         Payment receivedPayment = (Payment) paymentData.getSerializableExtra("PAYMENTDATA");
@@ -46,8 +46,9 @@ public class PaymentActivity extends AppCompatActivity implements PaymentListene
             public boolean shouldOverrideUrlLoading(WebView view, String url) {
                 if (url.equals(payment.getRedirectUrl())) {
                     //Do your thing
-                    Intent paymentIntent = new Intent(view.getContext(), ConfirmationActivity.class);
+                    Intent paymentIntent = new Intent(view.getContext(), PaymentCheckerActivity.class);
                     paymentIntent.putExtra(PROCESSED_TICKETLIST, ticketArrayList);
+                    paymentIntent.putExtra("PAYMENTDATA", payment);
                     startActivity(paymentIntent);
                     return true;
                 } else {

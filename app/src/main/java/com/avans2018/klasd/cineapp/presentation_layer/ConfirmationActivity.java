@@ -44,7 +44,7 @@ public class ConfirmationActivity extends AppCompatActivity {
         getSupportActionBar().setTitle(StringLimiter.limit(getResources().getString(R.string.confirmationHeader), 25));
 
         Intent intent = getIntent();
-        ArrayList<Ticket> ticketArrayList = (ArrayList<Ticket>) intent.getSerializableExtra(PaymentActivity.PROCESSED_TICKETLIST);
+        ArrayList<Ticket> ticketArrayList = (ArrayList<Ticket>) intent.getSerializableExtra(PaymentCheckerActivity.PROCESSED_TICKETLIST);
         for(Ticket ticket : ticketArrayList){
             storageDB.addTicket(ticket);
             new UpdateSeatStatusTask(new UpdateSeatStatusListener() {

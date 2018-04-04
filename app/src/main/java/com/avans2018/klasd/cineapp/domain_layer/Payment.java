@@ -9,6 +9,7 @@ public class Payment implements Serializable {
     private String paymentUrl;
     private String redirectUrl;
     private String webhookUrl;
+    private String status;
 
     public Payment(Double amount, String description) {
         this.amount = amount;
@@ -53,5 +54,14 @@ public class Payment implements Serializable {
 
     public String getWebhookUrl() {
         return webhookUrl;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public String getStatus() {
+
+        return status;
     }
 }

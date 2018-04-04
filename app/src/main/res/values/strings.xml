@@ -89,6 +89,9 @@
     <string name="failed_content">Payment failed. Return to Movie list.</string>
     <string name="back_to_detailed_activity">"Return to movie list"</string>
 
+    <!-- PaymentActivity!-->
+    <string name="paymentHeader">"Payment"</string>
+
     <!-- ConfirmationActivity!-->
     <string name="confirmationHeader">Order complete</string>
     <string name="confirmationContent">"Payment failed. You will be returned to Movie details. Please resubmit order."</string>

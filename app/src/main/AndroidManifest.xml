@@ -51,6 +51,10 @@
             android:configChanges="orientation"
             android:screenOrientation="portrait" />
         <activity
+            android:name=".presentation_layer.PaymentCheckerActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+        <activity
             android:name=".presentation_layer.ConfirmationActivity"
             android:configChanges="orientation"
             android:screenOrientation="portrait" />
