@@ -68,12 +68,12 @@ public class DetailActivity extends AppCompatActivity implements OnItemClickList
 
         ImageView detailImageView = (ImageView) findViewById(R.id.detailFilmImg);
         TextView detailActivityIMDB = (TextView) findViewById(R.id.detailFilmIMDB);
-        detailActivityIMDB.setText("   " + clickedMovie.getRating() + "/10");
+        detailActivityIMDB.setText(clickedMovie.getRating() + "/10");
         TextView detailActivityPlaytime = (TextView) findViewById(R.id.detailFilmPlaytime);
         if(Locale.getDefault().getDisplayLanguage().equals("Nederlands")){
-            detailActivityPlaytime.setText("  " + clickedMovie.getDuration() + "m");
+            detailActivityPlaytime.setText(clickedMovie.getDuration() + "m");
         } else {
-            detailActivityPlaytime.setText("       " + clickedMovie.getDuration() + "m");
+            detailActivityPlaytime.setText(clickedMovie.getDuration() + "m");
         }
 
         TextView detailActivityFilmAge = (TextView) findViewById(R.id.detailFilmAge);
