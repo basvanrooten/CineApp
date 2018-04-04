@@ -47,6 +47,17 @@ public class FailedPaymentActivity extends AppCompatActivity {
 
         // Hoofdtitel veranderen
         getSupportActionBar().setTitle(StringLimiter.limit(getResources().getString(R.string.failedHeader), 25));
+
+        Intent intent = getIntent();
+        ArrayList<Ticket> ticketArrayList = (ArrayList<Ticket>) intent.getSerializableExtra(PaymentCheckerActivity.PROCESSED_TICKETLIST);
+        for(Ticket ticket : ticketArrayList){
+            new UpdateSeatStatusTask(new UpdateSeatStatusListener() {
+                @Override
+                public void onSeatRecieved(Seat seat) {
+                    //TODO: Nothing.
+                }
+            }, ticket.getMovieSchedule(), ticket.getSeat(), SeatStatus.FREE).execute();
+        }
     }
 
     @Override
@@ -56,5 +67,4 @@ public class FailedPaymentActivity extends AppCompatActivity {
         startActivity(new Intent(FailedPaymentActivity.this, MainActivity.class));
         finish();
     }
-
 }

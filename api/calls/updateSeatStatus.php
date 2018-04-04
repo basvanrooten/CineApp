@@ -4,6 +4,9 @@ include "../mainUtil.php";
 
 use Database\Database;
 
+if($_GET["status"] == "0") {
+    $_GET["status"] = "zero";
+}
 $fields = array("scheduleId", "seatId", "status");
 $seat = array();
 $results = array();
@@ -12,6 +15,9 @@ if(checkFields($fields) && checkValidApiKey()) {
 
     $scheduleId = getField($fields[0]);
     $seatId = getField($fields[1]);
+    if($_GET["status"] == "zero") {
+        $_GET["status"] = 0;
+    }
     $status = getField($fields[2]);
 
     $statement = Database::getConnection()->prepare("Update Taken Set Taken = ? WHERE SeatId = ? AND MovieScheduleId = ?");

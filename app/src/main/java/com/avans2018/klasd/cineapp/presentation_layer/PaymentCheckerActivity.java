@@ -51,6 +51,7 @@ public class PaymentCheckerActivity extends AppCompatActivity implements Payment
 
         Intent paymentFailedIntent = new Intent(this, FailedPaymentActivity.class);
         Intent paymentSuccesIntent = new Intent(this, ConfirmationActivity.class);
+        paymentFailedIntent.putExtra(PROCESSED_TICKETLIST, ticketArrayList);
         paymentSuccesIntent.putExtra(PROCESSED_TICKETLIST, ticketArrayList);
         switch (p.getStatus()) {
             case "cancelled":
