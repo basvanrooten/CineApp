@@ -8,9 +8,15 @@ $movieSchedules = array();
 
 $paymentData = [];
 
+$test = true;
+
 if(checkFields($fields) && checkValidApiKey()) {
     $mollie = new Mollie_API_Client();
-    $mollie->setApiKey("test_952f8yVN3jWnyuv2RmSMHVFF3pUm4C");
+    if($test) {
+        $mollie->setApiKey("test_952f8yVN3jWnyuv2RmSMHVFF3pUm4C");
+    } else {
+        $mollie->setApiKey("live_yhHjdHPdWr7y9QDn5bVa8E2caz4NqA");
+    }
 
     $id = getField($fields[0]);
 

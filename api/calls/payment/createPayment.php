@@ -7,10 +7,15 @@ $fields = array("amount", "description");
 $movieSchedules = array();
 
 $paymentData = [];
+$test = true;
 
 if(checkFields($fields) && checkValidApiKey()) {
     $mollie = new Mollie_API_Client();
-    $mollie->setApiKey("test_952f8yVN3jWnyuv2RmSMHVFF3pUm4C");
+    if($test) {
+        $mollie->setApiKey("test_952f8yVN3jWnyuv2RmSMHVFF3pUm4C");
+    } else {
+        $mollie->setApiKey("live_yhHjdHPdWr7y9QDn5bVa8E2caz4NqA");
+    }
 
     $amount = getField($fields[0]);
     $description = getField($fields[1]);
@@ -21,8 +26,7 @@ if(checkFields($fields) && checkValidApiKey()) {
         $payment = $mollie->payments->create(array(
             "amount" => floatval($amount),
             "description" => $description,
-            "redirectUrl" => $redirectUrl,
-            "method" => "ideal"
+            "redirectUrl" => $redirectUrl
         ));
         $paymentData["payment"]["id"] = $payment->id;
         $paymentData["payment"]["amount"] = floatval($amount);
