@@ -42,16 +42,16 @@ public class MyTicketsDetailActivity extends AppCompatActivity {
 
         ImageView QRCode = (ImageView) findViewById(R.id.ticketQRCodeBig);
 
-//      String QRUrl = clickedTicket.getId() + "";    // placeholder voor QR-code
-        String QRUrl = "https://cdn.crunchify.com/wp-content/uploads/2013/01/CrunchifyQR-Tutorial.png";    // placeholder voor QR-code
-        Picasso.with(getApplicationContext()).load(QRUrl).fit().centerInside().into(QRCode);
 
         MultiFormatWriter multiFormatWriter = new MultiFormatWriter();
         try {
-            BitMatrix bitMatrix = multiFormatWriter.encode(QRUrl, BarcodeFormat.QR_CODE, 200, 200);
+            String str = clickedTicket.getSeat() + " | " + clickedTicket.getMovie() + ", " + clickedTicket.getDate() + " " + clickedTicket.getTime() ;
+            BitMatrix bitMatrix = multiFormatWriter.encode(str, BarcodeFormat.QR_CODE, 200, 200);
             BarcodeEncoder barcodeEncoder = new BarcodeEncoder();
             Bitmap bitmap = barcodeEncoder.createBitmap(bitMatrix);
             QRCode.setImageBitmap(bitmap);
+
+
         } catch (Exception e)   {
             e.printStackTrace();
         }
