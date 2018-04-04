@@ -15,6 +15,7 @@ import com.avans2018.klasd.cineapp.R;
 import com.avans2018.klasd.cineapp.data_access_layer.seat.UpdateSeatStatusListener;
 import com.avans2018.klasd.cineapp.data_access_layer.seat.UpdateSeatStatusTask;
 import com.avans2018.klasd.cineapp.domain_layer.MovieSchedule;
+import com.avans2018.klasd.cineapp.domain_layer.Payment;
 import com.avans2018.klasd.cineapp.domain_layer.Seat;
 import com.avans2018.klasd.cineapp.domain_layer.SeatStatus;
 import com.avans2018.klasd.cineapp.domain_layer.Ticket;
@@ -109,8 +110,10 @@ public class CheckoutActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
-                Intent paymentIntent = new Intent(view.getContext(), ConfirmationActivity.class);
+                Intent paymentIntent = new Intent(view.getContext(), PaymentActivity.class);
                 ArrayList<Ticket> tickets = new ArrayList<>();
+                Payment payment = new Payment(totalPayment, totalTickets +" Tickets");
+                paymentIntent.putExtra("PAYMENTDATA", payment);
 
                 bookedSeats = new ArrayList<>();
                 bookedSeats.addAll(seats);
@@ -142,7 +145,7 @@ public class CheckoutActivity extends AppCompatActivity {
                 paymentIntent.putExtra(PROCESSED_TICKETLIST, tickets);
 
                 startActivity(paymentIntent);
-                Log.i(TAG, "Starting ConfirmationActivity...");
+                Log.i(TAG, "Starting PaymentActivity...");
             }
 
             private Seat getBookedSeat() {

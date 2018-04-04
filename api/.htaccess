@@ -15,4 +15,6 @@ RewriteRule ^insertMovieSchedule calls/insertMovieSchedule.php [NC,L]
 
 RewriteRule ^updateSeatStatus calls/updateSeatStatus.php [NC,L]
 
+RewriteRule ^createPayment calls/payment/createPayment.php [NC,L]
+
 
