@@ -22,15 +22,6 @@ public class Ticket implements Serializable{
 
     private static final String TAG = "Domain: Ticket";
 
-    public Ticket(int id, MovieSchedule movieSchedule, Seat seat, PaymentCategory paymentCategory) {
-        this.id = id;
-        this.seat = seat;
-        this.movieSchedule = movieSchedule;
-        this.paymentCategory = paymentCategory;
-
-        Log.d(TAG, "Ticket-Constructor (extended) called");
-    }
-
     public Ticket(MovieSchedule movieSchedule, Seat seat, PaymentCategory paymentCategory) {
         this.id = 0;
         this.seat = seat;
